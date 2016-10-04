@@ -4,13 +4,21 @@ package com.example.chen_hsi.androidtutnonfregment;
  * Created by Chen-Hsi on 2016/10/3.
  */
 
-public class Facility {
+import java.io.Serializable;
+/**
+ * Created by GMD on 30/9/16.
+ */
+
+public class Facility implements Serializable {
     private int facility_photo_resource;
     private String facility_name;
     private String facility_address;
     private double facility_xaddr;
     private double facility_yaddr;
     private String facility_phone;
+    // private ArrayList<Sport> SportList;
+    // private ArrayList<Review> ReviewList;
+    private int occupancy[][]=new int[20][14];
 
     public Facility(String facility_name, String facility_address, double facility_xaddr, double facility_yaddr, String facility_phone) {
         this.facility_name = facility_name;

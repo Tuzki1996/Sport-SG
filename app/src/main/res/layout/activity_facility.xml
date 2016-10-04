@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_facility"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.chen_hsi.androidtutnonfregment.FacilityActivity"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/my_toolbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:background="?attr/colorPrimary" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_below="@id/my_toolbar"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/facility_photo"/>
+    <TextView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_below="@id/my_toolbar"
+        android:layout_toRightOf="@id/facility_photo"
+        android:id="@+id/facility_name"/>
+    <TextView
+        android:layout_width="175dp"
+        android:layout_height="75dp"
+        android:layout_below="@id/my_toolbar"
+        android:layout_toRightOf="@id/facility_photo"
+        android:layout_toEndOf="@id/facility_name"
+        android:id="@+id/facility_address"/>
+    <TextView
+        android:layout_width="175dp"
+        android:layout_height="75dp"
+        android:layout_toRightOf="@id/facility_photo"
+        android:layout_toEndOf="@id/facility_address"
+        android:id="@+id/facility_phone"/>
+</RelativeLayout>

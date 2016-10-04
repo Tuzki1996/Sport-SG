@@ -129,7 +129,7 @@ public class HistoryActivity extends AppCompatActivity {
     private void displayHistoryList(){
         historylist = new ArrayList<HashMap<String, String>>();
 
-        new JSONParse().execute();
+        //new JSONParse().execute();
     }
 
 

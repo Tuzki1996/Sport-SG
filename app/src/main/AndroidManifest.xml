@@ -22,7 +22,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".BookingActivity" />
-        <activity android:name=".PaymentActivity"></activity>
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".FacilityActivity"></activity>
     </application>
 
 </manifest>

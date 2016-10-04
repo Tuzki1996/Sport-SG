@@ -3,6 +3,7 @@ package com.example.chen_hsi.androidtutnonfregment;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Parcelable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -46,6 +47,7 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
         setMenu();
         setNavigation();
         facilityListView=(ListView)findViewById(R.id.list_view);
@@ -61,17 +63,6 @@ public class SearchActivity extends AppCompatActivity {
         sqLiteDatabase=dbHelper.getReadableDatabase();
         cursor=dbHelper.getFacility(sqLiteDatabase);
         int i=0;
-        //insertdata
-        for(String name:facility_name){
-            Facility dataProvider=new Facility(facility_photo_resource[i],
-                    facility_name[i],facility_address[i]);
-            //facilityAdapter.add(dataProvider);
-            dbHelper.addFacility(facility_name[i],Double.parseDouble(facility_xaddr[i]),Double.parseDouble(facility_yaddr[i]),facility_address[i],facility_telephone[i],sqLiteDatabase);
-            i++;
-        }
-
-        i=0;
-        //getdata
         if(cursor.moveToFirst())
         {
             do{
@@ -89,12 +80,23 @@ public class SearchActivity extends AppCompatActivity {
                 i++;
             }while (cursor.moveToNext());
         }
+        /*for(String name:facility_name){
+            Facility dataProvider=new Facility(facility_photo_resource[i],
+                    facility_name[i],facility_address[i]);
+        facilityAdapter.add(dataProvider);
+             dbHelper.addFacility(facility_name[i],Double.parseDouble(facility_xaddr[i]),Double.parseDouble(facility_yaddr[i]),facility_address[i],facility_telephone[i],sqLiteDatabase);
+            i++;
+        }*/
         facilityListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Facility facilitySelected=(Facility)adapterView.getItemAtPosition(i);
                 //TextView selected=(TextView)view.findViewById(R.id.facility_name);
                 Toast.makeText(SearchActivity.this,"You click "+facilitySelected.getFacility_name().toString(),Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), FacilityActivity.class);
+
+                intent.putExtra("facility_key", facilitySelected);
+                startActivity(intent);
             }
         });
         facilitySearch.addTextChangedListener(new TextWatcher() {
