@@ -29,6 +29,7 @@ public class SearchActivity extends AppCompatActivity {
     ListView facilityListView;
     EditText facilitySearch;
     int [] facility_photo_resource={R.drawable.picture1,R.drawable.picture2,R.drawable.picture3};
+    String [] facility_photo;
     String [] facility_name;
     String [] facility_address;
     String [] facility_xaddr;
@@ -59,34 +60,28 @@ public class SearchActivity extends AppCompatActivity {
         facility_xaddr=getResources().getStringArray(R.array.facility_xaddress);
         facility_yaddr=getResources().getStringArray(R.array.facility_yaddress);
         facility_telephone=getResources().getStringArray(R.array.facility_phone);
+        facility_photo=getResources().getStringArray(R.array.facility_photo);
         dbHelper=new DbHelper(this);
         sqLiteDatabase=dbHelper.getReadableDatabase();
         cursor=dbHelper.getFacility(sqLiteDatabase);
+        //createDatabase();
         int i=0;
         if(cursor.moveToFirst())
         {
             do{
-                String name,address,telephone,xaddr,yaddr;
+                String name,address,telephone,xaddr,yaddr,photo;
                 name=cursor.getString(0);
                 telephone=cursor.getString(4);
                 address=cursor.getString(3);
                 xaddr=cursor.getString(1);
                 yaddr=cursor.getString(2);
-                facilities[i]=new Facility(name,address,Double.parseDouble(xaddr),Double.parseDouble(yaddr),telephone);
+                photo=cursor.getString(5);
+                facilities[i]=new Facility(name,address,Double.parseDouble(xaddr),Double.parseDouble(yaddr),telephone,photo);
 
-                Facility dataProvider=new Facility(facility_photo_resource[1],
-                        name,address);
-                facilityAdapter.add(dataProvider);
+                facilityAdapter.add(facilities[i]);
                 i++;
             }while (cursor.moveToNext());
         }
-        /*for(String name:facility_name){
-            Facility dataProvider=new Facility(facility_photo_resource[i],
-                    facility_name[i],facility_address[i]);
-        facilityAdapter.add(dataProvider);
-             dbHelper.addFacility(facility_name[i],Double.parseDouble(facility_xaddr[i]),Double.parseDouble(facility_yaddr[i]),facility_address[i],facility_telephone[i],sqLiteDatabase);
-            i++;
-        }*/
         facilityListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -118,6 +113,14 @@ public class SearchActivity extends AppCompatActivity {
 
     }
 
+private void createDatabase()
+{
+    int i=0;
+    for(String name:facility_name){
+        dbHelper.addFacility(facility_name[i],Double.parseDouble(facility_xaddr[i]),Double.parseDouble(facility_yaddr[i]),facility_address[i],facility_telephone[i],facility_photo[i],sqLiteDatabase);
+        i++;
+    }
+}
 
    /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {

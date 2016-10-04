@@ -10,6 +10,8 @@ import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 /**
@@ -69,7 +71,7 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
             handler=(DataHandler)row.getTag();
         }
         Facility dataProvider=(Facility)this.getItem(position);
-        handler.Photo.setImageResource(dataProvider.getFacility_photo_resource());
+        Picasso.with(getContext()).load(dataProvider.getFacility_photo_resource()).into(handler.Photo);
         handler.name.setText(dataProvider.getFacility_name());
         handler.address.setText(dataProvider.getFacility_address());
 
@@ -89,9 +91,9 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
             if(cs!=null&&cs.toString().length()>0)
             {
                 ArrayList<Facility> filtered=new ArrayList<Facility>();
-                for(int i=0;i<list.size();i++)
+                for(int i=0;i<OriginalList.size();i++)
                 {
-                    Facility facility=list.get(i);
+                    Facility facility=OriginalList.get(i);
                     if(facility.getFacility_name().toLowerCase().contains(cs))
                         filtered.add(facility);
                 }

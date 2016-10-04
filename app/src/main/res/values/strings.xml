@@ -40,5 +40,10 @@
         <item>6767 1735
 </item>
     </string-array>
+<string-array name="facility_photo">
+    <item formatted="false">https://www.myactivesg.com/~/media/consumer/images/facilities/bedok\%%20activesg\%%20gym/bedok\%%20activesg\%%20gym3.jpg</item>
+    <item formatted="false">https://www.myactivesg.com/~/media/consumer/images/facilities/bishan\%%20activesg\%%20gym/bishan\%%20activesg\%%20gym1.jpg</item>
+    <item formatted="false">https://www.myactivesg.com/~/media/consumer/images/facilities/choa\%%20chu\%%20kang\%%20activesg\%%20gym/choa\%%20chu\%%20kang\%%20activesg\%%20gym4.jpg</item>
 
+</string-array>
 </resources>

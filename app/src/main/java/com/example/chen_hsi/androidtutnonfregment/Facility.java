@@ -18,13 +18,16 @@ public class Facility implements Serializable {
    // private ArrayList<Review> ReviewList;
     private int occupancy[][]=new int[20][14];
 
-    public Facility(String facility_name, String facility_address, double facility_xaddr, double facility_yaddr, String facility_phone) {
+    public Facility(String facility_name, String facility_address, double facility_xaddr, double facility_yaddr, String facility_phone, String facility_photo_resource) {
         this.facility_name = facility_name;
         this.facility_address = facility_address;
         this.facility_xaddr = facility_xaddr;
         this.facility_yaddr = facility_yaddr;
         this.facility_phone = facility_phone;
+        this.facility_photo_resource = facility_photo_resource;
     }
+
+
 
     public static abstract class newFacility
     {
@@ -33,6 +36,7 @@ public class Facility implements Serializable {
         public static final String FACILITY_YADDR="facility_yaddr";
         public static final String FACILITY_ADDR="facility_addr";
         public static final String FACILITY_PHONE="facility_phone";
+        public static final String FACILITY_PHOTO="facility_photo";
         public static final String TABLE_NAME="Facility";
     }
     public Facility(String facility_photo_resource,String facility_name,String facility_address)

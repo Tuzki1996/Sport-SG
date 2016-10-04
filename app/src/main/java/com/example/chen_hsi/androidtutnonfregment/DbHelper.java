@@ -21,7 +21,8 @@ public class DbHelper extends SQLiteOpenHelper {
                     Facility.newFacility.FACILITY_XADDR + " REAL, " +
                     Facility.newFacility.FACILITY_YADDR + " REAL, " +
                     Facility.newFacility.FACILITY_ADDR + " TEXT, " +
-                    Facility.newFacility.FACILITY_PHONE + " TEXT);";
+                    Facility.newFacility.FACILITY_PHONE + " TEXT, " +
+                    Facility.newFacility.FACILITY_PHOTO+ " TEXT);";
 
     public DbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -33,7 +34,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_FACILITY_QUERY);
         Log.e("DATABASE OPERATION", "Database created / opened...");
     }
-    public void addFacility(String name,double xaddr,double yaddr,String addr,String phone,SQLiteDatabase db){
+    public void addFacility(String name,double xaddr,double yaddr,String addr,String phone,String photo,SQLiteDatabase db){
 
         ContentValues contentValues=new ContentValues();
         contentValues.put(Facility.newFacility.FACILITY_NAME,name);
@@ -41,6 +42,7 @@ public class DbHelper extends SQLiteOpenHelper {
         contentValues.put(Facility.newFacility.FACILITY_XADDR,xaddr);
         contentValues.put(Facility.newFacility.FACILITY_YADDR,yaddr);
         contentValues.put(Facility.newFacility.FACILITY_PHONE,phone);
+        contentValues.put(Facility.newFacility.FACILITY_PHOTO,photo);
         db.insert(Facility.newFacility.TABLE_NAME,null,contentValues);
         Log.e("DATABASE OPERATION", "Row inserted...");
 
@@ -48,7 +50,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public Cursor getFacility(SQLiteDatabase db)
     {
         Cursor cursor;
-        String[] projections={Facility.newFacility.FACILITY_NAME,Facility.newFacility.FACILITY_XADDR,Facility.newFacility.FACILITY_YADDR,Facility.newFacility.FACILITY_ADDR,Facility.newFacility.FACILITY_PHONE};
+        String[] projections={Facility.newFacility.FACILITY_NAME,Facility.newFacility.FACILITY_XADDR,Facility.newFacility.FACILITY_YADDR,Facility.newFacility.FACILITY_ADDR,Facility.newFacility.FACILITY_PHONE,Facility.newFacility.FACILITY_PHOTO};
         cursor= db.query(Facility.newFacility.TABLE_NAME,projections,null,null,null,null,null);
         return cursor;
     }

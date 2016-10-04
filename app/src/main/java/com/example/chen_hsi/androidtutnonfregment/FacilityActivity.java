@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 public class FacilityActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -32,8 +34,7 @@ public class FacilityActivity extends AppCompatActivity {
         facilityName.setText(facility.getFacility_name());
         facilityAddress.setText(facility.getFacility_address());
         facilityPhone.setText("Phone: "+facility.getFacility_phone());
-
-       new ImageLoadTask("https://pbs.twimg.com/profile_images/695684826565840897/VNZVklL7.jpg", facilityImage).execute();
+        Picasso.with(getBaseContext()).load(facility.getFacility_photo_resource()).into(facilityImage);
     }
     private void setMenu(){
 
