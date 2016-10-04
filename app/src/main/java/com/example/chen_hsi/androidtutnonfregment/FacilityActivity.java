@@ -24,13 +24,16 @@ public class FacilityActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facility);
-        facility=(Facility) getIntent().getSerializableExtra("facility_key");
+       facility=(Facility) getIntent().getSerializableExtra("facility_key");
         facilityName=(TextView) findViewById(R.id.facility_name);
         facilityAddress=(TextView) findViewById(R.id.facility_address);
         facilityImage=(ImageView)findViewById(R.id.facility_photo) ;
+        facilityPhone=(TextView)findViewById(R.id.facility_phone);
         facilityName.setText(facility.getFacility_name());
         facilityAddress.setText(facility.getFacility_address());
-        new ImageLoadTask("https://pbs.twimg.com/profile_images/695684826565840897/VNZVklL7.jpg", facilityImage).execute();
+        facilityPhone.setText("Phone: "+facility.getFacility_phone());
+
+       new ImageLoadTask("https://pbs.twimg.com/profile_images/695684826565840897/VNZVklL7.jpg", facilityImage).execute();
     }
     private void setMenu(){
 
