@@ -1,8 +1,11 @@
-package gmd.com.sportsg;
-import java.io.Serializable;
+package com.example.chen_hsi.androidtutnonfregment;
+
 /**
- * Created by GMD on 30/9/16.
+ * Created by Chen-Hsi on 2016/10/3.
  */
+
+import java.io.Serializable;
+
 
 public class Facility implements Serializable {
     private String facility_photo_resource;
