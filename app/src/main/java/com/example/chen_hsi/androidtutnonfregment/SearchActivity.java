@@ -1,8 +1,10 @@
 package com.example.chen_hsi.androidtutnonfregment;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Parcelable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -20,10 +22,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
     ListView facilityListView;
@@ -35,7 +47,7 @@ public class SearchActivity extends AppCompatActivity {
     String [] facility_xaddr;
     String [] facility_yaddr;
     String [] facility_telephone;
-    Facility[] facilities=new Facility[100];
+    ArrayList<Facility> facilities=new ArrayList<Facility>() ;
     FacilityAdapter facilityAdapter;
     DbHelper dbHelper;
     SQLiteDatabase sqLiteDatabase;
@@ -61,12 +73,13 @@ public class SearchActivity extends AppCompatActivity {
         facility_yaddr=getResources().getStringArray(R.array.facility_yaddress);
         facility_telephone=getResources().getStringArray(R.array.facility_phone);
         facility_photo=getResources().getStringArray(R.array.facility_photo);
-        dbHelper=new DbHelper(this);
-        sqLiteDatabase=dbHelper.getReadableDatabase();
-        cursor=dbHelper.getFacility(sqLiteDatabase);
+        new JSONParse().execute();
+        //dbHelper=new DbHelper(this);
+        //sqLiteDatabase=dbHelper.getReadableDatabase();
+        //cursor=dbHelper.getFacility(sqLiteDatabase);
         //createDatabase();
         int i=0;
-        if(cursor.moveToFirst())
+       /* if(cursor.moveToFirst())
         {
             do{
                 String name,address,telephone,xaddr,yaddr,photo;
@@ -76,12 +89,12 @@ public class SearchActivity extends AppCompatActivity {
                 xaddr=cursor.getString(1);
                 yaddr=cursor.getString(2);
                 photo=cursor.getString(5);
-                facilities[i]=new Facility(name,address,Double.parseDouble(xaddr),Double.parseDouble(yaddr),telephone,photo);
-
-                facilityAdapter.add(facilities[i]);
+                Facility facility=new Facility(name,address,Double.parseDouble(xaddr),Double.parseDouble(yaddr),telephone,photo);
+                facilities.add(facility);
+                facilityAdapter.add(facility);
                 i++;
             }while (cursor.moveToNext());
-        }
+        }*/
         facilityListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -122,45 +135,6 @@ private void createDatabase()
     }
 }
 
-   /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater=getMenuInflater();
-        menuInflater.inflate(R.menu.my_menu,menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        RelativeLayout relativeLayout=(RelativeLayout)findViewById(R.id.relative_layout);
-        switch (item.getItemId())
-        {
-            case R.id.id_book:
-                Toast.makeText(getBaseContext(),"u click book", Toast.LENGTH_LONG).show();
-                relativeLayout.setBackgroundColor(getResources().getColor(android.R.color.black));
-                break;
-            case R.id.id_search:
-                Toast.makeText(getBaseContext(),"u click search", Toast.LENGTH_LONG).show();
-                relativeLayout.setBackgroundColor(getResources().getColor(android.R.color.holo_purple));
-
-                break;
-        }
-        return true;
-        //return super.onOptionsItemSelected(item);
-    }*/
-
-    public void searchFacility(View view) {
-        /*facilityListView.setAdapter(facilityAdapter);
-String search=facilitySearch.getText().toString().trim();
-
-
-        for(Facility facility:facilities){
-            if (facility==null)
-            if(search=="")
-                facilityAdapter.add(facility);
-            else if(facility.getFacility_name().contains(search))
-                facilityAdapter.add(facility);
-        }*/
-    }
     private void setMenu(){
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -223,5 +197,75 @@ String search=facilitySearch.getText().toString().trim();
 
 
     }
+
+
+    private class JSONParse extends AsyncTask<Void,Void,Void> {
+        private ProgressDialog pDialog;
+
+
+
+        @Override
+        protected void onPreExecute() {
+            Log.e("DEBUG!!!!!","1" );
+            super.onPreExecute();
+            pDialog = new ProgressDialog(SearchActivity.this);
+            pDialog.setMessage("Getting Data ...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
+
+
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            Log.e("DEBUG!!!!!", "2");
+            String url = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=search";
+
+            JSONParser jParser = new JSONParser();
+
+            // Getting JSON from URL
+            String json = jParser.getJSONFromUrl2(url);
+            try {
+                JSONArray facilitiesJS = new JSONArray(json);
+                Log.e("FOUND!", String.valueOf(facilitiesJS.length()));
+                for (int i = 0; i < facilitiesJS.length(); i++) {
+                    JSONObject facilityJS = facilitiesJS.getJSONObject(i);
+                    int id;
+                    double xaddr, yaddr;
+                    String name, address, telephone, photo;
+                    id = facilityJS.getInt("id");
+                    name = facilityJS.getString("name");
+                    telephone = facilityJS.getString("phone");
+                    address = facilityJS.getString("addres");
+                    xaddr = facilityJS.getDouble("longtitude");
+                    yaddr = facilityJS.getDouble("lattitude");
+                    photo = facilityJS.getString("url");
+                    Facility facility = new Facility(name, address, xaddr, yaddr, telephone, photo);
+                   // facilityAdapter.add(facility);
+                    facilities.add(facility);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+return  null;
+        }
+        @Override
+        protected void onPostExecute(Void json) {
+            pDialog.dismiss();
+            try {
+                Log.e("DEBUG!!!!!","3" );
+                // Getting JSON Array from URL
+for(Facility facility:facilities ){
+    facilityAdapter.add(facility);
+}
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
+
 
 }

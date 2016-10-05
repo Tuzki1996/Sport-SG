@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_facility"
@@ -15,29 +21,38 @@
         android:layout_width="match_parent"
         android:background="?attr/colorPrimary" />
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="75dp"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/my_toolbar"
-        android:layout_alignParentLeft="true"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:id="@+id/facility_name"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:gravity="center"
+        android:layout_below="@id/facility_name"
         android:id="@+id/facility_photo"/>
     <TextView
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_below="@id/my_toolbar"
-        android:layout_toRightOf="@id/facility_photo"
-        android:id="@+id/facility_name"/>
-    <TextView
-        android:layout_width="175dp"
-        android:layout_height="75dp"
-        android:layout_below="@id/my_toolbar"
-        android:layout_toRightOf="@id/facility_photo"
-        android:layout_toEndOf="@id/facility_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/facility_photo"
         android:id="@+id/facility_address"/>
     <TextView
-        android:layout_width="175dp"
-        android:layout_height="75dp"
-        android:layout_toRightOf="@id/facility_photo"
-        android:layout_toEndOf="@id/facility_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/facility_address"
         android:id="@+id/facility_phone"/>
 </RelativeLayout>
+    <android.support.design.widget.NavigationView android:id="@+id/left_drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="#FFF"
+        app:menu="@menu/drawer_menu"
+        app:headerLayout="@layout/navigation_drawer_header"/>
+</android.support.v4.widget.DrawerLayout>
