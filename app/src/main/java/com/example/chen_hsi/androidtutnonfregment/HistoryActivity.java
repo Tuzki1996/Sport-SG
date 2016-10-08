@@ -42,15 +42,15 @@ public class HistoryActivity extends AppCompatActivity {
     ArrayList<HashMap<String, String>> historylist = new ArrayList<HashMap<String, String>>();
 
     //URL to get JSON Array
-    private static String url = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=login&email=red";
+    private static String url = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=getHistory&userid=329919";
 
     //JSON Node Names
     private static final String TAG_OS = "android";
-    private static final String TAG_DATE = "ver";
-    private static final String TAG_FACILITY = "name";
-    private static final String TAG_PAYMENT = "api";
+    private static final String TAG_DATE = "date";
+    private static final String TAG_FACILITY = "sportid";
+    private static final String TAG_PAYMENT = "price";
 
-    JSONArray history = null;
+    JSONArray history =new JSONArray();
 
 
 
@@ -62,6 +62,7 @@ public class HistoryActivity extends AppCompatActivity {
         setMenu();
         displayHistoryList();
         setNavigation();
+
 
 
 
@@ -129,7 +130,7 @@ public class HistoryActivity extends AppCompatActivity {
     private void displayHistoryList(){
         historylist = new ArrayList<HashMap<String, String>>();
 
-        //new JSONParse().execute();
+        new JSONParse().execute();
     }
 
 
@@ -139,7 +140,7 @@ public class HistoryActivity extends AppCompatActivity {
         actionBarDrawerToggle.syncState();
     }
 
-    private class JSONParse extends AsyncTask<String, String, JSONObject> {
+    private class JSONParse extends AsyncTask<String, String, JSONArray> {
         private ProgressDialog pDialog;
         @Override
         protected void onPreExecute() {
@@ -152,54 +153,61 @@ public class HistoryActivity extends AppCompatActivity {
             pDialog.setMessage("Getting Data ...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
-            pDialog.show();
+           // pDialog.show();
 
 
         }
 
         @Override
-        protected JSONObject doInBackground(String... args) {
+        protected JSONArray doInBackground(String... args) {
 
             JSONParser jParser = new JSONParser();
 
             // Getting JSON from URL
-            JSONObject json = jParser.getJSONFromUrl(url);
+            JSONArray jsonA = jParser.getJSONArrayFromUrl(url);
 
 
-            return json;
+
+
+            return jsonA;
         }
         @Override
-        protected void onPostExecute(JSONObject json) {
+        protected void onPostExecute(JSONArray json) {
             pDialog.dismiss();
             try {
                 Log.e("DEBUG!!!!!","3" );
                 // Getting JSON Array from URL
-                history = json.getJSONArray(TAG_OS);
-                for(int i = 0; i < history.length(); i++){
+                history = json;
+                for(int i = 0;i<history.length(); i++) {
                     JSONObject c = history.getJSONObject(i);
-
+                    Log.e("JasnObject",c.toString());
                     // Storing  JSON item in a Variable
-                    String date = "Date: "+c.getString(TAG_DATE);
-                    String facility = "Faclilty: "+c.getString(TAG_FACILITY);
-                    String payment = "Payment: "+c.getString(TAG_PAYMENT);
+                    String date = "Date: " + c.getString(TAG_DATE);
+                    Log.e("Date",c.getString(TAG_DATE));
+                    String facility = "Faclilty: " + c.getString(TAG_FACILITY);
+                    Log.e("Date",c.getString(TAG_FACILITY));
+                    String payment = "Payment: " + c.getString(TAG_PAYMENT);
+                    Log.e("payment",payment);
 
                     // Adding value HashMap key => value
 
                     HashMap<String, String> map = new HashMap<String, String>();
-
+                    Log.e("Debug","1");
                     map.put(TAG_DATE, date);
                     map.put(TAG_FACILITY, facility);
                     map.put(TAG_PAYMENT, payment);
-
+                    Log.e("Debug","2");
                     historylist.add(map);
-                    list=(ListView)findViewById(R.id.historyList);
-
+                    list = (ListView) findViewById(R.id.historyList);
+                    Log.e("Debug","3");
                     ListAdapter adapter = new SimpleAdapter(HistoryActivity.this, historylist,
                             R.layout.history_list,
-                            new String[] { TAG_DATE,TAG_FACILITY, TAG_PAYMENT }, new int[] {
-                            R.id.tDate,R.id.tFacility, R.id.tPayment});
+                            new String[]{TAG_DATE, TAG_FACILITY, TAG_PAYMENT}, new int[]{
+                            R.id.tDate, R.id.tFacility, R.id.tPayment});
+                    Log.e("Debug","4");
 
                     list.setAdapter(adapter);
+                    Log.e("Debug","5");
                    /* list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
                         @Override

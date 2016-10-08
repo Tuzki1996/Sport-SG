@@ -18,6 +18,78 @@
             android:layout_height="?attr/actionBarSize"
             android:layout_width="match_parent"
             android:background="?attr/colorPrimary" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/first_name"
+            android:hint="First Name"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_below="@+id/first_name"
+
+            android:id="@+id/last_name"
+            android:hint="Last Name"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_below="@+id/last_name"
+            android:id="@+id/registeremail"
+            android:hint="Email"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:layout_below="@+id/registeremail"
+
+            android:id="@+id/registerpassword"
+            android:hint="Password"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:inputType="phone"
+            android:ems="10"
+            android:id="@+id/contact"
+            android:layout_below="@+id/registerpassword"
+            android:hint="Contact"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
+
+        <Button
+            android:text="Submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/submitregister"
+            android:layout_below="@+id/contact"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            />
 
 
     </RelativeLayout>

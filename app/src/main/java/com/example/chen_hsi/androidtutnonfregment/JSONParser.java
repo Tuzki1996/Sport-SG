@@ -1,22 +1,16 @@
 package com.example.chen_hsi.androidtutnonfregment;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.BasicHttpParams;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,16 +22,49 @@ import android.util.Log;
 public class JSONParser {
     static InputStream is = null;
     static JSONObject jObj = null;
+    static JSONArray jArray = null;
     static String json = "";
-    static String output;
+
     // constructor
     public JSONParser() {
 
     }
 
-    public JSONObject getJSONFromUrl(String url) {
+    public JSONObject getJSONObjectFromUrl(String url) {
 
         // Making HTTP request
+        String jstring;
+        jstring=getStringFromServer(url);
+        try {
+
+            jObj = new JSONObject(json);
+            //jObj  = new JSONArray(json).getJSONObject(0);
+        } catch (JSONException e) {
+            Log.e("JSON Parser", "Error parsing data " + e.toString());
+        }
+
+        // return JSON String
+        return jObj;
+    }
+
+    public JSONArray getJSONArrayFromUrl(String url) {
+
+        String jstring;
+        jstring=getStringFromServer(url);
+        // try parse the string to a JSON object
+        try {
+
+            jArray = new JSONArray(json);
+            //jObj  = new JSONArray(json).getJSONObject(0);
+        } catch (JSONException e) {
+            Log.e("JSON Parser", "Error parsing data " + e.toString());
+        }
+
+        // return JSON String
+        return jArray;
+    }
+
+    private String getStringFromServer(String url){
         try {
             // defaultHttpClient
             DefaultHttpClient httpClient = new DefaultHttpClient();
@@ -69,19 +96,11 @@ public class JSONParser {
         } catch (Exception e) {
             Log.e("Buffer Error", "Error converting result " + e.toString());
         }
+        return json;
 
-        // try parse the string to a JSON object
-        try {
 
-            jObj = new JSONObject(json);
-            //jObj  = new JSONArray(json).getJSONObject(0);
-        } catch (JSONException e) {
-            Log.e("JSON Parser", "Error parsing data " + e.toString());
-        }
-
-        // return JSON String
-        return jObj;
     }
+
     public String getJSONFromUrl2(String url) {
         StringBuilder sb = new StringBuilder();
         // Making HTTP request
@@ -129,4 +148,5 @@ public class JSONParser {
         // return JSON String
         return json;
     }
+
 }
