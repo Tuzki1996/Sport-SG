@@ -5,6 +5,7 @@ package com.example.chen_hsi.androidtutnonfregment;
  */
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 
 public class Facility implements Serializable {
@@ -14,38 +15,30 @@ public class Facility implements Serializable {
     private double facility_xaddr;
     private double facility_yaddr;
     private String facility_phone;
-   // private ArrayList<Sport> SportList;
+private int facility_id;
+
+
+    private ArrayList<Sport> SportList=new ArrayList<Sport>();
    // private ArrayList<Review> ReviewList;
     private int occupancy[][]=new int[20][14];
 
-    public Facility(String facility_name, String facility_address, double facility_xaddr, double facility_yaddr, String facility_phone, String facility_photo_resource) {
+    public Facility(int facility_id,String facility_name, String facility_address, double facility_xaddr, double facility_yaddr, String facility_phone, String facility_photo_resource) {
         this.facility_name = facility_name;
         this.facility_address = facility_address;
         this.facility_xaddr = facility_xaddr;
         this.facility_yaddr = facility_yaddr;
         this.facility_phone = facility_phone;
         this.facility_photo_resource = facility_photo_resource;
+        this.facility_id=facility_id;
     }
 
 
-
-    public static abstract class newFacility
-    {
-        public static final String FACILITY_NAME="facility_name";
-        public static final String FACILITY_XADDR="facility_xaddr";
-        public static final String FACILITY_YADDR="facility_yaddr";
-        public static final String FACILITY_ADDR="facility_addr";
-        public static final String FACILITY_PHONE="facility_phone";
-        public static final String FACILITY_PHOTO="facility_photo";
-        public static final String TABLE_NAME="Facility";
+    public ArrayList<Sport> getSportList() {
+        return SportList;
     }
-    public Facility(String facility_photo_resource,String facility_name,String facility_address)
-    {
-        this.setFacility_photo_resource(facility_photo_resource);
-        this.setFacility_address(facility_address);
-        this.setFacility_name(facility_name);
+    public void setSportList(ArrayList<Sport> sportList) {
+        SportList = sportList;
     }
-
     public double getFacility_xaddr() {
         return facility_xaddr;
     }
@@ -92,5 +85,9 @@ public class Facility implements Serializable {
 
     public void setFacility_address(String facility_address) {
         this.facility_address = facility_address;
+    }
+    public void addSport(Sport sport)
+    {
+        this.SportList.add(sport);
     }
 }

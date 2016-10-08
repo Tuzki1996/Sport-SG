@@ -49,9 +49,6 @@ public class SearchActivity extends AppCompatActivity {
     String [] facility_telephone;
     ArrayList<Facility> facilities=new ArrayList<Facility>() ;
     FacilityAdapter facilityAdapter;
-    DbHelper dbHelper;
-    SQLiteDatabase sqLiteDatabase;
-    Cursor cursor;
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
@@ -126,14 +123,6 @@ public class SearchActivity extends AppCompatActivity {
 
     }
 
-private void createDatabase()
-{
-    int i=0;
-    for(String name:facility_name){
-        dbHelper.addFacility(facility_name[i],Double.parseDouble(facility_xaddr[i]),Double.parseDouble(facility_yaddr[i]),facility_address[i],facility_telephone[i],facility_photo[i],sqLiteDatabase);
-        i++;
-    }
-}
 
     private void setMenu(){
 
@@ -234,15 +223,29 @@ private void createDatabase()
                     int id;
                     double xaddr, yaddr;
                     String name, address, telephone, photo;
+
                     id = facilityJS.getInt("id");
                     name = facilityJS.getString("name");
                     telephone = facilityJS.getString("phone");
-                    address = facilityJS.getString("addres");
+                    address = facilityJS.getString("address");
                     xaddr = facilityJS.getDouble("longtitude");
                     yaddr = facilityJS.getDouble("lattitude");
                     photo = facilityJS.getString("url");
-                    Facility facility = new Facility(name, address, xaddr, yaddr, telephone, photo);
-                   // facilityAdapter.add(facility);
+                    Facility facility = new Facility(id,name, address, xaddr, yaddr, telephone, photo);
+                    if(!facilityJS.isNull("Sport")){
+                        JSONArray sportsJS=facilityJS.getJSONArray("Sport");
+                        for(int j=0;j<sportsJS.length();j++)
+                        {
+                            JSONObject sportJS=sportsJS.getJSONObject(j);
+                            if(sportJS!=null){
+                                int type=sportJS.getInt("sporttype");
+                                double price=sportJS.getDouble("price");
+                                int sport_id=sportJS.getInt("id");
+                                Sport sport=new Sport(type,price,sport_id);
+                                facility.addSport(sport);}
+                        }
+                    }
+
                     facilities.add(facility);
                 }
             } catch (JSONException e) {
@@ -256,6 +259,8 @@ return  null;
             try {
                 Log.e("DEBUG!!!!!","3" );
                 // Getting JSON Array from URL
+
+                facilityAdapter.clear();
 for(Facility facility:facilities ){
     facilityAdapter.add(facility);
 }
