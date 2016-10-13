@@ -17,9 +17,32 @@ public class Facility implements Serializable {
     private String facility_phone;
 private int facility_id;
 
+    public int getFacility_id() {
+        return facility_id;
+    }
+
+    public void setFacility_id(int facility_id) {
+        this.facility_id = facility_id;
+    }
+
+    public ArrayList<Review> getReviewList() {
+        return ReviewList;
+    }
+
+    public void setReviewList(ArrayList<Review> reviewList) {
+        ReviewList = reviewList;
+    }
+
+    public int[][] getOccupancy() {
+        return occupancy;
+    }
+
+    public void setOccupancy(int[][] occupancy) {
+        this.occupancy = occupancy;
+    }
 
     private ArrayList<Sport> SportList=new ArrayList<Sport>();
-   // private ArrayList<Review> ReviewList;
+    private ArrayList<Review> ReviewList=new ArrayList<Review>();
     private int occupancy[][]=new int[20][14];
 
     public Facility(int facility_id,String facility_name, String facility_address, double facility_xaddr, double facility_yaddr, String facility_phone, String facility_photo_resource) {
@@ -89,5 +112,9 @@ private int facility_id;
     public void addSport(Sport sport)
     {
         this.SportList.add(sport);
+    }
+    public void addReview(Review review)
+    {
+        this.ReviewList.add(review);
     }
 }

@@ -33,7 +33,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -266,7 +268,22 @@ return  facilitiesJS;
                                 facility.addSport(sport);}
                         }
                     }
-
+                    if(!facilityJS.isNull("review")){
+                        JSONArray reviewsJS=facilityJS.getJSONArray("review");
+                        for(int j=0;j<reviewsJS.length();j++)
+                        {
+                            JSONObject reviewJS=reviewsJS.getJSONObject(j);
+                            if(reviewJS!=null){
+                                int reviewId=reviewJS.getInt("reviewid");
+                                String acc=reviewJS.getString("user");
+                                String text=reviewJS.getString("text");
+                                SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                                Date date=format1.parse(reviewJS.getString("date"));
+                                double rating=reviewJS.getDouble("rating");
+                                Review review=new Review(reviewId,acc,text,date,rating);
+                                facility.addReview(review);}
+                        }
+                    }
                     facilities.add(facility);
                 }
                 facilityAdapter.clear();

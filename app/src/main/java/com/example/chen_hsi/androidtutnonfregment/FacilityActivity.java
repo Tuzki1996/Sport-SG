@@ -12,20 +12,33 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.RatingBar;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 public class FacilityActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
+    ReviewAdapter reviewAdapter;
     Facility facility;
     TextView facilityName;
     TextView facilityAddress;
     TextView facilityPhone;
     ImageView facilityImage;
+    RatingBar facilityRating;
+    private ArrayList<Sport> facilitySportList=new ArrayList<Sport>();
+
+    private ArrayList<Review> facilityReviewList=new ArrayList<Review>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +51,21 @@ public class FacilityActivity extends AppCompatActivity {
         facilityAddress=(TextView) findViewById(R.id.facility_address);
         facilityImage=(ImageView)findViewById(R.id.facility_photo) ;
         facilityPhone=(TextView)findViewById(R.id.facility_phone);
+        facilityRating=(RatingBar)findViewById(R.id.ratingBar) ;
         facilityName.setText(facility.getFacility_name());
         facilityAddress.setText(facility.getFacility_address());
         facilityPhone.setText("Phone: "+facility.getFacility_phone());
+        facilitySportList=facility.getSportList();
+        facilityReviewList=facility.getReviewList();
         Picasso.with(getBaseContext()).load(facility.getFacility_photo_resource()).into(facilityImage);
+        ListView list = (ListView) findViewById(R.id.reviewList);
+        reviewAdapter=new ReviewAdapter(getApplicationContext(),R.layout.review_list);
+        for(Review review:facilityReviewList ){
+            if(review.getText().trim()!="")
+            reviewAdapter.add(review);
+        }
+        list.setAdapter(reviewAdapter);
+        facilityRating.setRating(3);
     }
     private void setMenu(){
 
