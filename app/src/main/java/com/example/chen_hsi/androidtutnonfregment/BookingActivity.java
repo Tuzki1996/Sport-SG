@@ -9,12 +9,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class BookingActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,10 @@ public class BookingActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         ActionBar actionBar=getSupportActionBar();
+
+        if(AccountInfo.getInstance().getLoginStatus()==true){
+            actionBar.setSubtitle("Hi,"+AccountInfo.getInstance().getUserName());
+        }
 
         actionBar.setElevation((float) 2.5);
         actionBar.setTitle("Booking");
@@ -45,6 +52,13 @@ public class BookingActivity extends AppCompatActivity {
     }
     private void setNavigation(){
         navigationView=(NavigationView)findViewById(R.id.left_drawer);
+        Menu drawerMenu=navigationView.getMenu();
+        MenuItem loginItem=drawerMenu.findItem(R.id.mLogin);
+
+        if(AccountInfo.getInstance().getLoginStatus()==true) {
+            loginItem.setTitle("LOGOUT");
+        }
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
 
             @Override
@@ -68,8 +82,18 @@ public class BookingActivity extends AppCompatActivity {
                         break;
 
                     case R.id.mLogin:
-                        navigate.setClass(BookingActivity.this,LoginActivity.class);
-                        startActivity(navigate);
+                        if(AccountInfo.getInstance().getLoginStatus()==true){
+                            AccountInfo.getInstance().setLoginStatus(false);
+                            Toast.makeText(BookingActivity.this,"You have logged out successfully!",Toast.LENGTH_LONG).show();
+                            navigate.setClass(BookingActivity.this,SearchActivity.class);
+                            startActivity(navigate);
+                        }
+                        else{
+                            navigate.setClass(BookingActivity.this,LoginActivity.class);
+                            startActivity(navigate);
+
+                        }
+
                         break;
 
                     case R.id.mRegister:

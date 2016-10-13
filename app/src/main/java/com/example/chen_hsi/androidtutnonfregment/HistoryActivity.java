@@ -1,6 +1,8 @@
 package com.example.chen_hsi.androidtutnonfregment;
 
 import android.app.ProgressDialog;
+import android.content.ClipData;
+import android.content.ClipData.Item;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
@@ -13,11 +15,13 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import org.json.JSONArray;
@@ -38,14 +42,16 @@ public class HistoryActivity extends AppCompatActivity {
     TextView date;
     TextView facility;
     TextView payment;
-    //Button Btngetdata;
+
     ArrayList<HashMap<String, String>> historylist = new ArrayList<HashMap<String, String>>();
 
-    //URL to get JSON Array
-    private static String url = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=getHistory&userid=329919";
+    //private String userId;
+    //private boolean loginStatus=true;
+    private String nameOfUser;
+    private String historyUrl;
 
     //JSON Node Names
-    private static final String TAG_OS = "android";
+
     private static final String TAG_DATE = "date";
     private static final String TAG_FACILITY = "sportid";
     private static final String TAG_PAYMENT = "price";
@@ -59,21 +65,44 @@ public class HistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_history);
+        /*AccountInfo.getInstance().setLoginStatus(true);
+        AccountInfo.getInstance().setUserId("12345");
+        AccountInfo.getInstance().setUserName("Tracy");*/
         setMenu();
-        displayHistoryList();
         setNavigation();
 
 
 
+        if(AccountInfo.getInstance().getLoginStatus()==true){
 
+            historyUrl = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=getHistory&userid="+AccountInfo.getInstance().getUserId();
+            Log.d("historyUrl",historyUrl);
+            displayHistoryList();
+
+        }
+       else{
+
+            Toast.makeText(HistoryActivity.this,"Please log in to view your booking history.",Toast.LENGTH_LONG).show();
+        }
 
 
 
     }
 
 
+
+
     private void setNavigation(){
         navigationView=(NavigationView)findViewById(R.id.left_drawer);
+
+        Menu drawerMenu=navigationView.getMenu();
+        MenuItem loginItem=drawerMenu.findItem(R.id.mLogin);
+
+        if(AccountInfo.getInstance().getLoginStatus()==true) {
+            loginItem.setTitle("LOGOUT");
+        }
+
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
 
             @Override
@@ -97,8 +126,18 @@ public class HistoryActivity extends AppCompatActivity {
                         startActivity(navigate);
                         break;
                     case R.id.mLogin:
-                        navigate.setClass(HistoryActivity.this,LoginActivity.class);
-                        startActivity(navigate);
+                        if(AccountInfo.getInstance().getLoginStatus()==true){
+                            AccountInfo.getInstance().setLoginStatus(false);
+                            Toast.makeText(HistoryActivity.this,"You have logged out successfully!",Toast.LENGTH_LONG).show();
+                            navigate.setClass(HistoryActivity.this,SearchActivity.class);
+                            startActivity(navigate);
+                        }
+                        else{
+                            navigate.setClass(HistoryActivity.this,LoginActivity.class);
+                            startActivity(navigate);
+                        }
+
+
                         break;
                     case R.id.mRegister:
                         navigate.setClass(HistoryActivity.this,RegisterActivity.class);
@@ -118,7 +157,9 @@ public class HistoryActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         ActionBar actionBar=getSupportActionBar();
-
+        if(AccountInfo.getInstance().getLoginStatus()==true){
+            actionBar.setSubtitle("Hi,"+AccountInfo.getInstance().getUserName());
+        }
         actionBar.setElevation((float) 2.5);
         actionBar.setTitle("Booking History");
         drawerLayout=(DrawerLayout)findViewById(R.id.drawer_layout);
@@ -130,7 +171,7 @@ public class HistoryActivity extends AppCompatActivity {
     private void displayHistoryList(){
         historylist = new ArrayList<HashMap<String, String>>();
 
-        new JSONParse().execute();
+        new HistoryListJSONParse().execute();
     }
 
 
@@ -140,17 +181,16 @@ public class HistoryActivity extends AppCompatActivity {
         actionBarDrawerToggle.syncState();
     }
 
-    private class JSONParse extends AsyncTask<String, String, JSONArray> {
+    private class HistoryListJSONParse extends AsyncTask<String, String, JSONArray> {
         private ProgressDialog pDialog;
         @Override
         protected void onPreExecute() {
-            Log.e("DEBUG!!!!!","1" );
             super.onPreExecute();
-            date = (TextView)findViewById(R.id.tDate);
-            facility= (TextView)findViewById(R.id.tFacility);
-            payment = (TextView)findViewById(R.id.tPayment);
+            //date = (TextView)findViewById(R.id.tDate);
+            //facility= (TextView)findViewById(R.id.tFacility);
+            //payment = (TextView)findViewById(R.id.tPayment);
             pDialog = new ProgressDialog(HistoryActivity.this);
-            pDialog.setMessage("Getting Data ...");
+            pDialog.setMessage("Getting your history ...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
            // pDialog.show();
@@ -164,50 +204,52 @@ public class HistoryActivity extends AppCompatActivity {
             JSONParser jParser = new JSONParser();
 
             // Getting JSON from URL
-            JSONArray jsonA = jParser.getJSONArrayFromUrl(url);
+            JSONArray historyListJsonArray = jParser.getJSONArrayFromUrl(historyUrl);
 
 
 
 
-            return jsonA;
+            return historyListJsonArray;
         }
         @Override
         protected void onPostExecute(JSONArray json) {
             pDialog.dismiss();
             try {
-                Log.e("DEBUG!!!!!","3" );
-                // Getting JSON Array from URL
+
                 history = json;
                 for(int i = 0;i<history.length(); i++) {
-                    JSONObject c = history.getJSONObject(i);
-                    Log.e("JasnObject",c.toString());
-                    // Storing  JSON item in a Variable
-                    String date = "Date: " + c.getString(TAG_DATE);
-                    Log.e("Date",c.getString(TAG_DATE));
-                    String facility = "Faclilty: " + c.getString(TAG_FACILITY);
-                    Log.e("Date",c.getString(TAG_FACILITY));
-                    String payment = "Payment: " + c.getString(TAG_PAYMENT);
-                    Log.e("payment",payment);
+                    JSONObject historyItem = history.getJSONObject(i);
+                    Log.d("HistoryItem",historyItem.toString());
+                    if(historyItem.toString().equals("{\"Result\":[\"Fail\"]}")){
+                        Toast.makeText(HistoryActivity.this,"Sorry you don't have any booking record",Toast.LENGTH_LONG).show();
+                        break;
+                    }
+                    String date = "Date: " + historyItem.getString(TAG_DATE);
+                    String facility = "Faclilty: " + historyItem.getString(TAG_FACILITY);
+                    String payment = "Payment: " + historyItem.getString(TAG_PAYMENT);
+
+                    Log.d("Date",historyItem.getString(TAG_FACILITY));
+                    Log.d("Date",historyItem.getString(TAG_DATE));
+                    Log.d("payment",payment);
 
                     // Adding value HashMap key => value
 
                     HashMap<String, String> map = new HashMap<String, String>();
-                    Log.e("Debug","1");
                     map.put(TAG_DATE, date);
                     map.put(TAG_FACILITY, facility);
                     map.put(TAG_PAYMENT, payment);
-                    Log.e("Debug","2");
+
                     historylist.add(map);
                     list = (ListView) findViewById(R.id.historyList);
-                    Log.e("Debug","3");
+
                     ListAdapter adapter = new SimpleAdapter(HistoryActivity.this, historylist,
                             R.layout.history_list,
                             new String[]{TAG_DATE, TAG_FACILITY, TAG_PAYMENT}, new int[]{
                             R.id.tDate, R.id.tFacility, R.id.tPayment});
-                    Log.e("Debug","4");
+
 
                     list.setAdapter(adapter);
-                    Log.e("Debug","5");
+
                    /* list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
                         @Override

@@ -27,7 +27,10 @@ public class LoginActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
-    String url;
+    String loginUrl;
+    String emailCheckUrl;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,36 +38,39 @@ public class LoginActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_login);
-
         setMenu();
         setNavigation();
+        //************** DEBUG USE************************************
+        String loginDebugString;
+
+        if(AccountInfo.getInstance().getLoginStatus()==true){
+            loginDebugString="true";
+        }
+        else{
+            loginDebugString="false";
+        }
+        //************** DEBUG USE************************************
+        Log.d("LoginStatus",loginDebugString);
 
 
 
-        Button submit=(Button)findViewById(R.id.bSubmit);
+
         final EditText username=(EditText)findViewById(R.id.ptUsername);
         final EditText password=(EditText)findViewById(R.id.ptPassword);
-
-
-        //url="http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=login&email=%27kck@hotmail.com%27&password=Password";
-        //http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?=verifytracychang@gmail.com&email=red
-        //http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=verifyemail&tracychang1996@gmail.com=red
-        //http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=login&email=%27kck@hotmail.com%27&password=asdf
-
+        Button submit=(Button)findViewById(R.id.bSubmit);
         TextView register=(TextView)findViewById(R.id.tvRegister);
-        // Create the text message with a string
+
+
+
 
         submit.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View view) {
-                String usernameString=username.getText().toString();
-                String passwordString=password.getText().toString();
-                url = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=login&email=%27"+usernameString+"%27&password="+passwordString;
-                Log.d("LoginURL",url);
 
-                if(validation()==true){
+
+                if(validation(username,password)==true){
                     //Toast.makeText(view.getContext(), "username= "+usernameString+"\n"+"password= "+passwordString, Toast.LENGTH_LONG).show();
 
-                    new JSONParse().execute();
+                    new LoginJSONParse().execute();
                 }
                 else{
                     Toast.makeText(LoginActivity.this,"Please enter your email address and password",Toast.LENGTH_LONG).show();
@@ -143,6 +149,7 @@ public class LoginActivity extends AppCompatActivity {
 
         actionBar.setElevation((float) 2.5);
         actionBar.setTitle("LOGIN");
+        
         drawerLayout=(DrawerLayout)findViewById(R.id.drawer_layout);
         actionBarDrawerToggle=new ActionBarDrawerToggle(this,drawerLayout,myToolbar,R.string.drawer_open,R.string.drawer_close);
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
@@ -156,116 +163,139 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    private boolean validation(){
-        final EditText username = (EditText) findViewById(R.id.ptUsername);
-        final EditText password = (EditText) findViewById(R.id.ptPassword);
+    private boolean validation(EditText username, EditText password){
+        //final EditText username = (EditText) findViewById(R.id.ptUsername);
+        //final EditText password = (EditText) findViewById(R.id.ptPassword);
 
         String usernameString = username.getText().toString();
-        String passwordString = username.getText().toString();
+        String passwordString = password.getText().toString();
         if (usernameString.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(usernameString).matches()) {
             username.setError("Invalid Email Address");
-            return true;
+            return false;
         }
-        else if(passwordString.isEmpty()||passwordString.length()<4||passwordString.length()<10){
+        else if(passwordString.isEmpty()||passwordString.length()<=4||passwordString.length()>10){
             password.setError("Please key in a password that is between 4 to 10 alphabetically");
-            return true;
+            return false;
         }
-        else{
 
-            return true;
-        }
+
+        loginUrl = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=login&email="+usernameString+"&password="+passwordString;
+        emailCheckUrl ="http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=verifyemail&email="+usernameString;
+        Log.d("LoginURL",loginUrl);
+        Log.d("emailCheckURL",emailCheckUrl);
+
+
+
+
+        return true;
+
 
 
 
     }
 
-    private class JSONParse extends AsyncTask<String, String, JSONArray> {
+    private class LoginJSONParse extends AsyncTask<String, String, JSONObject[]> {
         private ProgressDialog pDialog;
 
         @Override
         protected void onPreExecute() {
 
             super.onPreExecute();
-            //    date = (TextView)findViewById(R.id.tDate);
-            //  facility= (TextView)findViewById(R.id.tFacility);
-            //payment = (TextView)findViewById(R.id.tPayment);
+
+
             pDialog = new ProgressDialog(LoginActivity.this);
-            pDialog.setMessage("Sending Data ...");
-
-
+            pDialog.setMessage("Sending data...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
-            pDialog.show();
+            //pDialog.show();
         }
 
 
         @Override
-        protected JSONArray doInBackground(String... args)  {
-
+        protected JSONObject[] doInBackground(String... args) {
 
 
             JSONParser jParser = new JSONParser();
 
-            // Getting JSON from URL
-            JSONArray jsonA = jParser.getJSONArrayFromUrl(url);
+            JSONArray loginResult = jParser.getJSONArrayFromUrl(loginUrl);
+            JSONObject emailCheckExistResult = jParser.getJSONObjectFromUrl(emailCheckUrl);
+            Log.d("Email Check String", emailCheckExistResult.toString());
+            Log.d("Login Result String", loginResult.toString());
 
 
+            JSONObject[] JsonObArray = new JSONObject[3];
 
-            return jsonA;
-
-        }
-// user reader to read & parse response
-        //reader.close();
-
-
-
-
-
-        @Override
-        protected void onPostExecute(JSONArray json) {
-            pDialog.dismiss();
-
-            //JSONArray login = json.getJSONArray("");
-            // try {
-            //  Log.e("DEBUG!!!!!", "3");
             try {
-                JSONObject c = json.getJSONObject(0);
-                Log.d("Login Result",c.toString());
-                if (c.toString().equals("{\"Result\":\"Fail\"}") ) {
-
-                    Toast.makeText(LoginActivity.this,"Please register first",Toast.LENGTH_LONG).show();
-                    //print text success
-                    Intent toRegister = new Intent();
-                    toRegister.setClass(LoginActivity.this, RegisterActivity.class);//go to main menu
-                    startActivity(toRegister);
-
-
-                }
-                else{
-                    Log.d("Login Result",c.toString());
-                    Toast.makeText(LoginActivity.this,"Log in sucessfully!",Toast.LENGTH_LONG).show();
-                    //fail to log in
-                    //pDialog.dismiss();
-
-                }
-
-
-
-
-
+                JsonObArray[0] = emailCheckExistResult;
+                JsonObArray[1] = loginResult.getJSONObject(0);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
 
+            return JsonObArray;
+        }
 
+
+        @Override
+        protected void onPostExecute(JSONObject... loginVerifyResult ) {
+            pDialog.dismiss();
+
+            String emailCheckeExistResultString=loginVerifyResult[1].toString();
+            String loginResultString=loginVerifyResult[1].toString();
+
+            Log.d("Login Result",loginResultString);
+            if (loginResultString.equals("{\"Result\":\"Fail\"}") && emailCheckeExistResultString.equals("{\"result\":\"Success\"}")) {
+
+                Toast.makeText(LoginActivity.this,"Password Incorrect!",Toast.LENGTH_LONG).show();
+
+            }
+            else if(loginResultString.equals("{\"Result\":\"Fail\"}") && emailCheckeExistResultString.equals("{\"result\":\"Fail\"}")){
+
+                Toast.makeText(LoginActivity.this,"Please Register First !",Toast.LENGTH_LONG).show();
+                Intent toRegister = new Intent();
+                toRegister.setClass(LoginActivity.this, RegisterActivity.class);//go to main menu
+                startActivity(toRegister);
+
+            }
+            else{
+
+                try {
+
+                    String userId=loginVerifyResult[1].getString("id");
+                    String nameOfUser=loginVerifyResult[1].getString("firstname");
+
+                    AccountInfo.getInstance().setLoginStatus(true);
+                    AccountInfo.getInstance().setUserId(userId);
+                    AccountInfo.getInstance().setUserName(nameOfUser);
+                    //************** DEBUG USE************************************
+                    String loginDebugString;
+                    if(AccountInfo.getInstance().getLoginStatus()==true){
+                        loginDebugString="true";
+                    }
+                    else{
+                        loginDebugString="false";
+                    }
+                    //************** DEBUG USE************************************
+                    Log.d("LoginStatus",loginDebugString);
+                    Log.d("UserId",AccountInfo.getInstance().getUserId());
+                    Log.d("NameOfUser",AccountInfo.getInstance().getUserName());
+                    Toast.makeText(LoginActivity.this,"sucessful login !",Toast.LENGTH_LONG).show();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                //fail to log in
+
+
+            }
 
 
         }
 
+
     }
-
-
 
 
 

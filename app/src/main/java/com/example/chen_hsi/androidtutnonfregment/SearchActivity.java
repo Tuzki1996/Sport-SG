@@ -130,8 +130,8 @@ public class SearchActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         ActionBar actionBar=getSupportActionBar();
 
-        if(myToolbar==null){
-            Log.e("null","NUlllll,");
+        if(AccountInfo.getInstance().getLoginStatus()==true){
+            actionBar.setSubtitle("Hi,"+AccountInfo.getInstance().getUserName());
         }
 
         actionBar.setElevation((float) 2.5);
@@ -147,6 +147,12 @@ public class SearchActivity extends AppCompatActivity {
     }
     private void setNavigation(){
         navigationView=(NavigationView)findViewById(R.id.left_drawer);
+        Menu drawerMenu=navigationView.getMenu();
+        MenuItem loginItem=drawerMenu.findItem(R.id.mLogin);
+
+        if(AccountInfo.getInstance().getLoginStatus()==true) {
+            loginItem.setTitle("LOGOUT");
+        }
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
 
             @Override
@@ -171,8 +177,17 @@ public class SearchActivity extends AppCompatActivity {
                         startActivity(navigate);
                         break;
                     case R.id.mLogin:
-                        navigate.setClass(SearchActivity.this,LoginActivity.class);
-                        startActivity(navigate);
+                        if(AccountInfo.getInstance().getLoginStatus()==true){
+                            AccountInfo.getInstance().setLoginStatus(false);
+                            Toast.makeText(SearchActivity.this,"You have logged out successfully!",Toast.LENGTH_LONG).show();
+                            navigate.setClass(SearchActivity.this,SearchActivity.class);
+                            startActivity(navigate);
+                        }
+                        else{
+                            navigate.setClass(SearchActivity.this,LoginActivity.class);
+                            startActivity(navigate);
+                        }
+
                         break;
 
                     case R.id.mRegister:

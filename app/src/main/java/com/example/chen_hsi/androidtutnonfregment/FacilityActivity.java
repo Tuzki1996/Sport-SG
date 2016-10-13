@@ -8,10 +8,12 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -47,8 +49,12 @@ public class FacilityActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         ActionBar actionBar=getSupportActionBar();
 
+        if(AccountInfo.getInstance().getLoginStatus()==true){
+            actionBar.setSubtitle("Hi,"+AccountInfo.getInstance().getUserName());
+        }
+
         actionBar.setElevation((float) 2.5);
-        actionBar.setTitle("Booking History");
+        actionBar.setTitle("Facility");
         drawerLayout=(DrawerLayout)findViewById(R.id.drawer_layout);
         actionBarDrawerToggle=new ActionBarDrawerToggle(this,drawerLayout,myToolbar,R.string.drawer_open,R.string.drawer_close);
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
@@ -60,6 +66,13 @@ public class FacilityActivity extends AppCompatActivity {
     }
     private void setNavigation(){
         navigationView=(NavigationView)findViewById(R.id.left_drawer);
+        Menu drawerMenu=navigationView.getMenu();
+        MenuItem loginItem=drawerMenu.findItem(R.id.mLogin);
+
+        if(AccountInfo.getInstance().getLoginStatus()==true) {
+            loginItem.setTitle("LOGOUT");
+        }
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
 
             @Override
@@ -84,8 +97,17 @@ public class FacilityActivity extends AppCompatActivity {
                         startActivity(navigate);
                         break;
                     case R.id.mLogin:
-                        navigate.setClass(FacilityActivity.this,LoginActivity.class);
-                        startActivity(navigate);
+                        if(AccountInfo.getInstance().getLoginStatus()==true){
+                            AccountInfo.getInstance().setLoginStatus(false);
+                            Toast.makeText(FacilityActivity.this,"You have logged out successfully!",Toast.LENGTH_LONG).show();
+                            navigate.setClass(FacilityActivity.this,SearchActivity.class);
+                            startActivity(navigate);
+                        }
+                        else{
+                            navigate.setClass(FacilityActivity.this,LoginActivity.class);
+                            startActivity(navigate);
+                        }
+
                         break;
 
                     case R.id.mRegister:

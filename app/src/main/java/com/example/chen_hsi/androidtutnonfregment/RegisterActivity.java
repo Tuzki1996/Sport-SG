@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -46,24 +47,19 @@ public class RegisterActivity extends AppCompatActivity {
         Button submitregister = (Button) findViewById(R.id.submitregister);
 
 
-
-
-
         submitregister.setOnClickListener(new Button.OnClickListener() {
 
 
 
 
             public void onClick(View view) {
-                String usernameString = username.getText().toString();
+               /* String usernameString = username.getText().toString();
                 String passwordString = password.getText().toString();
                 String firstnameString=firstname.getText().toString();
                 String lastnameString=lastname.getText().toString();
-                String contactString=contact.getText().toString();
-                if (validation() == true) {
+                String contactString=contact.getText().toString();*/
+                if (validation(username,password,firstname,lastname,contact) == true) {
 
-                    registerUrl="http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=register&email="+usernameString+"&password="+passwordString+"&firstname="+firstnameString+"&lastname="+lastnameString+"&contact="+contactString;
-                    Log.d("registerUrl",registerUrl);
                     new RegisterJSONParse().execute(registerUrl);
 
                 }
@@ -81,7 +77,9 @@ public class RegisterActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         ActionBar actionBar=getSupportActionBar();
 
-
+        if(AccountInfo.getInstance().getLoginStatus()==true){
+            actionBar.setSubtitle("Hi,"+AccountInfo.getInstance().getUserName());
+        }
 
         actionBar.setElevation((float) 2.5);
         actionBar.setTitle("REGISTER");
@@ -97,6 +95,13 @@ public class RegisterActivity extends AppCompatActivity {
     }
     private void setNavigation() {
         navigationView = (NavigationView) findViewById(R.id.left_drawer);
+        Menu drawerMenu=navigationView.getMenu();
+        MenuItem loginItem=drawerMenu.findItem(R.id.mLogin);
+
+        if(AccountInfo.getInstance().getLoginStatus()==true) {
+            loginItem.setTitle("LOGOUT");
+        }
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
             @Override
@@ -120,8 +125,18 @@ public class RegisterActivity extends AppCompatActivity {
                         startActivity(navigate);
                         break;
                     case R.id.mLogin:
-                        navigate.setClass(RegisterActivity.this, LoginActivity.class);
-                        startActivity(navigate);
+                        if(AccountInfo.getInstance().getLoginStatus()==true){
+                            AccountInfo.getInstance().setLoginStatus(false);
+                            Toast.makeText(RegisterActivity.this,"You have logged out successfully!",Toast.LENGTH_LONG).show();
+                            navigate.setClass(RegisterActivity.this,SearchActivity.class);
+                            startActivity(navigate);
+                        }
+                        else{
+                            navigate.setClass(RegisterActivity.this, LoginActivity.class);
+                            startActivity(navigate);
+
+                        }
+
                         break;
 
                     case R.id.mRegister:
@@ -270,22 +285,22 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private boolean validation(){
-        final EditText username = (EditText) findViewById(R.id.registeremail);
-        final EditText password = (EditText) findViewById(R.id.registerpassword);
-        final EditText firstname = (EditText) findViewById(R.id.first_name);
-        final EditText lastname=(EditText)findViewById(R.id.last_name);
+    private boolean validation(EditText username,EditText password,EditText firstname,EditText lastname, EditText contact){
+
 
 
         String usernameString = username.getText().toString();
-        String passwordString = username.getText().toString();
+        String passwordString = password.getText().toString();
         String firstnameString=firstname.getText().toString();
         String lastnameString=lastname.getText().toString();
+        String contactString=contact.getText().toString();
+
+
         if (usernameString.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(usernameString).matches()) {
             username.setError("Invalid Email Address");
             return false;
         }
-        else if(passwordString.isEmpty()||passwordString.length()<4||passwordString.length()<10){
+        else if(passwordString.isEmpty()||passwordString.length()<4||passwordString.length()>10){
             password.setError("Please key in a password that is between 4 to 10 alphabetically");
             return false;
         }
@@ -298,13 +313,21 @@ public class RegisterActivity extends AppCompatActivity {
             lastname.setError("Please key in a your last name!");
             return false;
         }
-        if(usernameString.isEmpty()==false){
-
-            emailCheckUrl ="http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=verifyemail&email="+usernameString;
-            Log.d("emailcheckURL", emailCheckUrl);
-            new EmailCheckJSONParse().execute(emailCheckUrl);
-
+        else if(contactString.isEmpty()){
+            lastname.setError("Please key in a your contact number!");
+            return false;
         }
+
+
+
+
+        emailCheckUrl ="http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=verifyemail&email="+usernameString;
+        Log.d("emailcheckURL", emailCheckUrl);
+        new EmailCheckJSONParse().execute(emailCheckUrl);
+
+
+        registerUrl="http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=register&email="+usernameString+"&password="+passwordString+"&firstname="+firstnameString+"&lastname="+lastnameString+"&contact="+contactString;
+        Log.d("registerUrl",registerUrl);
 
 
         return true;
