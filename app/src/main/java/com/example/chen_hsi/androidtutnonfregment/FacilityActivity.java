@@ -8,8 +8,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
@@ -36,6 +38,7 @@ public class FacilityActivity extends AppCompatActivity {
     TextView facilityPhone;
     ImageView facilityImage;
     RatingBar facilityRating;
+    RatingBar userRating;
     private ArrayList<Sport> facilitySportList=new ArrayList<Sport>();
 
     private ArrayList<Review> facilityReviewList=new ArrayList<Review>();
@@ -52,6 +55,7 @@ public class FacilityActivity extends AppCompatActivity {
         facilityImage=(ImageView)findViewById(R.id.facility_photo) ;
         facilityPhone=(TextView)findViewById(R.id.facility_phone);
         facilityRating=(RatingBar)findViewById(R.id.ratingBar) ;
+        userRating=(RatingBar)findViewById(R.id.ratingBarUser);
         facilityName.setText(facility.getFacility_name());
         facilityAddress.setText(facility.getFacility_address());
         facilityPhone.setText("Phone: "+facility.getFacility_phone());
@@ -146,4 +150,15 @@ public class FacilityActivity extends AppCompatActivity {
 
     }
 
+    public void submitReview(View view) {
+        if(AccountInfo.getInstance().getLoginStatus()==true){
+
+
+
+        }
+        else{
+
+            Toast.makeText(FacilityActivity.this,"Please log in to submit your review.",Toast.LENGTH_LONG).show();
+        }
+    }
 }
