@@ -44,6 +44,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/facility_address"
         android:id="@+id/facility_phone"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/facility_photo"
+        android:background="#000000"
+        />
+    <RatingBar
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
 </RelativeLayout>
     <android.support.design.widget.NavigationView android:id="@+id/left_drawer"
         android:layout_width="240dp"

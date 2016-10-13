@@ -203,7 +203,7 @@ public class SearchActivity extends AppCompatActivity {
     }
 
 
-    private class JSONParse extends AsyncTask<Void,Void,Void> {
+    private class JSONParse extends AsyncTask<String, String, JSONArray> {
         private ProgressDialog pDialog;
 
 
@@ -222,17 +222,23 @@ public class SearchActivity extends AppCompatActivity {
         }
 
         @Override
-        protected Void doInBackground(Void... params) {
+        protected JSONArray doInBackground(String... params) {
             Log.e("DEBUG!!!!!", "2");
             String url = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=search";
 
             JSONParser jParser = new JSONParser();
 
             // Getting JSON from URL
-            String json = jParser.getJSONFromUrl2(url);
+            JSONArray facilitiesJS=jParser.getJSONArrayFromUrl(url);
+
+return  facilitiesJS;
+        }
+        @Override
+        protected void onPostExecute(JSONArray facilitiesJS) {
+            pDialog.dismiss();
             try {
-                JSONArray facilitiesJS = new JSONArray(json);
-                Log.e("FOUND!", String.valueOf(facilitiesJS.length()));
+                Log.e("DEBUG!!!!!","3" );
+                // Getting JSON Array from URL
                 for (int i = 0; i < facilitiesJS.length(); i++) {
                     JSONObject facilityJS = facilitiesJS.getJSONObject(i);
                     int id;
@@ -242,7 +248,7 @@ public class SearchActivity extends AppCompatActivity {
                     id = facilityJS.getInt("id");
                     name = facilityJS.getString("name");
                     telephone = facilityJS.getString("phone");
-                    address = facilityJS.getString("address");
+                    address = facilityJS.getString("location");
                     xaddr = facilityJS.getDouble("longtitude");
                     yaddr = facilityJS.getDouble("lattitude");
                     photo = facilityJS.getString("url");
@@ -263,18 +269,6 @@ public class SearchActivity extends AppCompatActivity {
 
                     facilities.add(facility);
                 }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-return  null;
-        }
-        @Override
-        protected void onPostExecute(Void json) {
-            pDialog.dismiss();
-            try {
-                Log.e("DEBUG!!!!!","3" );
-                // Getting JSON Array from URL
-
                 facilityAdapter.clear();
 for(Facility facility:facilities ){
     facilityAdapter.add(facility);

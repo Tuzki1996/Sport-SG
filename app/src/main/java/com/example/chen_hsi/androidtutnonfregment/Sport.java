@@ -1,10 +1,13 @@
 package com.example.chen_hsi.androidtutnonfregment;
 
+import java.io.Serializable;
+
 /**
  * Created by GMD on 5/10/16.
  */
 
-public class Sport {
+public class Sport  implements Serializable
+{
     public enum sport_type{Badminton,Basketball,Netball,Squash,TableTennis,Volleyball,field};
     private int type;
     private double price;

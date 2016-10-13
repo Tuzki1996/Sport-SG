@@ -14,14 +14,16 @@
         android:layout_height="75dp"
         android:layout_toRightOf="@+id/facility_photo"
         android:text="Name"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textColor="@color/black"/>
     <TextView
         android:id="@+id/facility_address"
         android:layout_width="175dp"
         android:layout_height="75dp"
         android:layout_toRightOf="@+id/facility_name"
         android:text="Address"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textColor="@color/black"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
