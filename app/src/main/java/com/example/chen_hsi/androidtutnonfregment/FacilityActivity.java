@@ -187,6 +187,18 @@ public class FacilityActivity extends AppCompatActivity {
             Toast.makeText(FacilityActivity.this,"Please log in to submit your review.",Toast.LENGTH_LONG).show();
         }
     }
+
+    public void bookNow(View view) {
+        Intent intent = new Intent(getApplicationContext(), BookingActivity.class);
+
+        intent.putExtra("facility_key", facility);
+        intent.putExtra("user_id",AccountInfo.getInstance().getUserId());
+        startActivity(intent);
+    }
+
+    public void getDirection(View view) {
+    }
+
     private class ReviewJSONParse extends AsyncTask<String, String, JSONObject> {
         private ProgressDialog pDialog;
 
