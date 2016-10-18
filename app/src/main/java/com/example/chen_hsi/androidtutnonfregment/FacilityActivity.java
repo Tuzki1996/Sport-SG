@@ -1,6 +1,8 @@
 package com.example.chen_hsi.androidtutnonfregment;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -23,7 +25,13 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -39,6 +47,8 @@ public class FacilityActivity extends AppCompatActivity {
     ImageView facilityImage;
     RatingBar facilityRating;
     RatingBar userRating;
+    EditText facilityReview;
+    String submitUrl;
     private ArrayList<Sport> facilitySportList=new ArrayList<Sport>();
 
     private ArrayList<Review> facilityReviewList=new ArrayList<Review>();
@@ -56,20 +66,31 @@ public class FacilityActivity extends AppCompatActivity {
         facilityPhone=(TextView)findViewById(R.id.facility_phone);
         facilityRating=(RatingBar)findViewById(R.id.ratingBar) ;
         userRating=(RatingBar)findViewById(R.id.ratingBarUser);
+        facilityReview=(EditText)findViewById(R.id.etComment);
         facilityName.setText(facility.getFacility_name());
-        facilityAddress.setText(facility.getFacility_address());
-        facilityPhone.setText("Phone: "+facility.getFacility_phone());
+        facilityAddress.setText(facility.getFacility_description());
+        String sports="";
+        for(Sport sport:facilitySportList)
+        sports+=sport+", ";
+        if(sports.length()!=0)
+        sports.substring(0,sports.length()-2);
+        facilityPhone.setText("Phone: "+facility.getFacility_phone()+"\nSports: "+sports);
         facilitySportList=facility.getSportList();
-        facilityReviewList=facility.getReviewList();
+        loadReview();
         Picasso.with(getBaseContext()).load(facility.getFacility_photo_resource()).into(facilityImage);
+        facilityRating.setRating((float)facility.getFacility_rating());
+
+    }
+    private void loadReview()
+    {
+        facilityReviewList=facility.getReviewList();
         ListView list = (ListView) findViewById(R.id.reviewList);
         reviewAdapter=new ReviewAdapter(getApplicationContext(),R.layout.review_list);
         for(Review review:facilityReviewList ){
             if(review.getText().trim()!="")
-            reviewAdapter.add(review);
+                reviewAdapter.add(review);
         }
         list.setAdapter(reviewAdapter);
-        facilityRating.setRating(3);
     }
     private void setMenu(){
 
@@ -150,15 +171,77 @@ public class FacilityActivity extends AppCompatActivity {
 
     }
 
-    public void submitReview(View view) {
+    public void submitReview(View view) throws UnsupportedEncodingException {
         if(AccountInfo.getInstance().getLoginStatus()==true){
+            int acc_id=Integer.parseInt( AccountInfo.getInstance().getUserId());
+            String datetime=new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+            String review=facilityReview.getText().toString();
+            review = URLEncoder.encode(review,"UTF-8");
+            double userRatingValue=(double) userRating.getRating();
+            submitUrl="http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=submitReview&text="+review+"&rating="+userRatingValue+"&date="+datetime+"&userid="+acc_id+"&facilityid="+facility.getFacility_id();
 
-
-
+            new ReviewJSONParse().execute(submitUrl);
         }
         else{
 
             Toast.makeText(FacilityActivity.this,"Please log in to submit your review.",Toast.LENGTH_LONG).show();
         }
+    }
+    private class ReviewJSONParse extends AsyncTask<String, String, JSONObject> {
+        private ProgressDialog pDialog;
+
+        @Override
+        protected void onPreExecute() {
+
+            super.onPreExecute();
+
+            pDialog = new ProgressDialog(FacilityActivity.this);
+            pDialog.setMessage("Getting Data ...");
+
+
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
+        }
+
+
+        @Override
+        protected JSONObject doInBackground(String... args)  {
+
+
+
+            JSONParser jParser = new JSONParser();
+
+            // Getting JSON from URL
+            JSONObject json = jParser.getJSONObjectFromUrl(submitUrl);
+
+
+
+            return json;
+        }
+
+
+
+
+
+        @Override
+        protected void onPostExecute(JSONObject json) {
+            pDialog.dismiss();
+
+
+
+
+
+            Log.d("register result",json.toString());
+            if (json.toString().equals("{\"result\":\"Success\"}") ) {
+
+                Toast.makeText(FacilityActivity.this,"Submit successfully",Toast.LENGTH_LONG).show();
+                //print text success
+
+
+
+            }
+        }
+
     }
 }

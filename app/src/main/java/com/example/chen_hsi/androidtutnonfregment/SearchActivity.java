@@ -42,13 +42,6 @@ import java.util.List;
 public class SearchActivity extends AppCompatActivity {
     ListView facilityListView;
     EditText facilitySearch;
-    int [] facility_photo_resource={R.drawable.picture1,R.drawable.picture2,R.drawable.picture3};
-    String [] facility_photo;
-    String [] facility_name;
-    String [] facility_address;
-    String [] facility_xaddr;
-    String [] facility_yaddr;
-    String [] facility_telephone;
     ArrayList<Facility> facilities=new ArrayList<Facility>() ;
     FacilityAdapter facilityAdapter;
     DrawerLayout drawerLayout;
@@ -66,19 +59,13 @@ public class SearchActivity extends AppCompatActivity {
         facilitySearch=(EditText) findViewById(R.id.myFilter);
         facilityAdapter =new FacilityAdapter(getApplicationContext(),R.layout.row_layout);
         facilityListView.setAdapter(facilityAdapter);
-        facility_name=getResources().getStringArray(R.array.facility_titles);
-        facility_address=getResources().getStringArray(R.array.facility_address);
-        facility_xaddr=getResources().getStringArray(R.array.facility_xaddress);
-        facility_yaddr=getResources().getStringArray(R.array.facility_yaddress);
-        facility_telephone=getResources().getStringArray(R.array.facility_phone);
-        facility_photo=getResources().getStringArray(R.array.facility_photo);
         new JSONParse().execute();
         //dbHelper=new DbHelper(this);
         //sqLiteDatabase=dbHelper.getReadableDatabase();
         //cursor=dbHelper.getFacility(sqLiteDatabase);
         //createDatabase();
-        int i=0;
-       /* if(cursor.moveToFirst())
+        /*int i=0;
+        if(cursor.moveToFirst())
         {
             do{
                 String name,address,telephone,xaddr,yaddr,photo;
@@ -98,7 +85,6 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Facility facilitySelected=(Facility)adapterView.getItemAtPosition(i);
-                //TextView selected=(TextView)view.findViewById(R.id.facility_name);
                 Toast.makeText(SearchActivity.this,"You click "+facilitySelected.getFacility_name().toString(),Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), FacilityActivity.class);
 
@@ -244,8 +230,8 @@ return  facilitiesJS;
                 for (int i = 0; i < facilitiesJS.length(); i++) {
                     JSONObject facilityJS = facilitiesJS.getJSONObject(i);
                     int id;
-                    double xaddr, yaddr;
-                    String name, address, telephone, photo;
+                    double xaddr, yaddr,rating;
+                    String name, address, telephone, photo,description;
 
                     id = facilityJS.getInt("id");
                     name = facilityJS.getString("name");
@@ -254,7 +240,9 @@ return  facilitiesJS;
                     xaddr = facilityJS.getDouble("longtitude");
                     yaddr = facilityJS.getDouble("lattitude");
                     photo = facilityJS.getString("url");
-                    Facility facility = new Facility(id,name, address, xaddr, yaddr, telephone, photo);
+                    description=facilityJS.getString("description");
+                    rating=facilityJS.getDouble("Rating");
+                    Facility facility = new Facility(id,name, address, xaddr, yaddr, telephone, photo,description,rating);
                     if(!facilityJS.isNull("Sport")){
                         JSONArray sportsJS=facilityJS.getJSONArray("Sport");
                         for(int j=0;j<sportsJS.length();j++)
@@ -277,10 +265,10 @@ return  facilitiesJS;
                                 int reviewId=reviewJS.getInt("reviewid");
                                 String acc=reviewJS.getString("user");
                                 String text=reviewJS.getString("text");
-                                SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                                SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
                                 Date date=format1.parse(reviewJS.getString("date"));
-                                double rating=reviewJS.getDouble("rating");
-                                Review review=new Review(reviewId,acc,text,date,rating);
+                                double review_rating=reviewJS.getDouble("rating");
+                                Review review=new Review(reviewId,acc,text,date,review_rating);
                                 facility.addReview(review);}
                         }
                     }
