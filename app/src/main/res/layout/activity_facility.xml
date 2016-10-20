@@ -6,13 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_facility"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.chen_hsi.androidtutnonfregment.FacilityActivity"
-    android:orientation="vertical">
     <android.support.v7.widget.Toolbar
 
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -21,12 +14,24 @@
         android:layout_width="match_parent"
         app:subtitleTextColor="@color/lightbluegrey"
         app:theme="@style/blueGreyToolbar" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_facility"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.chen_hsi.androidtutnonfregment.FacilityActivity"
+    android:orientation="vertical">
+
 
     <TextView
         style="@style/BigTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/my_toolbar"
         android:gravity="center"
         android:id="@+id/facility_name" />
     <ImageView
@@ -88,13 +93,14 @@
         android:layout_below="@id/tvRating"
         android:id="@+id/etComment"/>
     <Button
-        style="@style/TextContent"
-        android:layout_width="20dp"
-        android:layout_height="10dp"
+        android:background="@drawable/button_shape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Submit"
-        android:gravity="right"
+        android:layout_alignRight="@id/etComment"
         android:layout_below="@id/etComment"
         android:onClick="submitReview"
+        android:layout_marginTop="10dp"
         android:id="@+id/btComment"/>
 
     <TextView
@@ -111,6 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tvReview"/>
 </RelativeLayout>
+    </ScrollView>
     <android.support.design.widget.NavigationView android:id="@+id/left_drawer"
         android:layout_width="240dp"
         android:layout_height="match_parent"
