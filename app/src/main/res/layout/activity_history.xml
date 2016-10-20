@@ -19,7 +19,8 @@
             android:id="@+id/my_toolbar"
             android:layout_height="?attr/actionBarSize"
             android:layout_width="match_parent"
-            android:background="?attr/colorPrimary" />
+            app:subtitleTextColor="@color/lightbluegrey"
+            app:theme="@style/blueGreyToolbar" />
 
 
             <ListView
@@ -38,7 +39,7 @@
         android:dividerHeight="0dp"
         android:background="#FFF"
         app:menu="@menu/drawer_menu"
-        app:headerLayout="@layout/navigation_drawer_header"/>
+        />
 
 
 </android.support.v4.widget.DrawerLayout>

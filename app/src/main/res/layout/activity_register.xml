@@ -17,8 +17,11 @@
             android:id="@+id/toolbar"
             android:layout_height="?attr/actionBarSize"
             android:layout_width="match_parent"
-            android:background="?attr/colorPrimary" />
+            app:subtitleTextColor="@color/lightbluegrey"
+            app:theme="@style/blueGreyToolbar" />
         <EditText
+            style="@style/TextContent"
+            android:background="@drawable/background_shape"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:inputType="textPersonName"
@@ -27,12 +30,13 @@
             android:hint="First Name"
             android:layout_below="@+id/toolbar"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+
 
             />
 
         <EditText
+            style="@style/TextContent"
+            android:background="@drawable/background_shape"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:inputType="textPersonName"
@@ -41,11 +45,13 @@
 
             android:id="@+id/last_name"
             android:hint="Last Name"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"/>
+            android:layout_marginTop="10dp"
+            />
 
 
         <EditText
+            style="@style/TextContent"
+            android:background="@drawable/background_shape"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:inputType="textPersonName"
@@ -53,10 +59,12 @@
             android:layout_below="@+id/last_name"
             android:id="@+id/registeremail"
             android:hint="Email"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"/>
+            android:layout_marginTop="10dp"
+            />
 
         <EditText
+            style="@style/TextContent"
+            android:background="@drawable/background_shape"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:inputType="textPassword"
@@ -65,30 +73,47 @@
 
             android:id="@+id/registerpassword"
             android:hint="Password"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"/>
+            android:layout_marginTop="10dp"
+         />
+        <EditText
+            style="@style/TextContent"
+            android:background="@drawable/background_shape"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:layout_below="@+id/registerpassword"
+            android:id="@+id/retypepassword"
+            android:hint="Retype Password"
+            android:layout_marginTop="10dp"
+           />
 
 
         <EditText
+            style="@style/TextContent"
+            android:background="@drawable/background_shape"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:inputType="phone"
             android:ems="10"
             android:id="@+id/contact"
-            android:layout_below="@+id/registerpassword"
+            android:layout_below="@+id/retypepassword"
             android:hint="Contact"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"/>
+            android:layout_marginTop="10dp"
+
+           />
 
         <Button
-            android:text="Submit"
-            android:layout_width="wrap_content"
+            style="@style/TextContent"
+            android:background="@drawable/button_shape"
+            android:text="REGISTER"
+            android:textColor="@color/lightbluegrey"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/submitregister"
             android:layout_below="@+id/contact"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="50dp"
+
             />
 
 

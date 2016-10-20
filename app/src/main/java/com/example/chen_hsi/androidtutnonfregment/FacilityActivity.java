@@ -59,7 +59,7 @@ public class FacilityActivity extends AppCompatActivity {
         setContentView(R.layout.activity_facility);
         setMenu();
         setNavigation();
-       facility=(Facility) getIntent().getSerializableExtra("facility_key");
+        facility=(Facility) getIntent().getSerializableExtra("facility_key");
         facilityName=(TextView) findViewById(R.id.facility_name);
         facilityAddress=(TextView) findViewById(R.id.facility_address);
         facilityImage=(ImageView)findViewById(R.id.facility_photo) ;
@@ -116,12 +116,29 @@ public class FacilityActivity extends AppCompatActivity {
     private void setNavigation(){
         navigationView=(NavigationView)findViewById(R.id.left_drawer);
         Menu drawerMenu=navigationView.getMenu();
+        View headerView=navigationView.inflateHeaderView(R.layout.navigation_drawer_header);
+        TextView accountInfo=(TextView)headerView.findViewById(R.id.tAccountInfo);
+        TextView name=(TextView)headerView.findViewById(R.id.tName);
+        TextView firstName=(TextView)headerView.findViewById(R.id.tFirstName);
+        TextView lastName=(TextView)headerView.findViewById(R.id.tLastName);
+        TextView email=(TextView)headerView.findViewById(R.id.tEmail);
+        TextView emailAdd=(TextView)headerView.findViewById(R.id.tEmalAdd);
+
         MenuItem loginItem=drawerMenu.findItem(R.id.mLogin);
+        MenuItem regisgerItem=drawerMenu.findItem(R.id.mRegister);
 
         if(AccountInfo.getInstance().getLoginStatus()==true) {
             loginItem.setTitle("LOGOUT");
-        }
+            regisgerItem.setVisible(false);
+            accountInfo.setText("ACCOUNT INFO");
+            name.setText("NAME:");
+            firstName.setText(AccountInfo.getInstance().getUserName());
+            lastName.setText(AccountInfo.getInstance().getLastName());
+            email.setText("EMAIL:");
+            emailAdd.setText(AccountInfo.getInstance().getEmail());
 
+
+        }
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
 
             @Override
@@ -133,7 +150,7 @@ public class FacilityActivity extends AppCompatActivity {
                     case R.id.mHome:
                         break;
                     case R.id.mBook:
-                        navigate.setClass(FacilityActivity.this,BookingActivity.class);
+                        navigate.setClass(FacilityActivity.this,SubBookingActivity.class);
                         startActivity(navigate);
                         break;
 
@@ -189,7 +206,7 @@ public class FacilityActivity extends AppCompatActivity {
     }
 
     public void bookNow(View view) {
-        Intent intent = new Intent(getApplicationContext(), BookingActivity.class);
+        Intent intent = new Intent(getApplicationContext(), SubBookingActivity.class);
 
         intent.putExtra("facility_key", facility);
         intent.putExtra("user_id",AccountInfo.getInstance().getUserId());

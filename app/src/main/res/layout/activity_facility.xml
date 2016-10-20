@@ -19,20 +19,22 @@
         android:id="@+id/my_toolbar"
         android:layout_height="?attr/actionBarSize"
         android:layout_width="match_parent"
-        android:background="?attr/colorPrimary" />
+        app:subtitleTextColor="@color/lightbluegrey"
+        app:theme="@style/blueGreyToolbar" />
 
     <TextView
+        style="@style/BigTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/my_toolbar"
-        android:textSize="20dp"
         android:gravity="center"
-        android:id="@+id/facility_name"/>
+        android:id="@+id/facility_name" />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:gravity="center"
         android:layout_below="@id/facility_name"
+        android:layout_margin="5dp"
         android:id="@+id/facility_photo"/>
     <RatingBar
         android:layout_width="wrap_content"
@@ -44,24 +46,28 @@
         android:isIndicator="true"
         />
     <TextView
+        style="@style/TextContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/ratingBar"
         android:id="@+id/facility_address"/>
     <TextView
+        style="@style/TextContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/facility_address"
         android:id="@+id/facility_phone"/>
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="20dp"
-    android:text="Rate and comment: "
-    android:layout_below="@id/facility_phone"
-    android:textSize="20dp"
-    android:id="@+id/tvRating"/>
+   <TextView
+       style="@style/TextTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rate and comment: "
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/facility_phone"
+        android:id="@+id/tvRating"/>
     <RatingBar
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ratingBarUser"
@@ -73,12 +79,16 @@
 
         />
     <EditText
+        style="@style/TextContent"
+        android:background="@drawable/background_shape"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Write a comment...."
+        android:layout_marginTop="0dp"
         android:layout_below="@id/tvRating"
         android:id="@+id/etComment"/>
     <Button
+        style="@style/TextContent"
         android:layout_width="20dp"
         android:layout_height="10dp"
         android:text="Submit"
@@ -88,12 +98,13 @@
         android:id="@+id/btComment"/>
 
     <TextView
+        style="@style/TextTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Review: "
         android:layout_below="@id/btComment"
         android:id="@+id/tvReview"
-        android:textSize="20dp"/>
+        />
     <ListView
         android:id="@+id/reviewList"
         android:layout_width="fill_parent"
@@ -109,5 +120,5 @@
         android:dividerHeight="0dp"
         android:background="#FFF"
         app:menu="@menu/drawer_menu"
-        app:headerLayout="@layout/navigation_drawer_header"/>
+        />
 </android.support.v4.widget.DrawerLayout>

@@ -31,6 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
     NavigationView navigationView;
     String emailCheckUrl;
     String registerUrl;
+    String loginUrl;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
         setNavigation();
         final EditText username = (EditText) findViewById(R.id.registeremail);
         final EditText password = (EditText) findViewById(R.id.registerpassword);
+        final EditText retypePassword = (EditText) findViewById(R.id.retypepassword);
         final EditText firstname = (EditText) findViewById(R.id.first_name);
         final EditText lastname=(EditText)findViewById(R.id.last_name);
         final EditText contact=(EditText)findViewById(R.id.contact);
@@ -58,7 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String firstnameString=firstname.getText().toString();
                 String lastnameString=lastname.getText().toString();
                 String contactString=contact.getText().toString();*/
-                if (validation(username,password,firstname,lastname,contact) == true) {
+                if (validation(username,password,retypePassword,firstname,lastname,contact) == true) {
 
                     new RegisterJSONParse().execute(registerUrl);
 
@@ -112,7 +114,7 @@ public class RegisterActivity extends AppCompatActivity {
                     case R.id.mHome:
                         break;
                     case R.id.mBook:
-                        navigate.setClass(RegisterActivity.this, BookingActivity.class);
+                        navigate.setClass(RegisterActivity.this, SubBookingActivity.class);
                         startActivity(navigate);
                         break;
 
@@ -151,7 +153,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private class EmailCheckJSONParse extends AsyncTask<String, String, JSONObject> {
+    private class LoginJSONParse extends AsyncTask<String, String, JSONObject> {
         private ProgressDialog pDialog;
 
         @Override
@@ -160,7 +162,7 @@ public class RegisterActivity extends AppCompatActivity {
             super.onPreExecute();
 
             pDialog = new ProgressDialog(RegisterActivity.this);
-            pDialog.setMessage("Getting Data ...");
+            pDialog.setMessage("Login ...");
 
 
             pDialog.setIndeterminate(false);
@@ -176,9 +178,13 @@ public class RegisterActivity extends AppCompatActivity {
 
             JSONParser jParser = new JSONParser();
 
-            // Getting JSON from URL
-            JSONObject json = jParser.getJSONObjectFromUrl(emailCheckUrl);
-
+            JSONArray loginJsonArray = jParser.getJSONArrayFromUrl(loginUrl);
+            JSONObject json=null;
+            try {
+                json=loginJsonArray.getJSONObject(0);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
 
 
             return json;
@@ -196,16 +202,49 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-                Log.d("email check result",json.toString());
-                if (json.toString().equals("{\"result\":\"Success\"}") ) {
+                Log.d("Login result",json.toString());
+                if (json.toString().equals("{\"Result\":\"Fail\"}") ) {
 
-                    Toast.makeText(RegisterActivity.this, "Email Exists!Please use another email!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, "Something went wrong, please try again later.", Toast.LENGTH_LONG).show();
                     //print text success
 
 
                 }
                 else{
-                    Toast.makeText(RegisterActivity.this,"Email Checked!!",Toast.LENGTH_LONG).show();
+                    try {
+
+                        String userId=json.getString("id");
+                        String firstName=json.getString("firstname");
+                        String email=json.getString("email");
+                        String lastName=json.getString("lastname");
+
+                        AccountInfo.getInstance().setLoginStatus(true);
+                        AccountInfo.getInstance().setUserId(userId);
+                        AccountInfo.getInstance().setUserName(firstName);
+                        AccountInfo.getInstance().setUserName(email);
+                        AccountInfo.getInstance().setLastName(lastName);
+
+                        //************** DEBUG USE************************************
+                        String loginDebugString;
+                        if(AccountInfo.getInstance().getLoginStatus()==true){
+                            loginDebugString="true";
+                        }
+                        else{
+                            loginDebugString="false";
+                        }
+                        //************** DEBUG USE************************************
+                        Log.d("LoginStatus",loginDebugString);
+                        Log.d("UserId",AccountInfo.getInstance().getUserId());
+                        Log.d("NameOfUser",AccountInfo.getInstance().getUserName());
+
+                        Toast.makeText(RegisterActivity.this,"sucessful login !",Toast.LENGTH_LONG).show();
+                        Intent toSearchActivity=new Intent();
+                        toSearchActivity.setClass(RegisterActivity.this, SearchActivity.class);
+                        startActivity(toSearchActivity);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
 
 
@@ -228,7 +267,7 @@ public class RegisterActivity extends AppCompatActivity {
             super.onPreExecute();
 
             pDialog = new ProgressDialog(RegisterActivity.this);
-            pDialog.setMessage("Getting Data ...");
+            pDialog.setMessage("Register ...");
 
 
             pDialog.setIndeterminate(false);
@@ -267,11 +306,15 @@ public class RegisterActivity extends AppCompatActivity {
                 Log.d("register result",json.toString());
                 if (json.toString().equals("{\"result\":\"Success\"}") ) {
 
-                    Toast.makeText(RegisterActivity.this,"you've register successfully",Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this,"you've registered successfully",Toast.LENGTH_LONG).show();
                     //print text success
+                    new LoginJSONParse().execute(loginUrl);
 
 
 
+                }
+               else{
+                    Toast.makeText(RegisterActivity.this,"Email Exists!Please use another email!",Toast.LENGTH_LONG).show();
                 }
 
 
@@ -285,52 +328,62 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private boolean validation(EditText username,EditText password,EditText firstname,EditText lastname, EditText contact){
+    private boolean validation(EditText username,EditText password,EditText retypePassword,EditText firstname,EditText lastname, EditText contact){
 
 
 
         String usernameString = username.getText().toString();
         String passwordString = password.getText().toString();
+        String retypePasswordString = retypePassword.getText().toString();
         String firstnameString=firstname.getText().toString();
         String lastnameString=lastname.getText().toString();
         String contactString=contact.getText().toString();
-
+        boolean returnResult=true;
 
         if (usernameString.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(usernameString).matches()) {
             username.setError("Invalid Email Address");
-            return false;
+            returnResult=false;
         }
-        else if(passwordString.isEmpty()||passwordString.length()<4||passwordString.length()>10){
+        if(passwordString.isEmpty()||passwordString.length()<4||passwordString.length()>10){
             password.setError("Please key in a password that is between 4 to 10 alphabetically");
-            return false;
+            returnResult=false;
         }
-        else if(firstnameString.isEmpty()){
+       if(firstnameString.isEmpty()){
             firstname.setError("Please key in your first name!");
-            return false;
+           returnResult=false;
         }
 
-        else if(lastnameString.isEmpty()){
+        if(lastnameString.isEmpty()){
             lastname.setError("Please key in a your last name!");
-            return false;
+            returnResult=false;
         }
-        else if(contactString.isEmpty()){
+        if(contactString.isEmpty()){
             lastname.setError("Please key in a your contact number!");
-            return false;
+            returnResult=false;
+        }
+        if(!passwordString.equals(retypePasswordString)){
+            retypePassword.setError("Password inconsistent!");
+            returnResult=false;
         }
 
 
 
+        if(returnResult==true) {
 
-        emailCheckUrl ="http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=verifyemail&email="+usernameString;
-        Log.d("emailcheckURL", emailCheckUrl);
-        new EmailCheckJSONParse().execute(emailCheckUrl);
-
-
-        registerUrl="http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=register&email="+usernameString+"&password="+passwordString+"&firstname="+firstnameString+"&lastname="+lastnameString+"&contact="+contactString;
-        Log.d("registerUrl",registerUrl);
+            emailCheckUrl = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=verifyemail&email=" + usernameString;
+            Log.d("emailcheckURL", emailCheckUrl);
+            //new EmailCheckJSONParse().execute(emailCheckUrl);
 
 
-        return true;
+            registerUrl = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=register&email=" + usernameString + "&password=" + passwordString + "&firstname=" + firstnameString + "&lastname=" + lastnameString + "&contact=" + contactString;
+            Log.d("registerUrl", registerUrl);
+
+            loginUrl = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=login&email="+usernameString+"&password="+passwordString;
+
+        }
+
+
+        return returnResult;
     }
 
 

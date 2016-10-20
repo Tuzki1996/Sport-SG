@@ -17,6 +17,7 @@ import android.util.Log;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -94,12 +95,29 @@ public class HistoryActivity extends AppCompatActivity {
 
     private void setNavigation(){
         navigationView=(NavigationView)findViewById(R.id.left_drawer);
-
         Menu drawerMenu=navigationView.getMenu();
+        View headerView=navigationView.inflateHeaderView(R.layout.navigation_drawer_header);
+        TextView accountInfo=(TextView)headerView.findViewById(R.id.tAccountInfo);
+        TextView name=(TextView)headerView.findViewById(R.id.tName);
+        TextView firstName=(TextView)headerView.findViewById(R.id.tFirstName);
+        TextView lastName=(TextView)headerView.findViewById(R.id.tLastName);
+        TextView email=(TextView)headerView.findViewById(R.id.tEmail);
+        TextView emailAdd=(TextView)headerView.findViewById(R.id.tEmalAdd);
+
         MenuItem loginItem=drawerMenu.findItem(R.id.mLogin);
+        MenuItem regisgerItem=drawerMenu.findItem(R.id.mRegister);
 
         if(AccountInfo.getInstance().getLoginStatus()==true) {
             loginItem.setTitle("LOGOUT");
+            regisgerItem.setVisible(false);
+            accountInfo.setText("ACCOUNT INFO");
+            name.setText("NAME:");
+            firstName.setText(AccountInfo.getInstance().getUserName());
+            lastName.setText(AccountInfo.getInstance().getLastName());
+            email.setText("EMAIL:");
+            emailAdd.setText(AccountInfo.getInstance().getEmail());
+
+
         }
 
 
@@ -114,7 +132,7 @@ public class HistoryActivity extends AppCompatActivity {
                     case R.id.mHome:
                         break;
                     case R.id.mBook:
-                        navigate.setClass(HistoryActivity.this,BookingActivity.class);
+                        navigate.setClass(HistoryActivity.this,SubBookingActivity.class);
                         startActivity(navigate);
                         break;
 
@@ -224,28 +242,50 @@ public class HistoryActivity extends AppCompatActivity {
                         Toast.makeText(HistoryActivity.this,"Sorry you don't have any booking record",Toast.LENGTH_LONG).show();
                         break;
                     }
-                    String date = "Date: " + historyItem.getString(TAG_DATE);
-                    String facility = "Faclilty: " + historyItem.getString(TAG_FACILITY);
-                    String payment = "Payment: " + historyItem.getString(TAG_PAYMENT);
-
-                    Log.d("Date",historyItem.getString(TAG_FACILITY));
+                    String date = historyItem.getString(TAG_DATE);
                     Log.d("Date",historyItem.getString(TAG_DATE));
+                    JSONObject sportItem=historyItem.getJSONObject("Sport");
+                    JSONObject facilityItem= historyItem.getJSONObject("Facility");
+
+                    String payment =  sportItem.getString("price");
                     Log.d("payment",payment);
+                    String sportType= sportItem.getString("sporttype");
+                    Log.d("sportType",sportType);
+                    String facilityName=facilityItem.getString("name");
+                    Log.d("facilityName",facilityName);
+                    String phoneNum=facilityItem.getString("phone");
+                    Log.d("phoneNum",phoneNum);
+                    String webUrl=facilityItem.getString("url");
+                    Log.d("webUrl",webUrl);
+                    String description=facilityItem.getString("description");
+                    Log.d("description",description);
+
+
+
+
 
                     // Adding value HashMap key => value
 
                     HashMap<String, String> map = new HashMap<String, String>();
-                    map.put(TAG_DATE, date);
-                    map.put(TAG_FACILITY, facility);
-                    map.put(TAG_PAYMENT, payment);
+                    map.put("date", date);
+                    map.put("payment", payment);
+                    map.put("sportType", sportType);
+                    map.put("facilityName", facilityName);
+                    map.put("phoneNum", phoneNum);
+                    map.put("webUrl", webUrl);
+                    map.put("description", description);
+
+
+
+
 
                     historylist.add(map);
                     list = (ListView) findViewById(R.id.historyList);
 
                     ListAdapter adapter = new SimpleAdapter(HistoryActivity.this, historylist,
                             R.layout.history_list,
-                            new String[]{TAG_DATE, TAG_FACILITY, TAG_PAYMENT}, new int[]{
-                            R.id.tDate, R.id.tFacility, R.id.tPayment});
+                            new String[]{"date", "payment", "sportType","facilityName","phoneNum"}, new int[]{
+                            R.id.tDate, R.id.tPayment, R.id.tSportType,R.id.tFacilityName,R.id.tPhoneNum});
 
 
                     list.setAdapter(adapter);

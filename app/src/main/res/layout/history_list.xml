@@ -4,25 +4,143 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/tDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        />
 
-    <TextView
-        android:id="@+id/tFacility"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        />
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-    <TextView
-        android:id="@+id/tPayment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tDateTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAlignment="textStart"
+            android:text="DATE: "
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+
+
+
+
+            />
+        <TextView
+            android:id="@+id/tDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tDateTitle"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+
+            />
+
+    </RelativeLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tPaymentTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAlignment="textStart"
+            android:text="PAYMENT: "
+            android:layout_marginLeft="20dp"
+
+            />
+        <TextView
+            android:id="@+id/tPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tPaymentTitle"
+            android:layout_marginRight="20dp"
+
+            />
+
+    </RelativeLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tSportTypeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAlignment="textStart"
+            android:text="SPORT TYPE: "
+            android:layout_marginLeft="20dp"
+
+            />
+        <TextView
+            android:id="@+id/tSportType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tSportTypeTitle"
+            android:layout_marginRight="20dp"
+
+            />
+
+    </RelativeLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tFacilityNameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAlignment="textStart"
+            android:text="FACILITY NAME: "
+            android:layout_marginLeft="20dp"
+
+            />
+        <TextView
+            android:id="@+id/tFacilityName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tFacilityNameTitle"
+            android:layout_marginRight="20dp"
+
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tPhoneNumTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAlignment="textStart"
+            android:text="PHONE NUMBER: "
+            android:layout_marginLeft="20dp"
+
+            />
+        <TextView
+            android:id="@+id/tPhoneNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tPhoneNumTitle"
+            android:layout_marginRight="20dp"
+
+            />
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
 
 </LinearLayout>

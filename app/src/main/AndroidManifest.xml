@@ -5,28 +5,31 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <application
 
+    <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".HistoryActivity">
+        <activity android:name=".HistoryActivity"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="LOGIN">
+
         </activity>
-        <activity android:name=".LoginActivity" >
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".FacilityActivity" />
+        <activity android:name=".SubBookingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            </activity>
-        <activity android:name=".SearchActivity" />
-        <activity android:name=".BookingActivity" />
-        <activity android:name=".PaymentActivity" />
-        <activity android:name=".FacilityActivity"></activity>
-    </application>
 
+        </activity>
+    </application>
 
 </manifest>

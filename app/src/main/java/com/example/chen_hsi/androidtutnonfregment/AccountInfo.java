@@ -8,6 +8,8 @@ public class AccountInfo {
     private boolean loginStatus;
     private String userId;
     private String userName;
+    private String lastName;
+    private String email;
 
 
     public boolean getLoginStatus() {
@@ -19,6 +21,8 @@ public class AccountInfo {
     public  String getUserName(){
         return userName;
     }
+    public String getLastName(){return lastName;}
+    public  String getEmail(){return email;}
 
 
     public void setLoginStatus(boolean status) {
@@ -30,6 +34,8 @@ public class AccountInfo {
     public void setUserName(String name){
         this.userName=name;
     }
+    public void setLastName(String lastName1){this.lastName=lastName1;}
+    public void setEmail(String email1){this.email=email1;}
 
 
 

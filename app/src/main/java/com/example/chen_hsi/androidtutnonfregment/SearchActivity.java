@@ -136,10 +136,28 @@ public class SearchActivity extends AppCompatActivity {
     private void setNavigation(){
         navigationView=(NavigationView)findViewById(R.id.left_drawer);
         Menu drawerMenu=navigationView.getMenu();
+        View headerView=navigationView.inflateHeaderView(R.layout.navigation_drawer_header);
+        TextView accountInfo=(TextView)headerView.findViewById(R.id.tAccountInfo);
+        TextView name=(TextView)headerView.findViewById(R.id.tName);
+        TextView firstName=(TextView)headerView.findViewById(R.id.tFirstName);
+        TextView lastName=(TextView)headerView.findViewById(R.id.tLastName);
+        TextView email=(TextView)headerView.findViewById(R.id.tEmail);
+        TextView emailAdd=(TextView)headerView.findViewById(R.id.tEmalAdd);
+
         MenuItem loginItem=drawerMenu.findItem(R.id.mLogin);
+        MenuItem regisgerItem=drawerMenu.findItem(R.id.mRegister);
 
         if(AccountInfo.getInstance().getLoginStatus()==true) {
             loginItem.setTitle("LOGOUT");
+            regisgerItem.setVisible(false);
+            accountInfo.setText("ACCOUNT INFO");
+            name.setText("NAME:");
+            firstName.setText(AccountInfo.getInstance().getUserName());
+            lastName.setText(AccountInfo.getInstance().getLastName());
+            email.setText("EMAIL:");
+            emailAdd.setText(AccountInfo.getInstance().getEmail());
+
+
         }
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
 
@@ -152,7 +170,7 @@ public class SearchActivity extends AppCompatActivity {
                     case R.id.mHome:
                         break;
                     case R.id.mBook:
-                        navigate.setClass(SearchActivity.this,BookingActivity.class);
+                        navigate.setClass(SearchActivity.this,SubBookingActivity.class);
                         startActivity(navigate);
                         break;
 
@@ -179,7 +197,14 @@ public class SearchActivity extends AppCompatActivity {
                         break;
 
                     case R.id.mRegister:
+                        if(AccountInfo.getInstance().getLoginStatus()==false){
+                            navigate.setClass(SearchActivity.this,RegisterActivity.class);
+                            startActivity(navigate);
+                        }
+
                         break;
+
+
 
                 }
                 return false;

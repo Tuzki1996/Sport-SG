@@ -19,45 +19,75 @@
         android:id="@+id/toolbar"
         android:layout_height="?attr/actionBarSize"
         android:layout_width="match_parent"
-        android:background="?attr/colorPrimary" />
+        app:subtitleTextColor="@color/lightbluegrey"
+        app:theme="@style/blueGreyToolbar"
 
-    <Button
+
+        />
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/bSubmit"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="106dp" />
+        app:srcCompat="@drawable/login_picture"
+        android:id="@+id/loginPicture"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="register"
-        android:id="@+id/tvRegister"
-        android:layout_below="@+id/ptPassword"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentTop="true"
+        />
+
+
 
     <EditText
-        android:layout_width="fill_parent"
+        style="@style/TextContent"
+        android:background="@drawable/background_shape"
+        android:layout_alignBottom="@id/loginPicture"
+
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="30dp"
+        android:id="@+id/ptUsername"
+        android:hint="Username"
+        />
+
+    <EditText
+        style="@style/TextContent"
+        android:background="@drawable/background_shape"
+        android:id="@+id/ptPassword"
+        android:layout_below="@id/ptUsername"
+        android:layout_marginBottom="60dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/ptPassword"
         android:contentDescription="Password"
         android:hint="Password"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
 
-    <EditText
+         />
+
+
+    <Button
+        style="@style/TextContent"
+        android:id="@+id/bSubmit"
+        android:background="@drawable/button_shape"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ptUsername"
-        android:hint="Username"
-        android:layout_marginBottom="36dp"
-        android:layout_above="@+id/ptPassword"
-        android:layout_alignParentStart="true" />
+        android:text="LOGIN"
+        android:textColor="@color/lightbluegrey"
+        android:layout_below="@id/ptPassword"
+        android:layout_centerHorizontal="true"
+
+        />
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textAlignment="center"
+        android:text="Don't have an account?\nRegister Now"
+        android:id="@+id/tvRegister"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
 
 </RelativeLayout>
     <android.support.design.widget.NavigationView android:id="@+id/left_drawer"

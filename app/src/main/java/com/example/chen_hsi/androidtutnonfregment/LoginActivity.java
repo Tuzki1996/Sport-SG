@@ -111,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
                     case R.id.mHome:
                         break;
                     case R.id.mBook:
-                        navigate.setClass(LoginActivity.this,LoginActivity.class);
+                        navigate.setClass(LoginActivity.this,SubBookingActivity.class);
                         startActivity(navigate);
                         break;
 
@@ -148,7 +148,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
         actionBar.setElevation((float) 2.5);
-        actionBar.setTitle("LOGIN");
+
+        //actionBar.setTitle("LOGIN");
         
         drawerLayout=(DrawerLayout)findViewById(R.id.drawer_layout);
         actionBarDrawerToggle=new ActionBarDrawerToggle(this,drawerLayout,myToolbar,R.string.drawer_open,R.string.drawer_close);
@@ -245,29 +246,25 @@ public class LoginActivity extends AppCompatActivity {
             String loginResultString=loginVerifyResult[1].toString();
 
             Log.d("Login Result",loginResultString);
-            if (loginResultString.equals("{\"Result\":\"Fail\"}") && emailCheckeExistResultString.equals("{\"result\":\"Success\"}")) {
+            if (loginResultString.equals("{\"Result\":\"Fail\"}")) {
 
-                Toast.makeText(LoginActivity.this,"Password Incorrect!",Toast.LENGTH_LONG).show();
-
-            }
-            else if(loginResultString.equals("{\"Result\":\"Fail\"}") && emailCheckeExistResultString.equals("{\"result\":\"Fail\"}")){
-
-                Toast.makeText(LoginActivity.this,"Please Register First !",Toast.LENGTH_LONG).show();
-                Intent toRegister = new Intent();
-                toRegister.setClass(LoginActivity.this, RegisterActivity.class);//go to main menu
-                startActivity(toRegister);
+                Toast.makeText(LoginActivity.this,"Username or Password Incorrect!",Toast.LENGTH_LONG).show();
 
             }
+
             else{
 
                 try {
 
                     String userId=loginVerifyResult[1].getString("id");
-                    String nameOfUser=loginVerifyResult[1].getString("firstname");
-
+                    String firstName=loginVerifyResult[1].getString("firstname");
+                    String lastName=loginVerifyResult[1].getString("lastname");
+                    String email=loginVerifyResult[1].getString("email");
                     AccountInfo.getInstance().setLoginStatus(true);
                     AccountInfo.getInstance().setUserId(userId);
-                    AccountInfo.getInstance().setUserName(nameOfUser);
+                    AccountInfo.getInstance().setUserName(firstName);
+                    AccountInfo.getInstance().setLastName(lastName);
+                    AccountInfo.getInstance().setEmail(email);
                     //************** DEBUG USE************************************
                     String loginDebugString;
                     if(AccountInfo.getInstance().getLoginStatus()==true){
@@ -281,6 +278,10 @@ public class LoginActivity extends AppCompatActivity {
                     Log.d("UserId",AccountInfo.getInstance().getUserId());
                     Log.d("NameOfUser",AccountInfo.getInstance().getUserName());
                     Toast.makeText(LoginActivity.this,"sucessful login !",Toast.LENGTH_LONG).show();
+                    Intent toSearchActivity=new Intent();
+                    toSearchActivity.setClass(LoginActivity.this, SearchActivity.class);
+                    startActivity(toSearchActivity);
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
