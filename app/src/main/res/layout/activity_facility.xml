@@ -6,18 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.chen_hsi.androidtutnonfregment.FacilityActivity"
+        android:orientation="vertical">
     <android.support.v7.widget.Toolbar
 
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/my_toolbar"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="56dp"
         android:layout_width="match_parent"
         app:subtitleTextColor="@color/lightbluegrey"
         app:theme="@style/blueGreyToolbar" />
+
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
-
+        android:layout_height="wrap_content"
+        android:layout_below="@id/my_toolbar"
+        android:id="@+id/scrollView">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -94,9 +102,11 @@
         android:id="@+id/etComment"/>
     <Button
         android:background="@drawable/button_shape"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="40dp"
         android:text="Submit"
+        android:textSize="12sp"
+        android:textColor="@color/lightbluegrey"
         android:layout_alignRight="@id/etComment"
         android:layout_below="@id/etComment"
         android:onClick="submitReview"
@@ -111,13 +121,15 @@
         android:layout_below="@id/btComment"
         android:id="@+id/tvReview"
         />
-    <ListView
-        android:id="@+id/reviewList"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvReview"/>
-</RelativeLayout>
+
+    </RelativeLayout>
     </ScrollView>
+        <ListView
+            android:id="@+id/reviewList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scrollView"/>
+    </RelativeLayout>
     <android.support.design.widget.NavigationView android:id="@+id/left_drawer"
         android:layout_width="240dp"
         android:layout_height="match_parent"

@@ -29,8 +29,8 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/login_picture"
         android:id="@+id/loginPicture"
-        android:layout_below="@id/toolbar"
 
+        android:layout_alignParentTop="true"
         />
 
 
@@ -38,7 +38,7 @@
     <EditText
         style="@style/TextContent"
         android:background="@drawable/background_shape"
-        android:layout_centerInParent="true"
+        android:layout_alignBottom="@id/loginPicture"
 
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
