@@ -14,9 +14,15 @@ public class Facility implements Serializable {
     private String facility_address;
     private double facility_xaddr;
 
+    private double facility_yaddr;
+    private String facility_phone;
+    private  double facility_rating;
+    private  String facility_description;
+    private int facility_id;
     public double getFacility_rating() {
         return facility_rating;
     }
+
 
     public void setFacility_rating(double facility_rating) {
         this.facility_rating = facility_rating;
@@ -30,11 +36,6 @@ public class Facility implements Serializable {
         this.facility_description = facility_description;
     }
 
-    private double facility_yaddr;
-    private String facility_phone;
-    private  double facility_rating;
-    private  String facility_description;
-private int facility_id;
 
     public int getFacility_id() {
         return facility_id;
@@ -137,5 +138,9 @@ private int facility_id;
     public void addReview(Review review)
     {
         this.ReviewList.add(review);
+    }
+    public void clearReviewList()
+    {
+        this.ReviewList.clear();
     }
 }

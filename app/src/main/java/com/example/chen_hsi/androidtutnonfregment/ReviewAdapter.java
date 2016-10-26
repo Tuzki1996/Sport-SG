@@ -36,7 +36,11 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
         super.add(object);
         list.add(object);
     }
-
+    public void resetList()
+    {
+        super.clear();
+        list.clear();
+    }
     @Override
     public int getCount() {
         return this.list.size();

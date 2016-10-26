@@ -25,13 +25,17 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -44,11 +48,13 @@ public class FacilityActivity extends AppCompatActivity {
     TextView facilityName;
     TextView facilityAddress;
     TextView facilityPhone;
+    TextView tvReview;
     ImageView facilityImage;
     RatingBar facilityRating;
     RatingBar userRating;
     EditText facilityReview;
     String submitUrl;
+    NonScrollListView reviewList;
     private ArrayList<Sport> facilitySportList=new ArrayList<Sport>();
 
     private ArrayList<Review> facilityReviewList=new ArrayList<Review>();
@@ -67,15 +73,18 @@ public class FacilityActivity extends AppCompatActivity {
         facilityRating=(RatingBar)findViewById(R.id.ratingBar) ;
         userRating=(RatingBar)findViewById(R.id.ratingBarUser);
         facilityReview=(EditText)findViewById(R.id.etComment);
+        tvReview=(TextView)findViewById(R.id.tvReview);
         facilityName.setText(facility.getFacility_name());
         facilityAddress.setText(facility.getFacility_description());
+        facilitySportList=facility.getSportList();
+        reviewAdapter=new ReviewAdapter(getApplicationContext(),R.layout.review_list);
+        reviewList= (NonScrollListView) findViewById(R.id.reviewList);
         String sports="";
         for(Sport sport:facilitySportList)
-        sports+=sport+", ";
+        sports+=sport.getSport_type().getName()+", ";
         if(sports.length()!=0)
         sports.substring(0,sports.length()-2);
         facilityPhone.setText("Phone: "+facility.getFacility_phone()+"\nSports: "+sports);
-        facilitySportList=facility.getSportList();
         loadReview();
         Picasso.with(getBaseContext()).load(facility.getFacility_photo_resource()).into(facilityImage);
         facilityRating.setRating((float)facility.getFacility_rating());
@@ -84,13 +93,22 @@ public class FacilityActivity extends AppCompatActivity {
     private void loadReview()
     {
         facilityReviewList=facility.getReviewList();
-        ListView list = (ListView) findViewById(R.id.reviewList);
-        reviewAdapter=new ReviewAdapter(getApplicationContext(),R.layout.review_list);
+
         for(Review review:facilityReviewList ){
             if(review.getText().trim()!="")
                 reviewAdapter.add(review);
         }
-        list.setAdapter(reviewAdapter);
+        if(facilityReviewList.size()==0)
+        {
+            tvReview.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            reviewList.setAdapter(null);
+            tvReview.setVisibility(View.VISIBLE);
+            reviewList.setAdapter(reviewAdapter);
+        }
+        reviewList.setAdapter(reviewAdapter);
     }
     private void setMenu(){
 
@@ -189,15 +207,22 @@ public class FacilityActivity extends AppCompatActivity {
     }
 
     public void submitReview(View view) throws UnsupportedEncodingException {
+
         if(AccountInfo.getInstance().getLoginStatus()==true){
             int acc_id=Integer.parseInt( AccountInfo.getInstance().getUserId());
             String datetime=new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
             String review=facilityReview.getText().toString();
-            review = URLEncoder.encode(review,"UTF-8");
-            double userRatingValue=(double) userRating.getRating();
-            submitUrl="http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=submitReview&text="+review+"&rating="+userRatingValue+"&date="+datetime+"&userid="+acc_id+"&facilityid="+facility.getFacility_id();
+            if(review.trim()=="")
+            {   Toast.makeText(FacilityActivity.this,"Please enter your review before submit.",Toast.LENGTH_LONG).show();}
+            else {
+                review = URLEncoder.encode(review, "UTF-8");
+                double userRatingValue = (double) userRating.getRating();
+                submitUrl = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=submitReview&text=" + review + "&rating=" + userRatingValue + "&date=" + datetime + "&userid=" + acc_id + "&facilityid=" + facility.getFacility_id();
 
-            new ReviewJSONParse().execute(submitUrl);
+                new ReviewJSONParse().execute(submitUrl);
+                facilityReview.setText("");
+                userRating.setRating(0);
+            }
         }
         else{
 
@@ -225,7 +250,7 @@ public class FacilityActivity extends AppCompatActivity {
             super.onPreExecute();
 
             pDialog = new ProgressDialog(FacilityActivity.this);
-            pDialog.setMessage("Getting Data ...");
+            pDialog.setMessage("Submitting review ...");
 
 
             pDialog.setIndeterminate(false);
@@ -256,19 +281,42 @@ public class FacilityActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(JSONObject json) {
             pDialog.dismiss();
-
-
-
-
-
             Log.d("register result",json.toString());
-            if (json.toString().equals("{\"result\":\"Success\"}") ) {
+            if (json.toString().equals("{\"result\":\"Fail\"}") ) {
+                Toast.makeText(FacilityActivity.this,"Submit fail",Toast.LENGTH_LONG).show();
+            }
+            else
+            {
+                try {
+                    double rating=json.getDouble("rating");
+                    facility.setFacility_rating(rating);
+                    userRating.setRating((float)rating);
+                    if(!json.isNull("review")){
+                        JSONArray reviewsJS=json.getJSONArray("review");
+                        facility.clearReviewList();
+                        for(int j=0;j<reviewsJS.length();j++)
+                        {
+                            JSONObject reviewJS=reviewsJS.getJSONObject(j);
+                            if(reviewJS!=null){
+                                int reviewId=reviewJS.getInt("reviewid");
+                                String acc=reviewJS.getString("user");
+                                String text=reviewJS.getString("text");
+                                SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+                                Date date=format1.parse(reviewJS.getString("date"));
+                                double review_rating=reviewJS.getDouble("rating");
+                                Review review=new Review(reviewId,acc,text,date,review_rating);
+                                facility.addReview(review);}
+                        }
 
-                Toast.makeText(FacilityActivity.this,"Submit successfully",Toast.LENGTH_LONG).show();
-                //print text success
-
-
-
+                        reviewAdapter.resetList();
+                        loadReview();
+                        reviewAdapter.notifyDataSetChanged();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
         }
 

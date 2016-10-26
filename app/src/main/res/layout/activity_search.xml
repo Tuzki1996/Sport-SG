@@ -34,11 +34,17 @@
             android:layout_alignParentStart="true">
 
         </EditText>
-
+<Button
+    android:id="@+id/btSelectSport"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/myFilter"
+    android:text="Select sport"
+    android:onClick="selectSport"/>
         <ListView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/myFilter"
+            android:layout_below="@id/btSelectSport"
             android:id="@+id/list_view">
         </ListView>
 

@@ -34,6 +34,16 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
     ArrayList<Facility> list=new ArrayList();
     ArrayList<Facility> OriginalList=new ArrayList();
     private FacilityFilter filter;
+
+    public ArrayList<Integer> getSportlist() {
+        return Sportlist;
+    }
+
+    public void setSportlist(ArrayList<Integer> sportlist) {
+        Sportlist = sportlist;
+    }
+
+    ArrayList<Integer> Sportlist=new ArrayList<Integer>();
     public FacilityAdapter(Context context, int resource) {
         super(context, resource);
 
@@ -109,6 +119,20 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
                     if(facility.getFacility_name().toLowerCase().contains(cs))
                         filtered.add(facility);
                 }
+                if(Sportlist.size()>0) {
+                    ArrayList<Facility> sportFiltered=new ArrayList<Facility>();
+                    for (int i = 0; i < filtered.size(); i++) {
+                        Facility facility = filtered.get(i);
+                        for (int j = 0; j < facility.getSportList().size(); j++) {
+                            if(Sportlist.contains(facility.getSportList().get(j).getType()))
+                            {
+                                sportFiltered.add(facility);
+                                break;
+                            }
+                        }
+                    }
+                    filtered=sportFiltered;
+                }
                 filterResults.count=filtered.size();
                 filterResults.values=filtered;
             }
@@ -116,8 +140,23 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
             {
                 synchronized (this)
                 {
-                    filterResults.count=OriginalList.size();
-                    filterResults.values=OriginalList;
+                    ArrayList<Facility> filtered=OriginalList;
+                    if(Sportlist.size()>0) {
+                        ArrayList<Facility> sportFiltered=new ArrayList<Facility>();
+                        for (int i = 0; i < OriginalList.size(); i++) {
+                            Facility facility = OriginalList.get(i);
+                            for (int j = 0; j < facility.getSportList().size(); j++) {
+                                if(Sportlist.contains(facility.getSportList().get(j).getType()))
+                                {
+                                    sportFiltered.add(facility);
+                                    break;
+                                }
+                            }
+                        }
+                        filtered=sportFiltered;
+                    }
+                    filterResults.count=filtered.size();
+                    filterResults.values=filtered;
                 }
             }
             return  filterResults;

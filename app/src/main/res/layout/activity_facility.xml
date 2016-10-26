@@ -121,14 +121,14 @@
         android:layout_below="@id/btComment"
         android:id="@+id/tvReview"
         />
-
-    </RelativeLayout>
-    </ScrollView>
-        <ListView
+        <com.example.chen_hsi.androidtutnonfregment.NonScrollListView
             android:id="@+id/reviewList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/scrollView"/>
+            android:layout_below="@id/tvReview"/>
+    </RelativeLayout>
+    </ScrollView>
+
     </RelativeLayout>
     <android.support.design.widget.NavigationView android:id="@+id/left_drawer"
         android:layout_width="240dp"

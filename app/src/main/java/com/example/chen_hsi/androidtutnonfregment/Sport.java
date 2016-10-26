@@ -8,15 +8,51 @@ import java.io.Serializable;
 
 public class Sport  implements Serializable
 {
-    public enum sport_type{Badminton,Basketball,Netball,Squash,TableTennis,Volleyball,field};
+    public enum SPORT_TYPE{
+        BADMINTON("Badminton"),
+        Basketball("Basketball"),
+        PickleBall("Pickle Ball"),
+        SOCCER("Soccer"),
+        SQUASH("Squash"),
+        TABLETENNIS("Table tennis"),
+        TENNIS("Tennis"),
+        SWIMMING("Swimming"),
+        RUGBY("Rugby"),
+        GYM("Gym");
+        private String name;
+        SPORT_TYPE(String name){this.name=name;}
+        public String getName(){return this.name;}
+        public static String[] names() {
+            SPORT_TYPE[] sport_types = values();
+            String[] names = new String[sport_types.length];
+
+            for (int i = 0; i < sport_types.length; i++) {
+                names[i] = sport_types[i].name();
+            }
+
+            return names;
+        }
+    }
     private int type;
     private double price;
     private int id;
-    public Sport(int type,double price,int id)
+    private SPORT_TYPE sport_type;
+
+    public SPORT_TYPE getSport_type() {
+        return sport_type;
+    }
+
+    public void setSport_type(SPORT_TYPE sport_type) {
+        this.sport_type = sport_type;
+    }
+
+    public Sport(int type, double price, int id)
     {
+
         this.type=type;
         this.price=price;
         this.id=id;
+        this.sport_type=SPORT_TYPE.values()[type];
     }
 
     public int getType()
@@ -40,4 +76,5 @@ public class Sport  implements Serializable
     public void setId(int id){
         this.id=id;
     }
+
 }

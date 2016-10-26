@@ -10,7 +10,7 @@
         android:src="@drawable/picture1"/>
     <TextView
         android:id="@+id/facility_name"
-        android:layout_width="75dp"
+        android:layout_width="175dp"
         android:layout_height="75dp"
         android:layout_toRightOf="@+id/facility_photo"
         android:text="Name"
@@ -18,7 +18,7 @@
         android:textColor="@color/black"/>
     <TextView
         android:id="@+id/facility_address"
-        android:layout_width="175dp"
+        android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_toRightOf="@+id/facility_name"
         android:text="Address"

@@ -1,12 +1,17 @@
 package com.example.chen_hsi.androidtutnonfregment;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -35,10 +40,10 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-
 public class SearchActivity extends AppCompatActivity {
     ListView facilityListView;
     EditText facilitySearch;
@@ -47,7 +52,9 @@ public class SearchActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
-
+    static Date updateDateTime;
+    String searchText;
+    SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,28 +66,32 @@ public class SearchActivity extends AppCompatActivity {
         facilitySearch=(EditText) findViewById(R.id.myFilter);
         facilityAdapter =new FacilityAdapter(getApplicationContext(),R.layout.row_layout);
         facilityListView.setAdapter(facilityAdapter);
+
+        if(updateDateTime==null){
         new JSONParse().execute();
-        //dbHelper=new DbHelper(this);
-        //sqLiteDatabase=dbHelper.getReadableDatabase();
-        //cursor=dbHelper.getFacility(sqLiteDatabase);
-        //createDatabase();
-        /*int i=0;
-        if(cursor.moveToFirst())
+            ((MyApplication) this.getApplication()).setOriginalList(facilities);
+        }
+        else
         {
-            do{
-                String name,address,telephone,xaddr,yaddr,photo;
-                name=cursor.getString(0);
-                telephone=cursor.getString(4);
-                address=cursor.getString(3);
-                xaddr=cursor.getString(1);
-                yaddr=cursor.getString(2);
-                photo=cursor.getString(5);
-                Facility facility=new Facility(name,address,Double.parseDouble(xaddr),Double.parseDouble(yaddr),telephone,photo);
-                facilities.add(facility);
-                facilityAdapter.add(facility);
-                i++;
-            }while (cursor.moveToNext());
-        }*/
+            Date currentDateTime=new Date();
+            long diff = updateDateTime.getTime() - currentDateTime.getTime();
+            long diffMinutes = diff / (60 * 1000);
+            Log.e("DEBUG!!!!!",""+diffMinutes );
+            if(diffMinutes>=30)
+            {
+                new JSONParse().execute();
+                ((MyApplication) this.getApplication()).setOriginalList(facilities);
+            }
+            else
+            {
+                facilityAdapter.clear();
+                for(Facility facility: ((MyApplication) this.getApplication()).getOriginalList() ){
+                    facilityAdapter.add(facility);
+                }
+            }
+        }
+
+
         facilityListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -100,6 +111,7 @@ public class SearchActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                searchText=charSequence.toString();
                 facilityAdapter.getFilter().filter(charSequence.toString());
             }
 
@@ -215,6 +227,47 @@ public class SearchActivity extends AppCompatActivity {
 
     }
 
+    public void selectSport(View view) {
+        class SportSelection extends DialogFragment {
+
+            @NonNull
+
+            ArrayList<Integer> list=new ArrayList<Integer>();
+            public Dialog onCreateDialog(Bundle savedInstanceState) {
+                final String[] items=Sport.SPORT_TYPE.names();
+                AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+                builder.setTitle("Choose Sport");
+                builder.setMultiChoiceItems(Sport.SPORT_TYPE.names(), null, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                        if(isChecked)
+                        {
+                            list.add(which);
+                        }
+                        else if(list.contains(which)){
+                            list.remove(which);
+                        }
+                    }
+                }).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String selections="";
+                        for(Integer ms:list)
+                        {
+                            selections+=ms.toString()+"  ";
+                        }
+                        Toast.makeText(getActivity(),"Select"+selections,Toast.LENGTH_SHORT).show();
+                        facilityAdapter.setSportlist(list);
+                        facilityAdapter.getFilter().filter(searchText);
+                    }
+                });
+                return builder.create();
+            }
+        }
+        SportSelection sportSelection=new SportSelection();
+        sportSelection.show(getSupportFragmentManager(),"show");
+    }
+
 
     private class JSONParse extends AsyncTask<String, String, JSONArray> {
         private ProgressDialog pDialog;
@@ -304,11 +357,15 @@ for(Facility facility:facilities ){
     facilityAdapter.add(facility);
 }
 
+                updateDateTime=new Date();
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
         }
+
+
+
     }
 
 
