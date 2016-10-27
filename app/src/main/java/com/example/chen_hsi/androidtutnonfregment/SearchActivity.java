@@ -58,7 +58,6 @@ public class SearchActivity extends AppCompatActivity {
     RadioGroup rgSort;
 
     String searchText="";
-    SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -357,7 +356,7 @@ return  facilitiesJS;
                                 int reviewId=reviewJS.getInt("reviewid");
                                 String acc=reviewJS.getString("user");
                                 String text=reviewJS.getString("text");
-                                SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+                                SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                                 Date date=format1.parse(reviewJS.getString("date"));
                                 double review_rating=reviewJS.getDouble("rating");
                                 Review review=new Review(reviewId,acc,text,date,review_rating);

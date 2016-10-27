@@ -71,7 +71,7 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
             handler=(DataHandler)row.getTag();
         }
         Review dataProvider=(Review)this.getItem(position);
-        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd ");
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         handler.detail.setText(dataProvider.getAcc()+"     "+format1.format(dataProvider.getDate()));
         handler.review.setText(dataProvider.getText());

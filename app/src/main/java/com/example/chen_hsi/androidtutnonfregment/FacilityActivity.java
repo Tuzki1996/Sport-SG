@@ -212,12 +212,13 @@ public class FacilityActivity extends AppCompatActivity {
 
         if(AccountInfo.getInstance().getLoginStatus()==true){
             int acc_id=Integer.parseInt( AccountInfo.getInstance().getUserId());
-            String datetime=new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+            String datetime=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
             String review=facilityReview.getText().toString();
             if(review.trim()=="")
             {   Toast.makeText(FacilityActivity.this,"Please enter your review before submit.",Toast.LENGTH_LONG).show();}
             else {
                 review = URLEncoder.encode(review, "UTF-8");
+                datetime= URLEncoder.encode(datetime, "UTF-8");
                 double userRatingValue = (double) userRating.getRating();
                 submitUrl = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=submitReview&text=" + review + "&rating=" + userRatingValue + "&date=" + datetime + "&userid=" + acc_id + "&facilityid=" + facility.getFacility_id();
 
@@ -293,9 +294,9 @@ public class FacilityActivity extends AppCompatActivity {
             else
             {
                 try {
-                    double rating=json.getDouble("rating");
+                    double rating=json.getDouble("Rating");
                     facility.setFacility_rating(rating);
-                    userRating.setRating((float)rating);
+                    facilityRating.setRating((float)rating);
                     if(!json.isNull("review")){
                         JSONArray reviewsJS=json.getJSONArray("review");
                         facility.clearReviewList();
@@ -306,7 +307,7 @@ public class FacilityActivity extends AppCompatActivity {
                                 int reviewId=reviewJS.getInt("reviewid");
                                 String acc=reviewJS.getString("user");
                                 String text=reviewJS.getString("text");
-                                SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+                                SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                                 Date date=format1.parse(reviewJS.getString("date"));
                                 double review_rating=reviewJS.getDouble("rating");
                                 Review review=new Review(reviewId,acc,text,date,review_rating);
