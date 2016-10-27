@@ -82,6 +82,19 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
             android:id="@+id/btBook"/>
+        <Button
+            android:background="@drawable/button_shape"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Get Direction"
+            android:textSize="12sp"
+            android:textColor="@color/lightbluegrey"
+            android:layout_below="@id/facility_phone"
+            android:layout_toRightOf="@id/btBook"
+            android:onClick="getDict"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/btDirect"/>
 
    <TextView
        style="@style/TextTitle"

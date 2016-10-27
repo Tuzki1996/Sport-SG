@@ -2,6 +2,7 @@ package com.example.chen_hsi.androidtutnonfregment;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -37,6 +38,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public class FacilityActivity extends AppCompatActivity {
@@ -237,7 +239,12 @@ public class FacilityActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void getDirection(View view) {
+
+
+    public void getDict(View view) {
+        String uri = String.format(Locale.ENGLISH, "geo:%f,%f", facility.getFacility_lat(), facility.getFacility_lng());
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+        startActivity(intent);
     }
 
     private class ReviewJSONParse extends AsyncTask<String, String, JSONObject> {

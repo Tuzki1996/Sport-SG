@@ -307,19 +307,19 @@ return  facilitiesJS;
                 for (int i = 0; i < facilitiesJS.length(); i++) {
                     JSONObject facilityJS = facilitiesJS.getJSONObject(i);
                     int id;
-                    double xaddr, yaddr,rating;
+                    double lng, lat,rating;
                     String name, address, telephone, photo,description;
 
                     id = facilityJS.getInt("id");
                     name = facilityJS.getString("name");
                     telephone = facilityJS.getString("phone");
                     address = facilityJS.getString("location");
-                    xaddr = facilityJS.getDouble("longtitude");
-                    yaddr = facilityJS.getDouble("lattitude");
+                    lng = facilityJS.getDouble("longtitude");
+                    lat = facilityJS.getDouble("lattitude");
                     photo = facilityJS.getString("url");
                     description=facilityJS.getString("description");
                     rating=facilityJS.getDouble("Rating");
-                    Facility facility = new Facility(id,name, address, xaddr, yaddr, telephone, photo,description,rating);
+                    Facility facility = new Facility(id,name, address, lng, lat, telephone, photo,description,rating);
                     if(!facilityJS.isNull("Sport")){
                         JSONArray sportsJS=facilityJS.getJSONArray("Sport");
                         for(int j=0;j<sportsJS.length();j++)
