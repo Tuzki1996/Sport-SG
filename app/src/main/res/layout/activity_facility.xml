@@ -77,7 +77,7 @@
             android:text="Book Now"
             android:textSize="12sp"
             android:textColor="@color/lightbluegrey"
-            android:layout_below="@id/facility_address"
+            android:layout_below="@id/facility_phone"
             android:onClick="bookNow"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"

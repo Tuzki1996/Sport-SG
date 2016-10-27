@@ -27,9 +27,8 @@
         <activity android:name=".SearchActivity" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".FacilityActivity" />
-        <activity android:name=".SubBookingActivity">
-
-        </activity>
+        <activity android:name=".SubBookingActivity"/>
+        <uses-library android:name="com.google.android.maps" />
     </application>
 
 </manifest>

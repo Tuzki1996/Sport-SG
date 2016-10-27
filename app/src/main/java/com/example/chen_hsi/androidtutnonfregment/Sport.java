@@ -27,7 +27,7 @@ public class Sport  implements Serializable
             String[] names = new String[sport_types.length];
 
             for (int i = 0; i < sport_types.length; i++) {
-                names[i] = sport_types[i].name();
+                names[i] = sport_types[i].getName();
             }
 
             return names;

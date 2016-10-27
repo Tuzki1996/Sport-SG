@@ -6,14 +6,11 @@ package com.example.chen_hsi.androidtutnonfregment;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-
-
 public class Facility implements Serializable {
     private String facility_photo_resource;
     private String facility_name;
     private String facility_address;
     private double facility_xaddr;
-
     private double facility_yaddr;
     private String facility_phone;
     private  double facility_rating;

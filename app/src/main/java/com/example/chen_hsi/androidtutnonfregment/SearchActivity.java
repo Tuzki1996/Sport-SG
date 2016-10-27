@@ -96,7 +96,6 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Facility facilitySelected=(Facility)adapterView.getItemAtPosition(i);
-                Toast.makeText(SearchActivity.this,"You click "+facilitySelected.getFacility_name().toString(),Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), FacilityActivity.class);
 
                 intent.putExtra("facility_key", facilitySelected);
@@ -256,7 +255,7 @@ public class SearchActivity extends AppCompatActivity {
                         {
                             selections+=ms.toString()+"  ";
                         }
-                        //Toast.makeText(getActivity(),"Select"+selections,Toast.LENGTH_SHORT).show();
+
                         facilityAdapter.setSportlist(list);
                         facilityAdapter.getFilter().filter(searchText);
                     }
