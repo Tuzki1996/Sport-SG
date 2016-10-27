@@ -53,7 +53,7 @@ public class SearchActivity extends AppCompatActivity {
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
     static Date updateDateTime;
-    String searchText;
+    String searchText="";
     SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -245,7 +245,7 @@ public class SearchActivity extends AppCompatActivity {
                             list.add(which);
                         }
                         else if(list.contains(which)){
-                            list.remove(which);
+                            list.remove(new Integer(which));
                         }
                     }
                 }).setPositiveButton("OK", new DialogInterface.OnClickListener() {
