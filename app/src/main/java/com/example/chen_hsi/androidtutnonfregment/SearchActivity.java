@@ -29,6 +29,8 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -53,6 +55,8 @@ public class SearchActivity extends AppCompatActivity {
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
     static Date updateDateTime;
+    RadioGroup rgSort;
+
     String searchText="";
     SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
     @Override
@@ -66,7 +70,7 @@ public class SearchActivity extends AppCompatActivity {
         facilitySearch=(EditText) findViewById(R.id.myFilter);
         facilityAdapter =new FacilityAdapter(getApplicationContext(),R.layout.row_layout);
         facilityListView.setAdapter(facilityAdapter);
-
+        rgSort=(RadioGroup)findViewById(R.id.rgrSort);
         if(updateDateTime==null){
         new JSONParse().execute();
             ((MyApplication) this.getApplication()).setOriginalList(facilities);
@@ -91,7 +95,17 @@ public class SearchActivity extends AppCompatActivity {
             }
         }
 
-
+        rgSort.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId == R.id.rbtSortName) {
+                    facilityAdapter.setSortDistance(false);
+                } else if(checkedId == R.id.rbtSortDistance) {
+                    facilityAdapter.setSortDistance(true);
+                }
+                facilityAdapter.getFilter().filter(searchText);
+            }
+        });
         facilityListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -225,41 +239,42 @@ public class SearchActivity extends AppCompatActivity {
 
 
     }
-
+    static String[] items=Sport.SPORT_TYPE.names();
+    static boolean[] checkedItems = new boolean[items.length];
     public void selectSport(View view) {
         class SportSelection extends DialogFragment {
 
             @NonNull
 
             ArrayList<Integer> list=new ArrayList<Integer>();
+
             public Dialog onCreateDialog(Bundle savedInstanceState) {
-                final String[] items=Sport.SPORT_TYPE.names();
-                AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+
+                final AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
                 builder.setTitle("Choose Sport");
-                builder.setMultiChoiceItems(Sport.SPORT_TYPE.names(), null, new DialogInterface.OnMultiChoiceClickListener() {
+                builder.setMultiChoiceItems(items, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+
+                        checkedItems[which]=isChecked;
                         if(isChecked)
                         {
                             list.add(which);
                         }
-                        else if(list.contains(which)){
+                        else if(isChecked==false){
                             list.remove(new Integer(which));
                         }
                     }
                 }).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String selections="";
-                        for(Integer ms:list)
-                        {
-                            selections+=ms.toString()+"  ";
-                        }
+
 
                         facilityAdapter.setSportlist(list);
                         facilityAdapter.getFilter().filter(searchText);
                     }
                 });
+                builder.setCancelable(false);
                 return builder.create();
             }
         }
@@ -355,7 +370,7 @@ return  facilitiesJS;
 for(Facility facility:facilities ){
     facilityAdapter.add(facility);
 }
-
+                facilityAdapter.getFilter().filter(searchText);
                 updateDateTime=new Date();
             } catch (Exception e) {
                 e.printStackTrace();

@@ -7,6 +7,9 @@
         android:layout_height="75dp"
         android:layout_alignParentLeft="true"
         android:id="@+id/facility_photo"
+        android:paddingLeft="5dp"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp"
         android:src="@drawable/picture1"/>
     <TextView
         android:id="@+id/facility_name"
@@ -15,19 +18,34 @@
         android:layout_toRightOf="@+id/facility_photo"
         android:text="Name"
         android:gravity="center"
+        android:textStyle="bold"
         android:textColor="@color/black"/>
     <TextView
         android:id="@+id/facility_address"
         android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/facility_name"
         android:text="Address"
         android:gravity="center"
+        android:paddingTop="20dp"
         android:textColor="@color/black"/>
+    <RatingBar
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBarUser"
+        android:numStars="5"
+        android:layout_below="@id/facility_address"
+        android:layout_toRightOf="@id/facility_name"
+        style="?android:attr/ratingBarStyleSmall"
+        android:paddingTop="10dp"
+        android:isIndicator="true"
+
+        />
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_below="@id/facility_photo"
-        android:background="#000000"
+        android:background="@color/primary_dark"
         />
 </RelativeLayout>

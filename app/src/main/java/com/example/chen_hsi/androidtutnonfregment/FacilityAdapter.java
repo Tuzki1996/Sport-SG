@@ -13,10 +13,12 @@ import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.squareup.picasso.Picasso;
 
 import org.apache.http.client.HttpClient;
@@ -25,6 +27,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 
 /**
@@ -34,6 +38,12 @@ import java.util.HashMap;
 public class FacilityAdapter extends ArrayAdapter<Facility> {
     ArrayList<Facility> list=new ArrayList();
     ArrayList<Facility> OriginalList=new ArrayList();
+    GPSTracker gps;
+    public void setSortDistance(Boolean sortDistance) {
+        this.sortDistance = sortDistance;
+    }
+
+    Boolean sortDistance=false;
     private FacilityFilter filter;
 
     public ArrayList<Integer> getSportlist() {
@@ -53,7 +63,7 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
         ImageView Photo;
         TextView name;
         TextView address;
-
+        RatingBar ratingBar;
     }
 
     @Override
@@ -87,6 +97,7 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
             handler.Photo=(ImageView)row.findViewById(R.id.facility_photo);
             handler.name=(TextView)row.findViewById(R.id.facility_name);
             handler.address=(TextView)row.findViewById(R.id.facility_address);
+            handler.ratingBar=(RatingBar)row.findViewById(R.id.ratingBarUser) ;
             row.setTag(handler);
         }
         else
@@ -97,7 +108,7 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
         Picasso.with(getContext()).load(dataProvider.getFacility_photo_resource()).into(handler.Photo);
         handler.name.setText(dataProvider.getFacility_name());
         handler.address.setText(dataProvider.getFacility_address());
-
+        handler.ratingBar.setRating((float)dataProvider.getFacility_rating());
         return row;
     }
 
@@ -134,6 +145,29 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
                     }
                     filtered=sportFiltered;
                 }
+                if(sortDistance)
+                {
+
+                    gps = new GPSTracker(getContext());
+                    if(gps.canGetLocation()) {
+                        double latitude = gps.getLatitude();
+                        double longitude = gps.getLongitude();
+                        LatLng latLng = new LatLng(latitude,longitude);
+
+                        Toast.makeText(getContext(), latitude+""+longitude, Toast.LENGTH_LONG);
+                        Collections.sort(filtered, new SortDistance(latLng));
+                    }
+                    else {
+                        // can't get location
+                        // GPS or Network is not enabled
+                        // Ask user to enable GPS/network in settings
+                        Toast.makeText(getContext(), "GPS Not Found", Toast.LENGTH_LONG);
+                    }
+                }
+                else
+                {
+                    Collections.sort(filtered, new SortNames());
+                }
                 filterResults.count=filtered.size();
                 filterResults.values=filtered;
             }
@@ -156,6 +190,30 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
                         }
                         filtered=sportFiltered;
                     }
+                    if(sortDistance)
+                    {
+
+                        gps = new GPSTracker(getContext());
+
+                        if(gps.canGetLocation()) {
+                            double latitude = gps.getLatitude();
+                            double longitude = gps.getLongitude();
+                            LatLng latLng = new LatLng(latitude,longitude);
+
+                            Toast.makeText(getContext(), latitude+""+longitude, Toast.LENGTH_LONG);
+                            Collections.sort(filtered, new SortDistance(latLng));
+                        }
+                        else {
+                            // can't get location
+                            // GPS or Network is not enabled
+                            // Ask user to enable GPS/network in settings
+                            Toast.makeText(getContext(), "GPS Not Found", Toast.LENGTH_LONG);
+                        }
+                    }
+                    else
+                    {
+                        Collections.sort(filtered, new SortNames());
+                    }
                     filterResults.count=filtered.size();
                     filterResults.values=filtered;
                 }
@@ -171,5 +229,40 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
 
             notifyDataSetInvalidated();
         }
+    }
+}
+class SortDistance implements Comparator<Facility> {
+    LatLng currentLoc;
+
+    public SortDistance(LatLng current){
+        currentLoc = current;
+    }
+    @Override
+    public int compare(final Facility place1, final Facility place2) {
+        double lat1 = place1.getFacility_latlng().latitude;
+        double lon1 = place1.getFacility_latlng().longitude;
+        double lat2 = place2.getFacility_latlng().latitude;
+        double lon2 = place2.getFacility_latlng().longitude;
+
+        double distanceToPlace1 = distance(currentLoc.latitude, currentLoc.longitude, lat1, lon1);
+        double distanceToPlace2 = distance(currentLoc.latitude, currentLoc.longitude, lat2, lon2);
+        return (int) (distanceToPlace1 - distanceToPlace2);
+    }
+
+    public double distance(double fromLat, double fromLon, double toLat, double toLon) {
+        double radius = 6378137;   // approximate Earth radius, *in meters*
+        double deltaLat = toLat - fromLat;
+        double deltaLon = toLon - fromLon;
+        double angle = 2 * Math.asin( Math.sqrt(
+                Math.pow(Math.sin(deltaLat/2), 2) +
+                        Math.cos(fromLat) * Math.cos(toLat) *
+                                Math.pow(Math.sin(deltaLon/2), 2) ) );
+        return radius * angle;
+    }
+}
+class SortNames implements Comparator<Facility> {
+    @Override
+    public int compare(Facility a, Facility b) {
+        return a.getFacility_name().compareToIgnoreCase(b.getFacility_name());
     }
 }

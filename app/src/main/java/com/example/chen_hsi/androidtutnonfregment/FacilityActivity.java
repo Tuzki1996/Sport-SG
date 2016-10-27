@@ -242,8 +242,7 @@ public class FacilityActivity extends AppCompatActivity {
 
 
     public void getDict(View view) {
-        String uri = String.format(Locale.ENGLISH, "geo:%f,%f", facility.getFacility_lat(), facility.getFacility_lng());
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?daddr=" + facility.getFacility_lat()+ "," + facility.getFacility_lng()));
         startActivity(intent);
     }
 
