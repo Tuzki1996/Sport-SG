@@ -256,7 +256,7 @@ public class SearchActivity extends AppCompatActivity {
                         {
                             selections+=ms.toString()+"  ";
                         }
-                        Toast.makeText(getActivity(),"Select"+selections,Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getActivity(),"Select"+selections,Toast.LENGTH_SHORT).show();
                         facilityAdapter.setSportlist(list);
                         facilityAdapter.getFilter().filter(searchText);
                     }

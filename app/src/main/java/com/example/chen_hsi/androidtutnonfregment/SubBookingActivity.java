@@ -54,6 +54,7 @@ public class SubBookingActivity extends AppCompatActivity {
     ProgressDialog pd;
     String sportid = "100";
     String userid = "100";
+    String facilityid="";
     String dateVar;
     String timeVar;
     String startDateTime;
@@ -62,7 +63,9 @@ public class SubBookingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub_booking);
-
+        Facility facility=(Facility) getIntent().getSerializableExtra("facility_key");
+        facilityid= String.valueOf(facility.getFacility_id());
+        userid=AccountInfo.getInstance().getUserId();
         setMenu();
         setNavigation();
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

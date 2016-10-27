@@ -221,7 +221,7 @@ public class FacilityActivity extends AppCompatActivity {
 
                 new ReviewJSONParse().execute(submitUrl);
                 facilityReview.setText("");
-                userRating.setRating(0);
+                userRating.setRating(-1);
             }
         }
         else{
@@ -234,7 +234,6 @@ public class FacilityActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), SubBookingActivity.class);
 
         intent.putExtra("facility_key", facility);
-        intent.putExtra("user_id",AccountInfo.getInstance().getUserId());
         startActivity(intent);
     }
 
