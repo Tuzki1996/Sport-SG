@@ -35,6 +35,9 @@
 
         </EditText>
 <Button
+    style="@style/TextContent"
+    android:background="@drawable/button_shape"
+    android:textColor="@color/lightbluegrey"
     android:id="@+id/btSelectSport"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

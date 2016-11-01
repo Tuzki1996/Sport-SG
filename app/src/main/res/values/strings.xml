@@ -4,6 +4,9 @@
     <string name="drawer_close">drawer close</string>
     <string name="pick_date">Pick a Date</string>
     <string name="pick_time">Pick a Time</string>
+    <string name="bDetails"><u>Booking Details</u></string>
+    <string name="regisgterSuggest"><u>Don\'t Have an Account\?\nRegister Now</u></string>
+    <string name="pDetails">Payment Details</string>
 
     <string-array name="facility_titles">
         <item>Bedok Sports Centre</item>

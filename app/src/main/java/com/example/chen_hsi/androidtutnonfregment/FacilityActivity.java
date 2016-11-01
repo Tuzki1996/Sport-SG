@@ -167,12 +167,7 @@ public class FacilityActivity extends AppCompatActivity {
 
                 switch (item.getItemId())
                 {
-                    case R.id.mHome:
-                        break;
-                    case R.id.mBook:
-                        navigate.setClass(FacilityActivity.this,SubBookingActivity.class);
-                        startActivity(navigate);
-                        break;
+
 
                     case R.id.mHistory:
                         navigate.setClass(FacilityActivity.this,HistoryActivity.class);

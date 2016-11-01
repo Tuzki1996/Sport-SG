@@ -21,13 +21,29 @@
             android:layout_width="match_parent"
             app:subtitleTextColor="@color/lightbluegrey"
             app:theme="@style/blueGreyToolbar" />
-
-
+        <FrameLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
             <ListView
                 android:id="@+id/historyList"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/my_toolbar"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/history_not_login"
+                android:id="@+id/loginToViewPic"
+
+                android:layout_alignParentTop="true"
+                />
+
+
+        </FrameLayout>
+
+
+
 
     </RelativeLayout>
     <android.support.design.widget.NavigationView android:id="@+id/left_drawer"

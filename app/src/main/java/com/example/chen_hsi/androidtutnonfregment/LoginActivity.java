@@ -108,12 +108,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 switch (item.getItemId())
                 {
-                    case R.id.mHome:
-                        break;
-                    case R.id.mBook:
-                        navigate.setClass(LoginActivity.this,SubBookingActivity.class);
-                        startActivity(navigate);
-                        break;
 
                     case R.id.mHistory:
                         navigate.setClass(LoginActivity.this,HistoryActivity.class);
@@ -180,8 +174,8 @@ public class LoginActivity extends AppCompatActivity {
         }
 
 
-        loginUrl = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=login&email="+usernameString+"&password="+passwordString;
-        emailCheckUrl ="http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=verifyemail&email="+usernameString;
+        loginUrl = "http://hsienyan1994.pagekite.me:8080/CZ2006/getUserServlet?requestType=login&email="+usernameString+"&password="+passwordString;
+        emailCheckUrl ="http://hsienyan1994.pagekite.me:8080/CZ2006/getUserServlet?requestType=verifyemail&email="+usernameString;
         Log.d("LoginURL",loginUrl);
         Log.d("emailCheckURL",emailCheckUrl);
 
