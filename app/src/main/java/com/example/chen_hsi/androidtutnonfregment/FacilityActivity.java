@@ -83,9 +83,9 @@ public class FacilityActivity extends AppCompatActivity {
         reviewList= (NonScrollListView) findViewById(R.id.reviewList);
         String sports="";
         for(Sport sport:facilitySportList)
-        sports+=sport.getSport_type().getName()+", ";
+            sports+=sport.getSport_type().getName()+", ";
         if(sports.length()!=0)
-        sports.substring(0,sports.length()-2);
+            sports.substring(0,sports.length()-2);
         facilityPhone.setText("Phone: "+facility.getFacility_phone()+"\nSports: "+sports);
         loadReview();
         Picasso.with(getBaseContext()).load(facility.getFacility_photo_resource()).into(facilityImage);
@@ -167,12 +167,7 @@ public class FacilityActivity extends AppCompatActivity {
 
                 switch (item.getItemId())
                 {
-                    case R.id.mHome:
-                        break;
-                    case R.id.mBook:
-                        navigate.setClass(FacilityActivity.this,SubBookingActivity.class);
-                        startActivity(navigate);
-                        break;
+
 
                     case R.id.mHistory:
                         navigate.setClass(FacilityActivity.this,HistoryActivity.class);
@@ -197,6 +192,8 @@ public class FacilityActivity extends AppCompatActivity {
                         break;
 
                     case R.id.mRegister:
+                        navigate.setClass(FacilityActivity.this,RegisterActivity.class);
+                        startActivity(navigate);
                         break;
 
                 }
@@ -220,7 +217,7 @@ public class FacilityActivity extends AppCompatActivity {
                 review = URLEncoder.encode(review, "UTF-8");
                 datetime= URLEncoder.encode(datetime, "UTF-8");
                 double userRatingValue = (double) userRating.getRating();
-                submitUrl = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=submitReview&text=" + review + "&rating=" + userRatingValue + "&date=" + datetime + "&userid=" + acc_id + "&facilityid=" + facility.getFacility_id();
+                submitUrl = "http://hsienyan1994.pagekite.me:8080/CZ2006/getUserServlet?requestType=submitReview&text=" + review + "&rating=" + userRatingValue + "&date=" + datetime + "&userid=" + acc_id + "&facilityid=" + facility.getFacility_id();
 
                 new ReviewJSONParse().execute(submitUrl);
                 facilityReview.setText("");
@@ -234,10 +231,16 @@ public class FacilityActivity extends AppCompatActivity {
     }
 
     public void bookNow(View view) {
-        Intent intent = new Intent(getApplicationContext(), SubBookingActivity.class);
+        if(AccountInfo.getInstance().getLoginStatus()==true){
+            Intent intent = new Intent(getApplicationContext(), SubBookingActivity.class);
 
-        intent.putExtra("facility_key", facility);
-        startActivity(intent);
+            intent.putExtra("facility_key", facility);
+            startActivity(intent);
+        }
+        else{
+
+            Toast.makeText(FacilityActivity.this,"Please log in to book facility.",Toast.LENGTH_LONG).show();
+        }
     }
 
 

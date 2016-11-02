@@ -1,6 +1,8 @@
 package com.example.chen_hsi.androidtutnonfregment;
 
+import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 
 import java.util.ArrayList;
 
@@ -18,4 +20,5 @@ public class MyApplication extends Application {
     }
 
     ArrayList<Facility> OriginalList=new ArrayList();
+
 }

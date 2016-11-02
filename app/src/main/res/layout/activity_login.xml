@@ -24,6 +24,7 @@
 
 
         />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -79,14 +80,14 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/regisgterSuggest"
+        android:textStyle="italic"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textAlignment="center"
-        android:text="Don't have an account?\nRegister Now"
         android:id="@+id/tvRegister"
         android:layout_marginBottom="20dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
-
 
 
 </RelativeLayout>

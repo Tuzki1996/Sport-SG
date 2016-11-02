@@ -49,6 +49,36 @@ public class RegisterActivity extends AppCompatActivity {
         Button submitregister = (Button) findViewById(R.id.submitregister);
 
 
+        password.setOnFocusChangeListener(new View.OnFocusChangeListener(){
+
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                String usernameString= username.getText().toString();
+                if (usernameString.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(usernameString).matches()) {
+                    username.setError("Invalid Email Address");
+
+                }
+                else{
+                    emailCheckUrl = "http://hsienyan1994.pagekite.me:8080/CZ2006/getUserServlet?requestType=verifyemail&email=" + usernameString;
+                    Log.d("emailcheckURL", emailCheckUrl);
+                    new EmailCheckJSONParse().execute(emailCheckUrl);
+                }
+            }
+        });
+
+
+        contact.setOnFocusChangeListener(new View.OnFocusChangeListener(){
+
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                String passwordString= password.getText().toString();
+                String retypePasswordString= retypePassword.getText().toString();
+                if(!passwordString.equals(retypePasswordString)){
+                    retypePassword.setError("Password inconsistent!");
+                }
+            }
+        });
+
         submitregister.setOnClickListener(new Button.OnClickListener() {
 
 
@@ -111,12 +141,7 @@ public class RegisterActivity extends AppCompatActivity {
                 Intent navigate = new Intent();
 
                 switch (item.getItemId()) {
-                    case R.id.mHome:
-                        break;
-                    case R.id.mBook:
-                        navigate.setClass(RegisterActivity.this, SubBookingActivity.class);
-                        startActivity(navigate);
-                        break;
+
 
                     case R.id.mHistory:
                         navigate.setClass(RegisterActivity.this, HistoryActivity.class);
@@ -328,6 +353,67 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
+
+
+    private class EmailCheckJSONParse extends AsyncTask<String, String, JSONObject> {
+        private ProgressDialog pDialog;
+
+        @Override
+        protected void onPreExecute() {
+
+            super.onPreExecute();
+
+
+        }
+
+
+        @Override
+        protected JSONObject doInBackground(String... args)  {
+
+
+
+            JSONParser jParser = new JSONParser();
+
+            // Getting JSON from URL
+            JSONObject json = jParser.getJSONObjectFromUrl(emailCheckUrl);
+
+
+
+            return json;
+        }
+
+
+
+
+
+        @Override
+        protected void onPostExecute(JSONObject json) {
+
+
+
+
+            final EditText username = (EditText) findViewById(R.id.registeremail);
+            Log.d("register result",json.toString());
+            if (json.toString().equals("{\"result\":\"Success\"}") ) {
+                username.setError("username has been used");
+
+
+            }
+            else{
+
+            }
+
+
+
+
+
+
+
+
+        }
+
+    }
+
     private boolean validation(EditText username,EditText password,EditText retypePassword,EditText firstname,EditText lastname, EditText contact){
 
 
@@ -358,7 +444,7 @@ public class RegisterActivity extends AppCompatActivity {
             returnResult=false;
         }
         if(contactString.isEmpty()){
-            lastname.setError("Please key in a your contact number!");
+            contact.setError("Please key in a your contact number!");
             returnResult=false;
         }
         if(!passwordString.equals(retypePasswordString)){
@@ -370,15 +456,15 @@ public class RegisterActivity extends AppCompatActivity {
 
         if(returnResult==true) {
 
-            emailCheckUrl = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=verifyemail&email=" + usernameString;
-            Log.d("emailcheckURL", emailCheckUrl);
+
             //new EmailCheckJSONParse().execute(emailCheckUrl);
 
-
-            registerUrl = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=register&email=" + usernameString + "&password=" + passwordString + "&firstname=" + firstnameString + "&lastname=" + lastnameString + "&contact=" + contactString;
+            firstnameString.replace(" ","_");
+            lastnameString.replace(" ","_");
+            registerUrl = "http://hsienyan1994.pagekite.me:8080/CZ2006/getUserServlet?requestType=register&email=" + usernameString + "&password=" + passwordString + "&firstname=" + firstnameString + "&lastname=" + lastnameString + "&contact=" + contactString;
             Log.d("registerUrl", registerUrl);
 
-            loginUrl = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=login&email="+usernameString+"&password="+passwordString;
+            loginUrl = "http://hsienyan1994.pagekite.me:8080/CZ2006/getUserServlet?requestType=login&email="+usernameString+"&password="+passwordString;
 
         }
 

@@ -52,7 +52,7 @@ public class GPSTracker extends Service implements LocationListener {
             isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
 
             if (!isGPSEnabled && !isNetworkEnabled) {
-
+                showSettingsAlert();
             } else {
                 this.canGetLocation = true;
 

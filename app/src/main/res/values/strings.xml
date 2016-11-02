@@ -4,49 +4,9 @@
     <string name="drawer_close">drawer close</string>
     <string name="pick_date">Pick a Date</string>
     <string name="pick_time">Pick a Time</string>
+    <string name="bDetails"><u>Booking Details</u></string>
+    <string name="regisgterSuggest"><u>Don\'t Have an Account\?\nRegister Now</u></string>
+    <string name="pDetails">Payment Details</string>
 
-    <string-array name="facility_titles">
-        <item>Bedok Sports Centre</item>
-        <item>Bishan Sports Centre</item>
-        <item>Choa Chu Kang Sports Centre</item>
-    </string-array>
-    <string-array name="facility_address">
-        <item>5 Bedok North Street 2, Singapore 469645
-</item>
-        <item>5 Bishan Street 14, Singapore 579783
-</item>
-        <item>1 Choa Chu Kang Street 53, Singapore 689236
-</item>
-    </string-array>
-    <string-array name="facility_xaddress">
-        <item>103.8498517050618
-</item>
-        <item>103.9367160008611
-</item>
-        <item>103.8604865280632
-</item>
-    </string-array>
-    <string-array name="facility_yaddress">
-        <item>1.363078948451739
-</item>
-        <item>1.326380797845766
-</item>
-        <item>1.359390817831081
-</item>
-    </string-array>
-    <string-array name="facility_phone">
-        <item>6244 5385
-</item>
-        <item>6352 6631
-</item>
-        <item>6767 1735
-</item>
-    </string-array>
-    <string-array name="facility_photo">
-        <item formatted="false">https://www.myactivesg.com/~/media/consumer/images/facilities/bedok\%%20activesg\%%20gym/bedok\%%20activesg\%%20gym3.jpg</item>
-        <item formatted="false">https://www.myactivesg.com/~/media/consumer/images/facilities/bishan\%%20activesg\%%20gym/bishan\%%20activesg\%%20gym1.jpg</item>
-        <item formatted="false">https://www.myactivesg.com/~/media/consumer/images/facilities/choa\%%20chu\%%20kang\%%20activesg\%%20gym/choa\%%20chu\%%20kang\%%20activesg\%%20gym4.jpg</item>
-
-    </string-array>
     <string name="title_activity_sub_booking">SubBookingActivity</string>
 </resources>

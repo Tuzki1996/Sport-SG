@@ -39,6 +39,7 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
     ArrayList<Facility> list=new ArrayList();
     ArrayList<Facility> OriginalList=new ArrayList();
     GPSTracker gps;
+    Context context;
     public void setSortDistance(Boolean sortDistance) {
         this.sortDistance = sortDistance;
     }
@@ -57,6 +58,7 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
     ArrayList<Integer> Sportlist=new ArrayList<Integer>();
     public FacilityAdapter(Context context, int resource) {
         super(context, resource);
+        this.context=context;
 
     }
     static  class DataHandler{
@@ -154,14 +156,14 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
                         double longitude = gps.getLongitude();
                         LatLng latLng = new LatLng(latitude,longitude);
 
-                        Toast.makeText(getContext(), latitude+""+longitude, Toast.LENGTH_LONG);
+                        Toast.makeText(context, Double.toString(latitude)+""+Double.toString(longitude), Toast.LENGTH_SHORT).show();
                         Collections.sort(filtered, new SortDistance(latLng));
                     }
                     else {
                         // can't get location
                         // GPS or Network is not enabled
                         // Ask user to enable GPS/network in settings
-                        Toast.makeText(getContext(), "GPS Not Found", Toast.LENGTH_LONG);
+                        Toast.makeText(context, "GPS Not Found", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else
@@ -200,14 +202,14 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
                             double longitude = gps.getLongitude();
                             LatLng latLng = new LatLng(latitude,longitude);
 
-                            Toast.makeText(getContext(), latitude+""+longitude, Toast.LENGTH_LONG);
+                            Toast.makeText(context,Double.toString(latitude)+" "+Double.toString(longitude),Toast.LENGTH_SHORT).show();
                             Collections.sort(filtered, new SortDistance(latLng));
                         }
                         else {
                             // can't get location
                             // GPS or Network is not enabled
                             // Ask user to enable GPS/network in settings
-                            Toast.makeText(getContext(), "GPS Not Found", Toast.LENGTH_LONG);
+                            Toast.makeText(context, "GPS Not Found", Toast.LENGTH_SHORT).show();
                         }
                     }
                     else

@@ -13,8 +13,6 @@
     tools:context="com.example.chen_hsi.androidtutnonfregment.SubBookingActivity"
     tools:showIn="@layout/activity_sub_booking">
 
-
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,16 +21,9 @@
         android:id="@+id/btnPickDate"
         android:background="@drawable/button_shape"
         android:layout_centerInParent="true" />
-    <TextView
-        android:text="Pick a date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnPickDate"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/pickDate" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="CONFIRM"
         android:textColor="@color/lightbluegrey"
@@ -40,4 +31,65 @@
         android:background="@drawable/button_shape"
         android:layout_centerInParent="true"
         android:layout_alignParentBottom="true"/>
+
+
+    <Spinner
+        android:id="@+id/sportType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:layout_marginBottom="16dp"
+        android:layout_above="@+id/btnPickDate"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pick_time"
+        android:textColor="@color/lightbluegrey"
+        android:id="@+id/btnPickTime"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/button_shape"
+        android:layout_below="@+id/btnPickDate"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Select a Sport Type"
+        android:layout_above="@+id/sportType"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView3" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Occupancy Rate"
+        android:layout_below="@+id/btnPickTime"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        android:id="@+id/orTv2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orTv2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:id="@+id/occupancyRate" />
+    <TextView
+        style="@style/BigTitle"
+        android:layout_below="@id/my_toolbar"
+        android:layout_above="@id/textView3"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:id="@+id/facility_name"
+        />
+
 </RelativeLayout>

@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.ClipData.Item;
 import android.content.Intent;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -18,6 +19,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -71,18 +73,21 @@ public class HistoryActivity extends AppCompatActivity {
         AccountInfo.getInstance().setUserName("Tracy");*/
         setMenu();
         setNavigation();
-
+        ImageView plsLoginPic=(ImageView) findViewById(R.id.loginToViewPic);
+        ListView hisList=(ListView)findViewById(R.id.historyList);
 
 
         if(AccountInfo.getInstance().getLoginStatus()==true){
-
-            historyUrl = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=getHistory&userid="+AccountInfo.getInstance().getUserId();
+            plsLoginPic.setVisibility(View.INVISIBLE);
+            hisList.setVisibility(View.VISIBLE);
+            historyUrl = "http://hsienyan1994.pagekite.me:8080/CZ2006/getUserServlet?requestType=getHistory&userid="+AccountInfo.getInstance().getUserId();
             Log.d("historyUrl",historyUrl);
             displayHistoryList();
 
         }
        else{
-
+            hisList.setVisibility(View.INVISIBLE);
+            plsLoginPic.setVisibility(View.VISIBLE);
             Toast.makeText(HistoryActivity.this,"Please log in to view your booking history.",Toast.LENGTH_LONG).show();
         }
 
@@ -129,12 +134,7 @@ public class HistoryActivity extends AppCompatActivity {
 
                 switch (item.getItemId())
                 {
-                    case R.id.mHome:
-                        break;
-                    case R.id.mBook:
-                        navigate.setClass(HistoryActivity.this,SubBookingActivity.class);
-                        startActivity(navigate);
-                        break;
+
 
                     case R.id.mHistory:
                         break;
@@ -250,7 +250,9 @@ public class HistoryActivity extends AppCompatActivity {
                     String payment =  sportItem.getString("price");
                     Log.d("payment",payment);
                     String sportType= sportItem.getString("sporttype");
+
                     Log.d("sportType",sportType);
+                    sportType= Sport.SPORT_TYPE.names()[Integer.parseInt(sportType)];
                     String facilityName=facilityItem.getString("name");
                     Log.d("facilityName",facilityName);
                     String phoneNum=facilityItem.getString("phone");
@@ -303,6 +305,7 @@ public class HistoryActivity extends AppCompatActivity {
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
+                Toast.makeText(HistoryActivity.this,"Please check your network connection",Toast.LENGTH_LONG).show();
             }
 
         }

@@ -108,12 +108,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 switch (item.getItemId())
                 {
-                    case R.id.mHome:
-                        break;
-                    case R.id.mBook:
-                        navigate.setClass(LoginActivity.this,SubBookingActivity.class);
-                        startActivity(navigate);
-                        break;
 
                     case R.id.mHistory:
                         navigate.setClass(LoginActivity.this,HistoryActivity.class);
@@ -174,14 +168,14 @@ public class LoginActivity extends AppCompatActivity {
             username.setError("Invalid Email Address");
             return false;
         }
-        else if(passwordString.isEmpty()||passwordString.length()<=4||passwordString.length()>10){
+        else if(passwordString.isEmpty()||passwordString.length()<4||passwordString.length()>10){
             password.setError("Please key in a password that is between 4 to 10 alphabetically");
             return false;
         }
 
 
-        loginUrl = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=login&email="+usernameString+"&password="+passwordString;
-        emailCheckUrl ="http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=verifyemail&email="+usernameString;
+        loginUrl = "http://hsienyan1994.pagekite.me:8080/CZ2006/getUserServlet?requestType=login&email="+usernameString+"&password="+passwordString;
+        emailCheckUrl ="http://hsienyan1994.pagekite.me:8080/CZ2006/getUserServlet?requestType=verifyemail&email="+usernameString;
         Log.d("LoginURL",loginUrl);
         Log.d("emailCheckURL",emailCheckUrl);
 
@@ -260,11 +254,13 @@ public class LoginActivity extends AppCompatActivity {
                     String firstName=loginVerifyResult[1].getString("firstname");
                     String lastName=loginVerifyResult[1].getString("lastname");
                     String email=loginVerifyResult[1].getString("email");
+                    String telNo=loginVerifyResult[1].getString("contactno");
                     AccountInfo.getInstance().setLoginStatus(true);
                     AccountInfo.getInstance().setUserId(userId);
                     AccountInfo.getInstance().setUserName(firstName);
                     AccountInfo.getInstance().setLastName(lastName);
                     AccountInfo.getInstance().setEmail(email);
+                    AccountInfo.getInstance().setPhoneNo(telNo);
                     //************** DEBUG USE************************************
                     String loginDebugString;
                     if(AccountInfo.getInstance().getLoginStatus()==true){
@@ -285,6 +281,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 } catch (JSONException e) {
                     e.printStackTrace();
+                    Toast.makeText(LoginActivity.this,"Please check your network connection",Toast.LENGTH_LONG).show();
                 }
 
                 //fail to log in

@@ -134,7 +134,12 @@
 
 
 
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/facility_photo"
+        android:background="@color/primary_dark"
+        />
 
 
 

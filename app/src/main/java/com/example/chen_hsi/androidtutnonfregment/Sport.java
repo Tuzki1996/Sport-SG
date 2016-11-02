@@ -9,19 +9,21 @@ import java.io.Serializable;
 public class Sport  implements Serializable
 {
     public enum SPORT_TYPE{
-        BADMINTON("Badminton"),
-        Basketball("Basketball"),
-        PickleBall("Pickle Ball"),
-        SOCCER("Soccer"),
-        SQUASH("Squash"),
-        TABLETENNIS("Table tennis"),
-        TENNIS("Tennis"),
-        SWIMMING("Swimming"),
-        RUGBY("Rugby"),
-        GYM("Gym");
+        BADMINTON("Badminton",4),
+        Basketball("Basketball",2),
+        PickleBall("Pickle Ball",2),
+        SOCCER("Soccer",1),
+        SQUASH("Squash",2),
+        TABLETENNIS("Table tennis",2),
+        TENNIS("Tennis",4),
+        SWIMMING("Swimming",50),
+        RUGBY("Rugby",1),
+        GYM("Gym",30);
         private String name;
-        SPORT_TYPE(String name){this.name=name;}
+        private int sizeAllow;
+        SPORT_TYPE(String name,int sizeAllow){this.name=name;this.sizeAllow=sizeAllow;}
         public String getName(){return this.name;}
+        public int getSizeAllow(){return  this.sizeAllow;}
         public static String[] names() {
             SPORT_TYPE[] sport_types = values();
             String[] names = new String[sport_types.length];

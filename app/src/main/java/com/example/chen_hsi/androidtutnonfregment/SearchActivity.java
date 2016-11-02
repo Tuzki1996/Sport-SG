@@ -84,6 +84,7 @@ public class SearchActivity extends AppCompatActivity {
             {
                 new JSONParse().execute();
                 ((MyApplication) this.getApplication()).setOriginalList(facilities);
+
             }
             else
             {
@@ -93,7 +94,6 @@ public class SearchActivity extends AppCompatActivity {
                 }
             }
         }
-
         rgSort.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -191,20 +191,14 @@ public class SearchActivity extends AppCompatActivity {
 
                 switch (item.getItemId())
                 {
-                    case R.id.mHome:
-                        break;
-                    case R.id.mBook:
-                        navigate.setClass(SearchActivity.this,SubBookingActivity.class);
-                        startActivity(navigate);
-                        break;
+
 
                     case R.id.mHistory:
                         navigate.setClass(SearchActivity.this,HistoryActivity.class);
                         startActivity(navigate);
                         break;
                     case R.id.mSearch:
-                        navigate.setClass(SearchActivity.this,SearchActivity.class);
-                        startActivity(navigate);
+
                         break;
                     case R.id.mLogin:
                         if(AccountInfo.getInstance().getLoginStatus()==true){
@@ -303,7 +297,7 @@ public class SearchActivity extends AppCompatActivity {
         @Override
         protected JSONArray doInBackground(String... params) {
             Log.e("DEBUG!!!!!", "2");
-            String url = "http://hsienyan.pagekite.me:8080/CZ2006/getUserServlet?requestType=search";
+            String url = "http://hsienyan1994.pagekite.me:8080/CZ2006/getUserServlet?requestType=search";
 
             JSONParser jParser = new JSONParser();
 
@@ -373,6 +367,8 @@ for(Facility facility:facilities ){
                 updateDateTime=new Date();
             } catch (Exception e) {
                 e.printStackTrace();
+                    Toast.makeText(SearchActivity.this,"Please check your network connection",Toast.LENGTH_LONG).show();
+
             }
 
         }

@@ -10,7 +10,7 @@
         android:paddingLeft="5dp"
         android:paddingTop="1dp"
         android:paddingBottom="1dp"
-        android:src="@drawable/picture1"/>
+        />
     <TextView
         android:id="@+id/facility_name"
         android:layout_width="175dp"

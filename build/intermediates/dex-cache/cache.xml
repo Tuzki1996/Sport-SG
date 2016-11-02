@@ -3,12 +3,1136 @@
 
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+<<<<<<< HEAD
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_d39c4d1b472b4f70bf70daa51c2755ab19fc56db/classes.dex" />
+        sha1="9ff04cc3470178a44512624036751a803418c2ca">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.8.0_2f5580478293435c4fa5ea8b6a1d11a981bf711f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_ea00db07ba36f80400e8ca34ed1f84d39f3163e1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="20a3c4e355150c15c13dd58045d43ad0c717d916">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-safetynet-9.8.0_6711f7610327e9da903ff9f4869d5a424d9d354e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b4671be3d1288bf4e5f527cd33e42909fbe4ecc6">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-9.8.0_09ccccb0093433048a0aa37b87ec7a0680e2e458/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2d3035050a075484cbf2e33f1ce1f779bae4d451">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-9.8.0_8ee8dbc6273b5a6798cc00d2aee4019076ccecc4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_137482074ad91686cb545fc15c9f09e8f42aecfa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.8.0_73fa1c2a5beb57f12a84aac2b0b93021c5da365d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_5ed5aea42c2d68c843aaec761b6b5e7aa981bd04/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c61641e333fa88da21758bab8cc28ee16604b05f">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.8.0_e986eb9bda968d263e01cfb3265a2e84b3f56f38/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7fd91ec2730fdaa82906aad32a3f3d3e574bae56">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-9.8.0_c56f6605df53a59e7c87bd76369865a86e4c7d4d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a1ed98e01bd58976d80c062fd0ea2968a1ff68a1">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-9.8.0_529ad804e29e4fc732d53bb28e4ada1894beeb69/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="16afe57c1d7f8165d107c7806ce7b0c71de87159">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-9.8.0_722f182144d0dac64761f9b0529d965433469f8d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_8f6db72548c8bb81c547474512a3683ed5a4cb66/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0b8e087da59c0b062c33f49a335e59f907086da2">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-9.8.0_3a81a5e300e78ffa26341e93a3549a14482fc375/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_9f6ff0e450c729ce06151f2fd725a88fa97bdb7c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_c88394c37c2e3d697712f080b34804fbc9aa6a4a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_0e6e62f5cea9c48a1a32bb63ebbe95b5ed2b94fb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f2d240dd085626f03f759c41d628a0c8b63e491f">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-9.8.0_8bb70dc43d597ca8bb21b1a52ef8ab68220bfbf7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c81df6bd515398ebe45089b0b16c55752a131f6a">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-9.8.0_e65c7193dc91c011738b117093c94232aa2c7c74/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e3234cd25e23069abd48ecd2117bc0e8011bf45a">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-9.8.0_0f7e8ff486d6ee661262f7af451922d34114acd9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="363a20f1d25336e827dd24020f2ecdc42d62638f">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gass-9.8.0_aa38f51f6e2cea8504ef150b9827431a0dae6fd4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_1693d76ee0abaea56f07bee5a39de99ff7e5a16c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="03df48d3713661d66ad024b1e406259a4c26fcac">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.8.0_bfa11b4dc64c79b5bcbda2bec0565a7ec2a4310a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="679251204de40ace98776a6f4e3a649c27e3d89f">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-places-9.8.0_69817f17d45475b0a5589902efab8e75eae9f72c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-instantapps/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="00d358528c5a8731a6e19bca910cbb3fd755ee31">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-instantapps-9.8.0_b224eb5295ad8adb91552441301237d98e109cf4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7fd91ec2730fdaa82906aad32a3f3d3e574bae56">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-9.8.0_bf650a4dd64c915020e1b2a8c3a17eb4bf890eec/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_37dab65aaf5188a5ef0b582382cacc274f413b46/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="20a3c4e355150c15c13dd58045d43ad0c717d916">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-safetynet-9.8.0_bce50ee09237735c093a05c8f24f087857dacea1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="055eed08c9cff50cac0db69c74c4d9ff7aef3d84">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-framework-9.8.0_d1ce2f8c34e33b6805704b7533a4538c854559d5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="50e35ae101a679c4c8ef3dda075b1df9d5d947d9">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-9.8.0_07b3a940896e82a0e2996edf29ab88ccb9e03579/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_b735184983a135b7360e97e4ad4ab3e48d75d02e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0b8e087da59c0b062c33f49a335e59f907086da2">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-9.8.0_9094ea23e44f8617ecc89335f08b6caec46d5eee/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_56fec5b77011a6dfe2246207b4805a7b5b724f77/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_ec8424d5292700a3e84affa45bc435ae45cfecd6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ec9104b53aee77dfcfd2fe1c4add23ff7c4df55f">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-9.8.0_c19d7f83304aed88f86b7a1c8624be4fbdc289c7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/palette-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-palette-v7-24.0.0_f473bbe0b7ab52c73ebd24be51d95393e7968be0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-24.0.0_7f43f639fc5ea730838a66eb0f1b9361167c4f80/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a7a04d6b7c01e569a285fa627cf64f5b05295906">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-9.8.0_1960b26e9efccb035a6371267b44f350360cea29/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5ffe8867f51cfc726e9fb21db1e5b6962ebf25a0">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-9.8.0_6a8d181d2d7cc6cf715b73085a35a637656a9c84/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="3daa7a9c9009fd386872a84c177a76979bdcafd6">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-9.8.0_f792599c0356f3f27ad015e241e6624875c04153/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5ffe8867f51cfc726e9fb21db1e5b6962ebf25a0">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-9.8.0_579b0f9ee41ff9e418a21108c90955b71f63280e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/palette-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-palette-v7-24.0.0_ef2ffb3f74b46c69bb7062ab8b02e4da6f6d6075/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b4671be3d1288bf4e5f527cd33e42909fbe4ecc6">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-9.8.0_9c3ba9c3b841bf42786d421c9082d54242758fa6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="15e59454416c6341bd3ed2533b585cd340682dd1">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-9.8.0_9e357fc8c65b05bf4673476bd4c15362558f1955/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="190a642ba16d1421296a4d794606279b80039c59">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.8.0_6fa7190b9bca4207747f65c92acfdb35e47dc853/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c61641e333fa88da21758bab8cc28ee16604b05f">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.8.0_da018f29fab4b2a61e6775fa2c3d9b489593c3bf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e3234cd25e23069abd48ecd2117bc0e8011bf45a">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-9.8.0_1026bb0fafa87d7979d5361c031959c1f4889ee7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a972970c8beddb69c198f61f3fc55f0606a7dfe3">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-9.8.0_714c48970e853cc809555e811d327601cde8b2d5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="04bbbddf868aa02dd33f9e90d8f5d908c360f638">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-9.8.0_df4ab842ee4ba5b3e22d1cdf149440efec4966b4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ec9104b53aee77dfcfd2fe1c4add23ff7c4df55f">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-9.8.0_c772a47ced3646dd1ea8eca42ec2618ffa0c5eda/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_6e016d5dd61f9d00277883aeb163c4df23e8bd43/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0b53c4b90654b67ee3892a8e2e7b819c083ab7a6">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-9.8.0_7b9fc900dfb36dea848e980f3c981250a6810ed1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0b53c4b90654b67ee3892a8e2e7b819c083ab7a6">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-9.8.0_fb87a65846415ee02a7524fc46639575a617a038/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a0bbc970f0aed20dd7f66037817454873695791d">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d85e897a60e60e9b1aff4b7b605ec69628e9428d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e6d5d361d187a20cdc9b6458038bb13c80cc2d63">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_1d7e72574a84f89538e29d8dd57e3b11f64d1483/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7e92aadd0697922316d1395c1887a23aebec640a">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.8.0_89ccb5645dcb06ecbf8d7c002885e563faf213f9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_9a6bec404dbc137ae16e4f83e61e55f9644e157f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="3daa7a9c9009fd386872a84c177a76979bdcafd6">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-9.8.0_e83a33313b61990e65d02e682631faf54a302ed4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e56f31b23ddb067f95f01255295167db7c798612">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-9.8.0_7b75a52f53afce22198af88e1c17a49f0e7334a0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a30aea7df545072ad3c06f56b2efc13e67222140">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-9.8.0_e68a230c270faf139946fb7b6715dcd75fc197d6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e9b2cfdfd59b03643f1e240668275378b96615a8">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-9.8.0_4878fe87afb2a1089abd1948bc682668dd6597d9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ca851be26ff89f5b32cc222cee98139fb3fac830">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-9.8.0_e44eb3298276f27e8311c71fc202dd50c5b31a52/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="910c013c511f752c4bbe24c5f492f669f4a3ccc0">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-9.8.0_5f79aa02633c550748f739ea4ad3f8d20faf3f49/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="679251204de40ace98776a6f4e3a649c27e3d89f">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-places-9.8.0_8453f3c311f46237059c4c43d0df905172013780/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_8ea4d230fb8942c11d3db8e2884942bb3419d6b2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="cef85cfc7df40e29fbea58844dd4c1e7d0b15542">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-9.8.0_295ef8fec6072d5aa839d2daec3ece463587d553/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="04bbbddf868aa02dd33f9e90d8f5d908c360f638">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-9.8.0_c43868dc38a64ffd1d5e9126256995001c5eddf0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_cf1fd8d8a8882d7e60817798ae00cf2be64aed77/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_465ffc9b5a647ee939bee00bbb69fef3ff97d684/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ca851be26ff89f5b32cc222cee98139fb3fac830">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-9.8.0_a37e172d30eeb3e99c4d44e2aebb5212b00aa7ec/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.8.0_4c58c7cf4005c16b0a3113f105d8007684cf59aa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9ec750112d698682e3c81bb4340e77de7a0b5900">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f8c3fa3da664f3fb576edafeda32625c9ce2b9e5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_bfd30ce79c98f001ad024a3fec2937c1ff398b1d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5f47ede9561595584dca71104baa0fecb36dda87">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.8.0_7a2afa33a604227c49d4063aa6fa4a5aa18d84f7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="055eed08c9cff50cac0db69c74c4d9ff7aef3d84">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-framework-9.8.0_a8498390dfdbb660ef31e1f5f1b9073ddf423d6d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c81df6bd515398ebe45089b0b16c55752a131f6a">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-9.8.0_6b5695c9d9e29e1ef025b050e78e89aceb87e151/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_4344fe1d2bf06eea46da570f8e6d41a696160811/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="190a642ba16d1421296a4d794606279b80039c59">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.8.0_bb41565ad1e8905b7b66efc0be51d2094323c92b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="cef85cfc7df40e29fbea58844dd4c1e7d0b15542">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-9.8.0_f17a32e43b998b4f5529876d1bb7f1f3f19f9f3f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_3a4111f75e6f5ff490ffebf13b090c45831b6e8f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2d3035050a075484cbf2e33f1ce1f779bae4d451">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-9.8.0_380ef88e03e008d85eddb560e427a1321ea567e7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="122ec9237acd8a57d974b9d529987f1ee6ca5aea">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-9.8.0_7b358588eff1e0f0e8bda274c5da31a28bc3a7d5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-awareness/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a2537b11ae24b42172d34e2a613fc0b903c56158">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-awareness-9.8.0_ebdb19c0b64015a5254fd0228eed5e0f92c9dba1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a30aea7df545072ad3c06f56b2efc13e67222140">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-9.8.0_fa676bb952a25ebcefb636aeacc55f6c02800de4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9ff04cc3470178a44512624036751a803418c2ca">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.8.0_f7a9c14374c64c0a0cb4337af61a7a17d961544e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="289cad663c288ce965463cb9ece8b35cc7de0fac">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-9.8.0_b57a5ae7776bc2eb45fee684b3735e513b99c503/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.8.0_d568f3ce9c333321c0358aa4bf16f91e6f11d4a8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6b6f292b8b951dcf2ecf2b20853e3eabc7d65c48">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.8.0_5bb0bd3184d4412df8a88e7d7e38362620d67d73/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f2d240dd085626f03f759c41d628a0c8b63e491f">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-9.8.0_9ce15af77ad6a63b07c3c43cb898c458860b55ff/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="15e59454416c6341bd3ed2533b585cd340682dd1">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-9.8.0_b93aba13d45e6dd125e06ec19bb739d7f7889e58/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ee5304fd374e0b4ebf6b42d4037fbfb2c5336511">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-clearcut-9.8.0_6d74bdfaa520a069a6d121fa044267b3e58cbfbf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9dae58326f6f6a515022468cce56dd04ec3b9fdb">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-9.8.0_78dd7fea67d56e013a7f248c487e6a2ddd1ced0d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="266570862e5792ef3c51143a8b8593cf54fac68d">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-api-9.8.0_189a037c41ea5096ae51c09cafadaf61c9213ecd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="74ac7cbcf0de4a88e59612dc3a9e3f9e71acb4ca">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-9.8.0_32192f1d985c4d9555818afb447c95e86a6dfd96/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a7a04d6b7c01e569a285fa627cf64f5b05295906">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-9.8.0_c2dd3d5caecc7212b87bbed732952164f78ea6f6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="910c013c511f752c4bbe24c5f492f669f4a3ccc0">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-9.8.0_759bc053e57844e335ab22811c9fc25d0e0457c5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_d45c6296b025707f819ea5c5d2b103c0c729d912/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="4438b1a7848a7c571122ba618aa1304514aabee6">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.8.0_b18ff08e8a458fdfbbc7fb2cf053604b3e4da76d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e56f31b23ddb067f95f01255295167db7c798612">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-9.8.0_7ab20f37718168ff081435a678bd7ccc884bea77/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_a98fa7b73b5ef7e523b9b3c76414a32293ce1f43/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="3f8f779a22cbb4c4d0759467a4f1011bb5252970">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-module-9.8.0_58e9853ee5b225a07142d915df817fc3d8b8eaf7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/.gradle/caches/modules-2/files-2.1/org.jbundle.util.osgi.wrapped/org.jbundle.util.osgi.wrapped.org.apache.http.client/4.1.2/98c86e42679fe7ac066f6c242e0d14f0bce0bb7c/org.jbundle.util.osgi.wrapped.org.apache.http.client-4.1.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="98c86e42679fe7ac066f6c242e0d14f0bce0bb7c">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/org.jbundle.util.osgi.wrapped.org.apache.http.client-4.1.2_387dee8f09ed2571282ca7d8af38260ed0268420/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="3f8f779a22cbb4c4d0759467a4f1011bb5252970">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-module-9.8.0_5fb8c136d42b9f9ce3d1af99a5f922bdcb26b013/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="85299bf1924dde0200109a58033c5ef84ecb6991">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-9.8.0_e8dec7343f92a1c04b7d9e780b025017e21cdbb8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5f47ede9561595584dca71104baa0fecb36dda87">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.8.0_8f9a0435d82e2f09e7d04b2f77b8dda0abab91ba/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="363a20f1d25336e827dd24020f2ecdc42d62638f">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gass-9.8.0_85ee056504071e3a20b5b704b25f9c0c82f219da/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2289fac71aa6e0e02b2f9883d42c7325e22114f6">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_4a5555236f8bed178b99f0341f1fbfc7c59d9a8a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="74ac7cbcf0de4a88e59612dc3a9e3f9e71acb4ca">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-9.8.0_011aa727027202c90a6e23485b56d98625852eae/classes.dex" />
+=======
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c61641e333fa88da21758bab8cc28ee16604b05f">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.8.0_c55af481b3eb7881182602352a8d32727e4fb3b7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_e6c559b9d7d5972f564908a7da4505e9b4437320/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.8.0_c8b3d11a92bbd5a014276b97a657e0e5170f69dd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="122ec9237acd8a57d974b9d529987f1ee6ca5aea">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-9.8.0_26fe447edf631c3aaf7236e2897d468c4fb69401/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/palette-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-palette-v7-24.0.0_b48d1b2560dca0c1ff031867e0d128ff3b502aed/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="008a202ff01722bb22e3f1d5d0c72e26f723b060">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_9c7cb23dd6a2c5d0922f5963d4de6a6f8157e046/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9dae58326f6f6a515022468cce56dd04ec3b9fdb">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-9.8.0_f50ef954e5e777731596e6683ae3c163b491f092/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2d3035050a075484cbf2e33f1ce1f779bae4d451">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-9.8.0_6b7c300cf8cc62275bcd8d601ea809cdead48a41/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_ef8d404231e491e95967398505178cfb07b25765/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_ea148c66d07fb13fb3eaca3c40ee73f76fd2b8db/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_e8d2f35af3bf1a2c3eb9b2ead4cf5c2e1d441a0c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b4671be3d1288bf4e5f527cd33e42909fbe4ecc6">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-9.8.0_b1105b54aca3444a4c787e12bed58b37ca0bbfdf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_e423dbf4093e5682b308bb988c20f727cdd87fe5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="cef85cfc7df40e29fbea58844dd4c1e7d0b15542">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-9.8.0_9726b547ce8206e9aab83a0b81d587308edaaffa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e56f31b23ddb067f95f01255295167db7c798612">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-9.8.0_a9ab00e87e1283babfc3a2f7afb52348eddac311/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="15e59454416c6341bd3ed2533b585cd340682dd1">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-9.8.0_bd9c5ab56f1e1f14a4dd21cf396e68fd0671020c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a972970c8beddb69c198f61f3fc55f0606a7dfe3">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-9.8.0_1321a74246f39b0266a1ed1ea6415fef046aca1c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="16afe57c1d7f8165d107c7806ce7b0c71de87159">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-9.8.0_d12381561ea97581ec517bf6128c5f37a3b3a981/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -21,21 +1145,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_b25a49390cda4b8637ecf13216355db60a851a9c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_74c267b34b624e4e7b34d3503b53ae532567f608/classes.dex" />
+        sha1="3daa7a9c9009fd386872a84c177a76979bdcafd6">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-9.8.0_51fbccce2c1e26f23340312379b2091ed4fb8a25/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -48,6 +1163,186 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e3234cd25e23069abd48ecd2117bc0e8011bf45a">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-9.8.0_7110497b52952eb1706a5ddedda1ee18d716c4fd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ec9104b53aee77dfcfd2fe1c4add23ff7c4df55f">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-9.8.0_0caa3de945ea43728627079fc025f5cdb4a326bb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5ffe8867f51cfc726e9fb21db1e5b6962ebf25a0">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-9.8.0_87e8281dfbc69a20c93fb49dba1423ccdd87d94b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="363a20f1d25336e827dd24020f2ecdc42d62638f">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gass-9.8.0_bd16ad9c56e667404e1d4cf76e4f4157f8349114/classes.dex" />
+>>>>>>> origin/master
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_ffb3054717be208baf8e99577248cc68f7ce8bc8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+<<<<<<< HEAD
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_29578b31ccae1ccce8ce1854a0fe94b53a49da81/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_a70c69eb2069243cd1f8ade48d402fb7c03a3d25/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_778f0318d7e593f4d84836a1c80cda6eb7fc3157/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9dae58326f6f6a515022468cce56dd04ec3b9fdb">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-9.8.0_39ffb33cab665d6c15e8268d76b3d4814dfc907f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_d08e7b9c9c8968de1fc0edf1d47eb3b911522681/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_405e4120a8521b6115c18d857a1ab81a38f3b072/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_15d555e9458889e6eb032ee741f019b6061c674a/classes.dex" />
+=======
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0b53c4b90654b67ee3892a8e2e7b819c083ab7a6">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-9.8.0_74826abf6d2d5f992ab593f5706716ba8e623c97/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-24.0.0_66abec0b016839e1b077211f0d773ba4870da6a5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e9b2cfdfd59b03643f1e240668275378b96615a8">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-9.8.0_2368fb2a52c886d0bc2f6cb6b48c7e19195f6e19/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0b8e087da59c0b062c33f49a335e59f907086da2">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-9.8.0_6c2dcc93c2fdc7dcb8cca27a281208df08369085/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="289cad663c288ce965463cb9ece8b35cc7de0fac">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-9.8.0_0c8559cfb502d9b1de46312ab247f6977e53021e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="190a642ba16d1421296a4d794606279b80039c59">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.8.0_5c91979547e5117daff344dac654b39fa2c296c9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a7a04d6b7c01e569a285fa627cf64f5b05295906">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-9.8.0_6bc158463b34328f71e493abe5bb05cec94584c3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7fd91ec2730fdaa82906aad32a3f3d3e574bae56">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-9.8.0_988996681b0e448950401e2deee934d18efbc2ba/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/Chen-Hsi/.gradle/caches/modules-2/files-2.1/org.jbundle.util.osgi.wrapped/org.jbundle.util.osgi.wrapped.org.apache.http.client/4.1.2/98c86e42679fe7ac066f6c242e0d14f0bce0bb7c/org.jbundle.util.osgi.wrapped.org.apache.http.client-4.1.2.jar"
         jumboMode="true"
         optimize="true"
@@ -57,12 +1352,331 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="04bbbddf868aa02dd33f9e90d8f5d908c360f638">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-9.8.0_0152fd122b803e6af13309c0e813f5f1f9b16a1d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_5843d8ef3cbdee1392f82d37bc388a0a1c3e0d74/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="679251204de40ace98776a6f4e3a649c27e3d89f">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-places-9.8.0_a19ff9b91f946918caf4edd70afe8222ee670690/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ca851be26ff89f5b32cc222cee98139fb3fac830">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-9.8.0_4638bfe7f298274c9815511c5755c918ee53d729/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9ff04cc3470178a44512624036751a803418c2ca">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.8.0_6c424b12c126cddb672bf0edf13f5ab57ce6c6d7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.8.0_2679751ce5d52a9ed08b6a333c254676a367ce53/classes.dex" />
+>>>>>>> origin/master
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="4438b1a7848a7c571122ba618aa1304514aabee6">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.8.0_db287f4ef69a3b5ca95f494a27aa627c6f444c84/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+<<<<<<< HEAD
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fbb3885c40e431cd2b0dc69c0cab2bf6d5da7b43">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-9.8.0_69f4aed141f46d7c09d64139298bdbba26457902/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_5ded867fde86fbd45c42d1d78b7e0eed4649d716/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ee5304fd374e0b4ebf6b42d4037fbfb2c5336511">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-clearcut-9.8.0_16215f7cc80de3c272a7d8677acc6792a94f6ba0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="85299bf1924dde0200109a58033c5ef84ecb6991">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-9.8.0_952738652aa4e428e444782d168db755b4c48447/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="50e35ae101a679c4c8ef3dda075b1df9d5d947d9">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-9.8.0_875856e8b3785fd70845c228bb887a456940744a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e9b2cfdfd59b03643f1e240668275378b96615a8">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-9.8.0_0b6c1e624efddfe4756e5636d4f2e830da1a330b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="03df48d3713661d66ad024b1e406259a4c26fcac">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.8.0_d5e8dc0f50f05b0440364edaacd72d2a26992903/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_2d3d4a7ff39865f4dea548bd0df8a3091613e3aa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="289cad663c288ce965463cb9ece8b35cc7de0fac">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-9.8.0_b265c888e542b0af9e2bdef1e3efc6af8935237c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fbb3885c40e431cd2b0dc69c0cab2bf6d5da7b43">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-9.8.0_6acfad1142d559ebdd11ecf5c3e84969f3bbe328/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-awareness/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a2537b11ae24b42172d34e2a613fc0b903c56158">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-awareness-9.8.0_d2e3ed0750f1fdce22c3324ce5591e1442d04f90/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_ada6004e78e35fd08f0af58a67e9d59c9c7ee9b6/classes.dex" />
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_a0fb8dd139aeaaae500159114d4619e0f8f529c3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_3033aa2cb6c5815d8ffcdbd1f2303d6f8673a919/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a972970c8beddb69c198f61f3fc55f0606a7dfe3">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-9.8.0_d6ac5dc53e3cc9f3145f168b2a6721f32c6455a9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_e4137feb11df6e90fc9d696d5e6f2bc8dc23b220/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-24.0.0_d2e97fe7a20f79c120ee03862003ba5e94b5f01d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="122ec9237acd8a57d974b9d529987f1ee6ca5aea">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-9.8.0_f0fbab4474704132a4b3a61ead580870dbd1a0b9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.8.0_617d92da36a942a9b819171fdc17a5a017e62dda/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/9.8.0/jars/classes.jar"
+=======
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f2d240dd085626f03f759c41d628a0c8b63e491f">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-9.8.0_abf0d63cdc37e265a1a1c77e6f0ce085c4e9c833/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="03df48d3713661d66ad024b1e406259a4c26fcac">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.8.0_125261ba7932d92d1fd262d2f843dc4ebf428009/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5f47ede9561595584dca71104baa0fecb36dda87">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.8.0_f9872c68dd50a8a02ccf97a51f409962ee01d261/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6b6f292b8b951dcf2ecf2b20853e3eabc7d65c48">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.8.0_0a2de48fd966791b7bb2f739ed37f3d423e06163/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="3f8f779a22cbb4c4d0759467a4f1011bb5252970">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-module-9.8.0_4946e34a34aaba2068b7bbe6551b454903e76b3f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7e92aadd0697922316d1395c1887a23aebec640a">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.8.0_2d105fe44d01d3da4133774cac2287805fb43bae/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="266570862e5792ef3c51143a8b8593cf54fac68d">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-api-9.8.0_704b52e983c208f1853a6c72f6939ab85065522e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_d1ed1e5a722f21df9e2089efd64f9103c6effe3b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_d39c4d1b472b4f70bf70daa51c2755ab19fc56db/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="74ac7cbcf0de4a88e59612dc3a9e3f9e71acb4ca">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-9.8.0_cec23ecaa4fcfcbe8dd271b957ae667755ad6e86/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c81df6bd515398ebe45089b0b16c55752a131f6a">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-9.8.0_b480fc2156f9679d74e0eaf4b61253c15d0f1df8/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -72,15 +1686,6 @@
         revision="23.0.3"
         sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
         <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_4e3aafe4cc321e8154b5e9f4b7eb0a921a92d2f1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_e6c559b9d7d5972f564908a7da4505e9b4437320/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -102,84 +1707,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_5843d8ef3cbdee1392f82d37bc388a0a1c3e0d74/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="ddffbf9589ab6c4e1b24e0932365e0beb5925fb6">
+        sha1="d1199bfddd2fd75888100520ff09ee477ddadaa0">
         <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7d5f009029eea37e965cd4ba5125e99a1bf25d1a/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_8a8099f14f26a0123f6bee8845e674cf2c0ccff7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_056901212754f1e3e59f574b6d9c632db15e9b4b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="72657ea53c3b9a3942d1942d451ba9c6560b6b3a">
-        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_9c7cb23dd6a2c5d0922f5963d4de6a6f8157e046/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_da1676bbcdab67facb64f086f51c6566355357b4/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_60359843deb7085c70e6ee13eae1062055fdb43e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_e39238d1f5aafc5762c0f1687d535208d5888ca0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_776f29ef4d5b19dd75be719a888dfdd6110308ba/classes.dex" />
+        sha1="85299bf1924dde0200109a58033c5ef84ecb6991">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-9.8.0_c4edbb0670c9e99bc3f9b05d5a19c99b712d7219/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -192,12 +1734,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-instantapps/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_ef8d404231e491e95967398505178cfb07b25765/classes.dex" />
+        sha1="00d358528c5a8731a6e19bca910cbb3fd755ee31">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-instantapps-9.8.0_35ab57c50295b05fbb4589c45598b6ab4767b9bc/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -210,12 +1752,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_ea0b2b269ca0ae757e9ce9dd0f5cd583f8383c30/classes.dex" />
+        sha1="20a3c4e355150c15c13dd58045d43ad0c717d916">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-safetynet-9.8.0_626f7768ffd094a3928b29ae3f2316ed478191a3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="910c013c511f752c4bbe24c5f492f669f4a3ccc0">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-9.8.0_23c6a1d4bd4bcceb4e363ce294a9ef4fac4f6fa2/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -228,84 +1779,124 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/9.8.0/jars/classes.jar"
+>>>>>>> origin/master
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_35bdce616b9ffc7f69e4af282df8a2e02f5c2bd4/classes.dex" />
+        sha1="a1ed98e01bd58976d80c062fd0ea2968a1ff68a1">
+<<<<<<< HEAD
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-9.8.0_13ef53324b2a7344683f7b468225def299ca3f96/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_bb12062d480c669d4aa1ad9ef85152cf3fa5fade/classes.dex" />
+        sha1="266570862e5792ef3c51143a8b8593cf54fac68d">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-api-9.8.0_ae97b8651f590c21543ddc320a8fa504adcd8410/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-instantapps/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_92a967ea44d4fa4d98d9a34fd96046cf45e2569a/classes.dex" />
+        sha1="00d358528c5a8731a6e19bca910cbb3fd755ee31">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-instantapps-9.8.0_a7bf2060bf5eb0959950f46447f172ce9e8d35b0/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="ee05a82cf22b74db17c1520ec269cb8934f6ee43">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_ab8cb6025067f8e116d439c3f9d8c2171eb7f0b7/classes.dex" />
+        sha1="16afe57c1d7f8165d107c7806ce7b0c71de87159">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-9.8.0_77c96ac9d92dd19dfb71e28539e81554edb0549d/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_2396e93bbd24b8649100d7e89b97505ea3092158/classes.dex" />
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_bd05cafe2793c5c543615f650bf6d3874d744579/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jar="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_e8d2f35af3bf1a2c3eb9b2ead4cf5c2e1d441a0c/classes.dex" />
+        sha1="7e92aadd0697922316d1395c1887a23aebec640a">
+        <dex dex="/Users/GMD/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.8.0_c8b5a5370275a344cf7808673eff15278d185a7e/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_2595e90fcf5328b9967c9c0af84d625dd15ff26c/classes.dex" />
+        sha1="6b6f292b8b951dcf2ecf2b20853e3eabc7d65c48">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.8.0_95ca08582400a9686be03ffa3264debcaabc2adb/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jar="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_e423dbf4093e5682b308bb988c20f727cdd87fe5/classes.dex" />
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/GMD/Desktop/Sport-SG/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_eefa038f772cfb17cd7b7fda51b4f6d20cc5dcd6/classes.dex" />
+=======
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-9.8.0_498cc102bcf8708e51d29d5f7e5b838000694760/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_cad7b5f8a895dc713149c4a5c381dfff855ab124/classes.dex" />
+        sha1="ee5304fd374e0b4ebf6b42d4037fbfb2c5336511">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-clearcut-9.8.0_6b2ff27e570ca5507828854c4fa9e8daeeb5e70e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="055eed08c9cff50cac0db69c74c4d9ff7aef3d84">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-framework-9.8.0_be989d6644f8110dc6b6b4a38d078e102f1359ce/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fbb3885c40e431cd2b0dc69c0cab2bf6d5da7b43">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-9.8.0_477a768b8b0626c21549ea16f9279fb3ec0fbcd7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a30aea7df545072ad3c06f56b2efc13e67222140">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-9.8.0_fa46de0d568baac73f2bd3fac0dafb942be70c93/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="50e35ae101a679c4c8ef3dda075b1df9d5d947d9">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-9.8.0_40585c92021eb4b56553cb8f7302f16145c088f1/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -318,39 +1909,22 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-awareness/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_e5848f5c723ad4085a7ed030fd36f4a349dec4b2/classes.dex" />
+        sha1="a2537b11ae24b42172d34e2a613fc0b903c56158">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-awareness-9.8.0_ad56aa42b4805cf7d43eacb63374e4d515f3b7af/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_c6f75550d4dac8669207ae126b7a1996d8d9cf19/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_d1ed1e5a722f21df9e2089efd64f9103c6effe3b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="0416946ad887153db3a14882420ef0856e5e7c42">
-        <dex dex="/Users/Chen-Hsi/Downloads/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d6c0b5581ee450462b575e1e7136640d861575cf/classes.dex" />
+        sha1="4438b1a7848a7c571122ba618aa1304514aabee6">
+        <dex dex="/Users/Chen-Hsi/Desktop/Sport-SG-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.8.0_3e04bc3b3683180fc9d5763ad9836f628c319b80/classes.dex" />
+>>>>>>> origin/master
     </item>
 
 </items>
