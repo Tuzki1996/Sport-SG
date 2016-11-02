@@ -1,9 +1,6 @@
 package com.example.chen_hsi.androidtutnonfregment;
 
-<<<<<<< HEAD
 import android.app.Activity;
-=======
->>>>>>> origin/master
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -12,10 +9,7 @@ import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-<<<<<<< HEAD
 import android.net.Uri;
-=======
->>>>>>> origin/master
 import android.os.Bundle;
 import android.os.Looper;
 import android.provider.CalendarContract;
@@ -29,11 +23,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.format.DateFormat;
-<<<<<<< HEAD
 import android.text.format.DateUtils;
 import android.util.Log;
-=======
->>>>>>> origin/master
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,24 +32,18 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
-<<<<<<< HEAD
 import android.widget.EditText;
-=======
->>>>>>> origin/master
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-<<<<<<< HEAD
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 import org.apache.http.HttpEntity;
-=======
->>>>>>> origin/master
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -67,7 +52,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.protocol.HTTP;
-<<<<<<< HEAD
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -90,14 +74,6 @@ import static com.example.chen_hsi.androidtutnonfregment.R.id.occupancyRate;
 import static com.example.chen_hsi.androidtutnonfregment.R.id.textView;
 import static com.example.chen_hsi.androidtutnonfregment.SearchActivity.items;
 import static java.util.Calendar.HOUR_OF_DAY;
-=======
-import org.json.JSONObject;
-
-import java.io.InputStream;
-import java.util.Calendar;
-
-import static android.provider.ContactsContract.CommonDataKinds.Website.URL;
->>>>>>> origin/master
 
 public class SubBookingActivity extends AppCompatActivity {
 
@@ -114,7 +90,6 @@ public class SubBookingActivity extends AppCompatActivity {
     String startDateTime;
     String endDateTime;
     String sportType;
-<<<<<<< HEAD
     Sport sport = null;
     Facility facility;
     int occupancyRateCur;
@@ -129,25 +104,13 @@ public class SubBookingActivity extends AppCompatActivity {
      */
     private GoogleApiClient client;
 
-=======
-    Facility facility;
-
-
-    double price;
->>>>>>> origin/master
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub_booking);
-<<<<<<< HEAD
         facility = (Facility) getIntent().getSerializableExtra("facility_key");
         facilityid = String.valueOf(facility.getFacility_id());
         userid = AccountInfo.getInstance().getUserId();
-=======
-        facility=(Facility) getIntent().getSerializableExtra("facility_key");
-        //facilityid= String.valueOf(facility.getFacility_id());
-        //userid=AccountInfo.getInstance().getUserId();
->>>>>>> origin/master
         setMenu();
         setNavigation();
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -160,17 +123,12 @@ public class SubBookingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Booking In Progress", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-<<<<<<< HEAD
                 sendJson(Integer.toString(sport.getId()), userid, Double.toString(price), startDateTime, endDateTime, sportType, facility);
-=======
-                sendJson(sportid,userid,Double.toString(price),startDateTime,endDateTime,sportType,facility);
->>>>>>> origin/master
 
             }
         });
 
 
-<<<<<<< HEAD
         final Button btnPickDate = (Button) findViewById(R.id.btnPickDate);
         final Button btnPickTime = (Button) findViewById(R.id.btnPickTime);
         final TextView fnameTv = (TextView) findViewById(R.id.facility_name);
@@ -185,14 +143,6 @@ public class SubBookingActivity extends AppCompatActivity {
             items[i] = sport.getSport_type().getName();
             i++;
         }
-=======
-        final Button btnPickDate=(Button) findViewById(R.id.btnPickDate);
-        final Button btnPickTime=(Button) findViewById(R.id.btnPickTime);
-        final TextView fnameTv = (TextView)findViewById(R.id.facility_name);
-
-        Spinner dropdown = (Spinner)findViewById(R.id.sportType);
-        String[] items = new String[]{"","Swimming", "Badminton", "Basketball"};
->>>>>>> origin/master
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
 
@@ -200,14 +150,10 @@ public class SubBookingActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int pos, long id) {
                 //Toast.makeText(getBaseContext(), "You've selected " + parentView.getItemAtPosition(pos), Toast.LENGTH_LONG).show();
-<<<<<<< HEAD
                 sportType = parentView.getItemAtPosition(pos).toString();
                 sport = facilitySportList.get(pos);
                 price = sport.getPrice();
 
-=======
-                sportType=parentView.getItemAtPosition(pos).toString();
->>>>>>> origin/master
             }
 
             @Override
@@ -216,15 +162,9 @@ public class SubBookingActivity extends AppCompatActivity {
             }
 
         });
-<<<<<<< HEAD
         if (facility != null) {
             fnameTv.setText(facility.getFacility_name());
         } else {
-=======
-        if(facility!=null){
-            fnameTv.setText(facility.getFacility_name());
-        }else{
->>>>>>> origin/master
             fnameTv.setText("Default Facility Name");
         }
 
@@ -245,41 +185,11 @@ public class SubBookingActivity extends AppCompatActivity {
                 myCalendarEnd.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
                 //TextView pickDateTxtBox = (TextView)findViewById(R.id.pickDate);
-<<<<<<< HEAD
                 dateVar = year + "-" + monthOfYear + "-" + dayOfMonth;
                 //pickDateTxtBox.setText(dateVar);
                 pd = ProgressDialog.show(SubBookingActivity.this, "", "Querying for available timeslot", false);
-=======
-                dateVar=year + "-" + monthOfYear + "-" + dayOfMonth;
-                //pickDateTxtBox.setText(dateVar);
-                pd=ProgressDialog.show(SubBookingActivity.this, "", "Querying for available timeslot", false);
->>>>>>> origin/master
                 pd.dismiss();
-                btnPickDate.setText(dateVar);
-            }
 
-        };
-
-        btnPickDate.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                DatePickerDialog dialog =new DatePickerDialog(SubBookingActivity.this, date, myCalendarStart
-                        .get(Calendar.YEAR), myCalendarStart.get(Calendar.MONTH),
-                        myCalendarStart.get(Calendar.DAY_OF_MONTH));
-                Calendar cal = Calendar.getInstance();
-                dialog.getDatePicker().setMinDate(System.currentTimeMillis());
-                cal.add(Calendar.DATE,14);
-                dialog.getDatePicker().setMaxDate(cal.getTimeInMillis());
-                dialog.show();
-
-            }
-        });
-
-
-
-<<<<<<< HEAD
                 btnPickDate.setText(dateVar);
 
                 btnPickTime.setEnabled(true);
@@ -325,52 +235,10 @@ public class SubBookingActivity extends AppCompatActivity {
                         btnPickTime.setEnabled(false);
                         btnPickTime.setText("No Time Slot Available");
 
-=======
-        btnPickTime.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                final CharSequence timeslot[] = new CharSequence[] {"1pm-2pm", "2pm-3pm", "3pm-4pm", "4pm-5pm"};
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(SubBookingActivity.this);
-                builder.setTitle("Select a timeslot");
-                builder.setItems(timeslot, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getBaseContext(), "You've selected " + timeslot[which], Toast.LENGTH_LONG).show();
-                        if (timeslot[which].equals("1pm-2pm")) {
-                            startDateTime = dateVar + " 13:00:00";
-                            endDateTime = dateVar + " 14:00:00";
-                            myCalendarStart.set(Calendar.HOUR,13);
-                            myCalendarEnd.set(Calendar.HOUR,14);
-                            price=20.00;
-                        } else if (timeslot[which].equals("2pm-3pm")) {
-                            startDateTime= dateVar + " 14:00:00";
-                            endDateTime=dateVar + " 15:00:00";
-                            myCalendarStart.set(Calendar.HOUR,14);
-                            myCalendarEnd.set(Calendar.HOUR,15);
-                            price=20.00;
-                        } else if (timeslot[which].equals("3pm-4pm")) {
-                            startDateTime= dateVar + " 15:00:00";
-                            endDateTime=dateVar + " 16:00:00";
-                            myCalendarStart.set(Calendar.HOUR,15);
-                            myCalendarEnd.set(Calendar.HOUR,16);
-                            price=20.00;
-                        }else if (timeslot[which].equals("5pm-6pm")) {
-                            startDateTime= dateVar + " 17:00:00";
-                            endDateTime=dateVar + " 18:00:00";
-                            myCalendarStart.set(Calendar.HOUR,17);
-                            myCalendarEnd.set(Calendar.HOUR,18);
-                            price=20.00;
-                        }
-                        btnPickTime.setText(timeslot[which]);
->>>>>>> origin/master
                     }
                 }
                 ;
             }
-<<<<<<< HEAD
 
         };
 
@@ -389,8 +257,6 @@ public class SubBookingActivity extends AppCompatActivity {
                 dialog.show();
 
             }
-=======
->>>>>>> origin/master
         });
 
 
@@ -400,7 +266,6 @@ public class SubBookingActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
 
-<<<<<<< HEAD
 
                 final CharSequence timeslot[] = new CharSequence[]{"10am-11am", "11am-12pm", "12pm-1pm", "1pm-2pm", "2pm-3pm", "3pm-4pm", "4pm-5pm", "5pm-6pm", "6pm-7pm", "7pm-8pm"};
                 final CharSequence[] items;
@@ -558,24 +423,6 @@ public class SubBookingActivity extends AppCompatActivity {
 
 
     protected void sendJson(final String sid, final String uid, final String price, final String starttime, final String endtime, final String sportType, final Facility facility) {
-=======
-    }
-
-
-    protected void sendJson(final String sid, final String uid, final String price, final String starttime, final String endtime,final String sportType,final Facility facility) {
-
-        Intent intent = new Intent(getBaseContext(), PaymentActivity.class);
-        intent.putExtra("sid", sid);
-        intent.putExtra("uid", uid);
-        intent.putExtra("price", price);
-        intent.putExtra("starttime", starttime);
-        intent.putExtra("endtime", endtime);
-        intent.putExtra("sportType", sportType);
-        intent.putExtra("facility_key", facility);
-        startActivity(intent);
-/*
-
->>>>>>> origin/master
         Thread t = new Thread() {
 
             public void run() {
@@ -606,11 +453,8 @@ public class SubBookingActivity extends AppCompatActivity {
                         intent.putExtra("price", price);
                         intent.putExtra("starttime", starttime);
                         intent.putExtra("endtime", endtime);
-<<<<<<< HEAD
                         intent.putExtra("sportType", sportType);
                         intent.putExtra("facility_key", facility);
-=======
->>>>>>> origin/master
                         startActivity(intent);
                     }
 
@@ -621,11 +465,7 @@ public class SubBookingActivity extends AppCompatActivity {
                 Looper.loop(); //Loop in the message queue
             }
         };
-<<<<<<< HEAD
         t.start();
-=======
-        t.start(); */
->>>>>>> origin/master
 
     }
 
@@ -680,12 +520,7 @@ public class SubBookingActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem item) {
                 Intent navigate = new Intent();
 
-<<<<<<< HEAD
                 switch (item.getItemId()) {
-=======
-                switch (item.getItemId())
-                {
->>>>>>> origin/master
 
                     case R.id.mHistory:
                         navigate.setClass(SubBookingActivity.this, HistoryActivity.class);

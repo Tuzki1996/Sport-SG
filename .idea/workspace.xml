@@ -78,7 +78,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content_sub_booking.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="content_sub_booking.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_sub_booking.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="440">
@@ -123,17 +123,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SubBookingActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SubBookingActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/SubBookingActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="402" column="0" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
+            <state relative-caret-position="442">
+              <caret line="603" column="0" selection-start-line="603" selection-start-column="0" selection-end-line="603" selection-end-column="0" />
               <folding>
-                <marker date="1478096586000" expanded="true" signature="30322:31755" ph="{...}" />
-                <marker date="1478096586000" expanded="true" signature="31830:31928" ph="{...}" />
-                <marker date="1478096586000" expanded="true" signature="32134:32615" ph="{...}" />
-                <marker date="1478096586000" expanded="true" signature="32657:32938" ph="{...}" />
-                <marker date="1478096586000" expanded="true" signature="32979:33260" ph="{...}" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#3386#3394#0" expanded="true" />
+                <element signature="e#4267#4667#0" expanded="true" />
+                <element signature="e#4666#4667#0" expanded="true" />
+                <element signature="e#5399#5407#0" expanded="true" />
+                <element signature="e#6517#9834#0" expanded="true" />
+                <element signature="e#9833#9834#0" expanded="true" />
+                <element signature="e#9876#10589#0" expanded="true" />
+                <element signature="e#10588#10589#0" expanded="true" />
+                <element signature="e#10633#19494#0" expanded="true" />
+                <element signature="e#11438#19435#0" expanded="true" />
+                <element signature="e#15653#19359#0" expanded="true" />
+                <element signature="e#17552#19036#0" expanded="true" />
+                <element signature="e#19035#19036#0" expanded="true" />
+                <element signature="e#19358#19359#0" expanded="true" />
+                <element signature="e#19434#19435#0" expanded="true" />
+                <element signature="e#19493#19494#0" expanded="true" />
+                <element signature="e#19945#21953#0" expanded="true" />
+                <element signature="e#21952#21953#0" expanded="true" />
+                <element signature="e#22581#22601#0" expanded="true" />
+                <element signature="e#22603#22624#0" expanded="true" />
+                <element signature="e#24115#25779#0" expanded="true" />
+                <element signature="e#25778#25779#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2351,12 +2369,12 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/FacilityActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/SubBookingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/HistoryActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/PaymentActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_history.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_sub_booking.xml" />
         <option value="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_history.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/SubBookingActivity.java" />
       </list>
     </option>
   </component>
@@ -2806,7 +2824,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -2850,20 +2868,6 @@
         <state relative-caret-position="405">
           <caret line="170" column="97" selection-start-line="170" selection-start-column="7" selection-end-line="170" selection-end-column="97" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/SubBookingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="402" column="0" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
-          <folding>
-            <marker date="1478096586000" expanded="true" signature="30322:31755" ph="{...}" />
-            <marker date="1478096586000" expanded="true" signature="31830:31928" ph="{...}" />
-            <marker date="1478096586000" expanded="true" signature="32134:32615" ph="{...}" />
-            <marker date="1478096586000" expanded="true" signature="32657:32938" ph="{...}" />
-            <marker date="1478096586000" expanded="true" signature="32979:33260" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2938,6 +2942,38 @@
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/SubBookingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="603" column="0" selection-start-line="603" selection-start-column="0" selection-end-line="603" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3386#3394#0" expanded="true" />
+            <element signature="e#4267#4667#0" expanded="true" />
+            <element signature="e#4666#4667#0" expanded="true" />
+            <element signature="e#5399#5407#0" expanded="true" />
+            <element signature="e#6517#9834#0" expanded="true" />
+            <element signature="e#9833#9834#0" expanded="true" />
+            <element signature="e#9876#10589#0" expanded="true" />
+            <element signature="e#10588#10589#0" expanded="true" />
+            <element signature="e#10633#19494#0" expanded="true" />
+            <element signature="e#11438#19435#0" expanded="true" />
+            <element signature="e#15653#19359#0" expanded="true" />
+            <element signature="e#17552#19036#0" expanded="true" />
+            <element signature="e#19035#19036#0" expanded="true" />
+            <element signature="e#19358#19359#0" expanded="true" />
+            <element signature="e#19434#19435#0" expanded="true" />
+            <element signature="e#19493#19494#0" expanded="true" />
+            <element signature="e#19945#21953#0" expanded="true" />
+            <element signature="e#21952#21953#0" expanded="true" />
+            <element signature="e#22581#22601#0" expanded="true" />
+            <element signature="e#22603#22624#0" expanded="true" />
+            <element signature="e#24115#25779#0" expanded="true" />
+            <element signature="e#25778#25779#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
