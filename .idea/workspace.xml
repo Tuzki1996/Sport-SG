@@ -61,8 +61,8 @@
       <file leaf-file-name="PaymentActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/PaymentActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="47" column="51" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
+            <state relative-caret-position="3375">
+              <caret line="242" column="0" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3276#8645#0" expanded="true" />
@@ -71,17 +71,20 @@
                 <element signature="e#7929#8235#0" expanded="true" />
                 <element signature="e#8234#8235#0" expanded="true" />
                 <element signature="e#8644#8645#0" expanded="true" />
+                <marker date="1478096778000" expanded="false" signature="8941:9028" ph="(v) → { " />
+                <marker date="1478096778000" expanded="false" signature="9044:9068" ph=" }" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content_sub_booking.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="content_sub_booking.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_sub_booking.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+            <state relative-caret-position="440">
+              <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
               <folding>
+                <element signature="e#548#581#0" expanded="true" />
                 <element signature="e#901#920#0" expanded="true" />
                 <element signature="e#1974#1993#0" expanded="true" />
               </folding>
@@ -95,9 +98,14 @@
       <file leaf-file-name="HistoryActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/HistoryActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="945">
+              <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+              <folding>
+                <element signature="e#4355#5890#0" expanded="true" />
+                <element signature="e#5889#5890#0" expanded="true" />
+                <element signature="e#6490#6510#0" expanded="true" />
+                <element signature="e#6511#6532#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,8 +113,8 @@
       <file leaf-file-name="activity_history.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_history.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+            <state relative-caret-position="420">
+              <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -115,35 +123,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SubBookingActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SubBookingActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/SubBookingActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1898">
-              <caret line="267" column="0" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
+            <state relative-caret-position="127">
+              <caret line="402" column="0" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3386#3394#0" expanded="true" />
-                <element signature="e#4267#4667#0" expanded="true" />
-                <element signature="e#4666#4667#0" expanded="true" />
-                <element signature="e#5399#5407#0" expanded="true" />
-                <element signature="e#6517#9834#0" expanded="true" />
-                <element signature="e#9833#9834#0" expanded="true" />
-                <element signature="e#9876#10589#0" expanded="true" />
-                <element signature="e#10588#10589#0" expanded="true" />
-                <element signature="e#10633#19494#0" expanded="true" />
-                <element signature="e#11438#19435#0" expanded="true" />
-                <element signature="e#15653#19359#0" expanded="true" />
-                <element signature="e#17552#19036#0" expanded="true" />
-                <element signature="e#19035#19036#0" expanded="true" />
-                <element signature="e#19358#19359#0" expanded="true" />
-                <element signature="e#19434#19435#0" expanded="true" />
-                <element signature="e#19493#19494#0" expanded="true" />
-                <element signature="e#19945#21953#0" expanded="true" />
-                <element signature="e#21952#21953#0" expanded="true" />
-                <element signature="e#22581#22601#0" expanded="true" />
-                <element signature="e#22603#22624#0" expanded="true" />
-                <element signature="e#24115#25779#0" expanded="true" />
-                <element signature="e#25778#25779#0" expanded="true" />
+                <marker date="1478096586000" expanded="true" signature="30322:31755" ph="{...}" />
+                <marker date="1478096586000" expanded="true" signature="31830:31928" ph="{...}" />
+                <marker date="1478096586000" expanded="true" signature="32134:32615" ph="{...}" />
+                <marker date="1478096586000" expanded="true" signature="32657:32938" ph="{...}" />
+                <marker date="1478096586000" expanded="true" signature="32979:33260" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -2041,7 +2031,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4433946566000" />
+        <entry key="$PROJECT_DIR$" value="4433947085000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2361,11 +2351,12 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/FacilityActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/SubBookingActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/HistoryActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/PaymentActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_history.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_sub_booking.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/HistoryActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/SubBookingActivity.java" />
+        <option value="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_history.xml" />
       </list>
     </option>
   </component>
@@ -2419,6 +2410,28 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sport-SG" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2450,6 +2463,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="androidtutnonfregment" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sport-SG" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2770,7 +2793,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="727" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -2783,7 +2806,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -2830,21 +2853,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_history.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/SubBookingActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="127">
+          <caret line="402" column="0" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
+          <folding>
+            <marker date="1478096586000" expanded="true" signature="30322:31755" ph="{...}" />
+            <marker date="1478096586000" expanded="true" signature="31830:31928" ph="{...}" />
+            <marker date="1478096586000" expanded="true" signature="32134:32615" ph="{...}" />
+            <marker date="1478096586000" expanded="true" signature="32657:32938" ph="{...}" />
+            <marker date="1478096586000" expanded="true" signature="32979:33260" ph="{...}" />
+          </folding>
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/HistoryActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+          <folding>
+            <element signature="e#4355#5890#0" expanded="true" />
+            <element signature="e#5889#5890#0" expanded="true" />
+            <element signature="e#6490#6510#0" expanded="true" />
+            <element signature="e#6511#6532#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/PaymentActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="47" column="51" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
+        <state relative-caret-position="3375">
+          <caret line="242" column="0" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3276#8645#0" expanded="true" />
@@ -2853,15 +2892,45 @@
             <element signature="e#7929#8235#0" expanded="true" />
             <element signature="e#8234#8235#0" expanded="true" />
             <element signature="e#8644#8645#0" expanded="true" />
+            <marker date="1478096778000" expanded="false" signature="8941:9028" ph="(v) → { " />
+            <marker date="1478096778000" expanded="false" signature="9044:9068" ph=" }" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_history.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_history.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/content_sub_booking.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_sub_booking.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+        <state relative-caret-position="440">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding>
+            <element signature="e#548#581#0" expanded="true" />
             <element signature="e#901#920#0" expanded="true" />
             <element signature="e#1974#1993#0" expanded="true" />
           </folding>
@@ -2869,46 +2938,6 @@
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/HistoryActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/chen_hsi/androidtutnonfregment/SubBookingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1898">
-          <caret line="267" column="0" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3386#3394#0" expanded="true" />
-            <element signature="e#4267#4667#0" expanded="true" />
-            <element signature="e#4666#4667#0" expanded="true" />
-            <element signature="e#5399#5407#0" expanded="true" />
-            <element signature="e#6517#9834#0" expanded="true" />
-            <element signature="e#9833#9834#0" expanded="true" />
-            <element signature="e#9876#10589#0" expanded="true" />
-            <element signature="e#10588#10589#0" expanded="true" />
-            <element signature="e#10633#19494#0" expanded="true" />
-            <element signature="e#11438#19435#0" expanded="true" />
-            <element signature="e#15653#19359#0" expanded="true" />
-            <element signature="e#17552#19036#0" expanded="true" />
-            <element signature="e#19035#19036#0" expanded="true" />
-            <element signature="e#19358#19359#0" expanded="true" />
-            <element signature="e#19434#19435#0" expanded="true" />
-            <element signature="e#19493#19494#0" expanded="true" />
-            <element signature="e#19945#21953#0" expanded="true" />
-            <element signature="e#21952#21953#0" expanded="true" />
-            <element signature="e#22581#22601#0" expanded="true" />
-            <element signature="e#22603#22624#0" expanded="true" />
-            <element signature="e#24115#25779#0" expanded="true" />
-            <element signature="e#25778#25779#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
   </component>

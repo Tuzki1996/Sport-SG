@@ -80,7 +80,9 @@ public class HistoryActivity extends AppCompatActivity {
         if(AccountInfo.getInstance().getLoginStatus()==true){
             plsLoginPic.setVisibility(View.INVISIBLE);
             hisList.setVisibility(View.VISIBLE);
+
             historyUrl = "http://hsienyan1994.pagekite.me:8080/CZ2006/getUserServlet?requestType=getHistory&userid="+AccountInfo.getInstance().getUserId();
+
             Log.d("historyUrl",historyUrl);
             displayHistoryList();
 
