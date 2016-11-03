@@ -63,6 +63,7 @@ import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.TimeZone;
@@ -154,7 +155,72 @@ public class SubBookingActivity extends AppCompatActivity {
                 sport = facilitySportList.get(pos);
                 price = sport.getPrice();
 
+                if(!btnPickTime.getText().equals("PICK A TIME")){
+                    Thread t = new Thread() {
+                        public void run() {
+                            Looper.prepare(); //For Preparing Message Pool for the child Thread
+                            HttpClient client = new DefaultHttpClient();
+                            HttpConnectionParams.setConnectionTimeout(client.getParams(), 10000); //Timeout Limit
+                            HttpResponse response;
+
+
+                            try {
+                                HttpPost post = new HttpPost("http://hsienyan1994.pagekite.me:8080/CZ2006/getUserServlet?requestType=occupancyrate&sid=" + Integer.toString(sport.getId()) + "&date=" + dateVar + "&timeslot=" + timeslotVar);//Input Server url
+                                response = client.execute(post);
+                                //Checking response
+                                if (response != null) {
+                                    //Toast.makeText(getBaseContext(), "Result Response", Toast.LENGTH_LONG).show();
+                                    HttpEntity httpEntity = response.getEntity();
+                                    is = httpEntity.getContent();
+
+                                    BufferedReader reader = new BufferedReader(new InputStreamReader(
+                                            is, "iso-8859-1"), 8);
+                                    StringBuilder sb = new StringBuilder();
+                                    String line = null;
+                                    while ((line = reader.readLine()) != null) {
+                                        sb.append(line + "\n");
+                                    }
+                                    is.close();
+
+                                    final JSONObject json = new JSONObject(sb.toString());
+                                    occupancyRate.post(new Runnable() {
+                                        public void run() {
+                                            try {
+                                                occupancyRateCur = Integer.parseInt(json.getString("count"));
+                                                occupancyRateMax = sport.getSport_type().getSizeAllow();
+                                                occupancyRate.setText(json.getString("count") + "/" + Integer.toString(occupancyRateMax));
+                                                if (occupancyRateCur >= occupancyRateMax) {
+                                                    Toast.makeText(getBaseContext(), "Current time slot is full", Toast.LENGTH_LONG).show();
+                                                    fab.setEnabled(false);
+                                                    fab.setText("Please Select another Time Slot");
+                                                } else {
+                                                    fab.setEnabled(true);
+                                                    fab.setText("CONFIRM");
+                                                }
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                    });
+
+
+                                }
+
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+                            Looper.loop(); //Loop in the message queue
+                        }
+                    };
+                    t.start();
+                }
+
+
+
             }
+
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -185,10 +251,9 @@ public class SubBookingActivity extends AppCompatActivity {
                 myCalendarEnd.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
                 //TextView pickDateTxtBox = (TextView)findViewById(R.id.pickDate);
-                dateVar = year + "-" + monthOfYear + "-" + dayOfMonth;
+                dateVar = year + "-" + (monthOfYear+1) + "-" + dayOfMonth;
                 //pickDateTxtBox.setText(dateVar);
-                pd = ProgressDialog.show(SubBookingActivity.this, "", "Querying for available timeslot", false);
-                pd.dismiss();
+
 
                 btnPickDate.setText(dateVar);
 
@@ -201,6 +266,8 @@ public class SubBookingActivity extends AppCompatActivity {
                 int hour = Integer.parseInt(sdf.format(cal.getTime()));
 
                 //Define Time Slots
+                timeSlotStr.clear();
+
                 if (DateUtils.isToday(myCalendarStart.getTimeInMillis())) {
                     if (hour <= 18) {
                         timeSlotStr.add("7pm-8pm");
@@ -231,6 +298,7 @@ public class SubBookingActivity extends AppCompatActivity {
                                 }
                             }
                         }
+                        Collections.reverse(timeSlotStr);
                     } else {
                         btnPickTime.setEnabled(false);
                         btnPickTime.setText("No Time Slot Available");
@@ -269,6 +337,7 @@ public class SubBookingActivity extends AppCompatActivity {
 
                 final CharSequence timeslot[] = new CharSequence[]{"10am-11am", "11am-12pm", "12pm-1pm", "1pm-2pm", "2pm-3pm", "3pm-4pm", "4pm-5pm", "5pm-6pm", "6pm-7pm", "7pm-8pm"};
                 final CharSequence[] items;
+
                 if (DateUtils.isToday(myCalendarStart.getTimeInMillis())) {
                     items = timeSlotStr.toArray(new String[timeSlotStr.size()]);
                 } else {
@@ -276,12 +345,13 @@ public class SubBookingActivity extends AppCompatActivity {
                 }
 
 
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(SubBookingActivity.this);
                 builder.setTitle("Select a timeslot");
                 builder.setItems(items, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        //Toast.makeText(getBaseContext(), "You've selected " + timeslot[which], Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(), "You've selected " + timeslot[which], Toast.LENGTH_LONG).show();
                         if (items[which].equals("10am-11am")) {
                             startDateTime = dateVar + " 10:00:00";
                             endDateTime = dateVar + " 11:00:00";
@@ -347,7 +417,6 @@ public class SubBookingActivity extends AppCompatActivity {
 
                         btnPickTime.setText(timeslot[which]);
                         Thread t = new Thread() {
-
                             public void run() {
                                 Looper.prepare(); //For Preparing Message Pool for the child Thread
                                 HttpClient client = new DefaultHttpClient();
@@ -357,7 +426,6 @@ public class SubBookingActivity extends AppCompatActivity {
 
                                 try {
                                     HttpPost post = new HttpPost("http://hsienyan1994.pagekite.me:8080/CZ2006/getUserServlet?requestType=occupancyrate&sid=" + Integer.toString(sport.getId()) + "&date=" + dateVar + "&timeslot=" + timeslotVar);//Input Server url
-
                                     response = client.execute(post);
                                     //Checking response
                                     if (response != null) {
@@ -373,7 +441,6 @@ public class SubBookingActivity extends AppCompatActivity {
                                             sb.append(line + "\n");
                                         }
                                         is.close();
-
 
                                         final JSONObject json = new JSONObject(sb.toString());
                                         occupancyRate.post(new Runnable() {
@@ -426,6 +493,8 @@ public class SubBookingActivity extends AppCompatActivity {
         Thread t = new Thread() {
 
             public void run() {
+
+
                 Looper.prepare(); //For Preparing Message Pool for the child Thread
                 HttpClient client = new DefaultHttpClient();
                 HttpConnectionParams.setConnectionTimeout(client.getParams(), 10000); //Timeout Limit
@@ -446,6 +515,7 @@ public class SubBookingActivity extends AppCompatActivity {
 
                     //Checking response
                     if (response != null) {
+                        //pd.dismiss();
                         InputStream in = response.getEntity().getContent(); //Get the data in the entity
                         Intent intent = new Intent(getBaseContext(), PaymentActivity.class);
                         intent.putExtra("sid", sid);

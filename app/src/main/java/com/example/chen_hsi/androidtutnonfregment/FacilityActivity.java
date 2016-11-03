@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
@@ -63,6 +64,8 @@ public class FacilityActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facility);
         setMenu();
@@ -83,9 +86,9 @@ public class FacilityActivity extends AppCompatActivity {
         reviewList= (NonScrollListView) findViewById(R.id.reviewList);
         String sports="";
         for(Sport sport:facilitySportList)
-            sports+=sport.getSport_type().getName()+", ";
+        sports+=sport.getSport_type().getName()+", ";
         if(sports.length()!=0)
-            sports.substring(0,sports.length()-2);
+        sports.substring(0,sports.length()-2);
         facilityPhone.setText("Phone: "+facility.getFacility_phone()+"\nSports: "+sports);
         loadReview();
         Picasso.with(getBaseContext()).load(facility.getFacility_photo_resource()).into(facilityImage);
@@ -232,10 +235,10 @@ public class FacilityActivity extends AppCompatActivity {
 
     public void bookNow(View view) {
         if(AccountInfo.getInstance().getLoginStatus()==true){
-            Intent intent = new Intent(getApplicationContext(), SubBookingActivity.class);
+        Intent intent = new Intent(getApplicationContext(), SubBookingActivity.class);
 
-            intent.putExtra("facility_key", facility);
-            startActivity(intent);
+        intent.putExtra("facility_key", facility);
+        startActivity(intent);
         }
         else{
 

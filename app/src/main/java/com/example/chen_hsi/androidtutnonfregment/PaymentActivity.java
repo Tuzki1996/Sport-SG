@@ -95,99 +95,100 @@ public class PaymentActivity extends AppCompatActivity {
 
         if(!validate()){
             onPaymentFailed();
-            return;}
+            return;
+        }
         else {
             progressDialog.show();
             progressDialog.setIndeterminate(true);
             progressDialog.setMessage("Authenticating...");
             Random rnd=new Random();
             final int otp = 100000 + rnd.nextInt(900000);
-            Thread t = new Thread() {
+                Thread t = new Thread() {
 
-                public void run() {
-                    Looper.prepare(); //For Preparing Message Pool for the child Thread
-                    HttpClient client = new DefaultHttpClient();
-                    HttpConnectionParams.setConnectionTimeout(client.getParams(), 10000); //Timeout Limit
-                    HttpResponse response;
-                    JSONObject json = new JSONObject();
+                    public void run() {
+                        Looper.prepare(); //For Preparing Message Pool for the child Thread
+                        HttpClient client = new DefaultHttpClient();
+                        HttpConnectionParams.setConnectionTimeout(client.getParams(), 10000); //Timeout Limit
+                        HttpResponse response;
+                        JSONObject json = new JSONObject();
 
-                    try {
-                        HttpPost post = new HttpPost("http://smsgateway.me/api/v3/messages/send");//Input Server url
-                        json.put("email", "xiaojia1993@gmail.com");
-                        json.put("password", "forsmsgateway");
-                        json.put("device", "32326");
-                        json.put("number", AccountInfo.getInstance().getPhoneNo());
-                        json.put("message", "Welcome to Sports@SG, Your Payment OTP is " + otp);
-                        StringEntity se = new StringEntity(json.toString());
-                        se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
-                        post.setEntity(se);
-                        response = client.execute(post);
+                        try {
+                            HttpPost post = new HttpPost("http://smsgateway.me/api/v3/messages/send");//Input Server url
+                            json.put("email", "xiaojia1993@gmail.com");
+                            json.put("password", "forsmsgateway");
+                            json.put("device", "32326");
+                            json.put("number", AccountInfo.getInstance().getPhoneNo());
+                            json.put("message", "Welcome to Sports@SG, Your Payment OTP is " + otp);
+                            StringEntity se = new StringEntity(json.toString());
+                            se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
+                            post.setEntity(se);
+                            response = client.execute(post);
 
-                        //Checking response
-                        if (response != null) {
-                            InputStream in = response.getEntity().getContent(); //Get the data in the entity
-                            progressDialog.cancel();
+                            //Checking response
+                            if (response != null) {
+                                InputStream in = response.getEntity().getContent(); //Get the data in the entity
+                                progressDialog.cancel();
 
 
-                            LayoutInflater layoutInflater = LayoutInflater.from(PaymentActivity.this);
-                            View promptView = layoutInflater.inflate(R.layout.otp_dialog, null);
-                            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(PaymentActivity.this);
-                            alertDialogBuilder.setView(promptView);
+                                LayoutInflater layoutInflater = LayoutInflater.from(PaymentActivity.this);
+                                View promptView = layoutInflater.inflate(R.layout.otp_dialog, null);
+                                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(PaymentActivity.this);
+                                alertDialogBuilder.setView(promptView);
 
-                            final EditText editOTP = (EditText) promptView.findViewById(R.id.editOTP);
-                            // setup a dialog window
-                            alertDialogBuilder.setCancelable(false)
-                                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                final EditText editOTP = (EditText) promptView.findViewById(R.id.editOTP);
+                                // setup a dialog window
+                                alertDialogBuilder.setCancelable(false)
+                                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
 
-                                        public void onClick(DialogInterface dialog, int id) {
+                                            public void onClick(DialogInterface dialog, int id) {
 
-                                            int editOTPInt=Integer.parseInt(editOTP.getText().toString());
-                                            if(editOTPInt==otp){
-                                                onPaymentSuccess();
-                                                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                                                Calendar calstart = Calendar.getInstance();
-                                                Calendar calend = Calendar.getInstance();
-                                                try {
-                                                    calstart.setTime(format.parse(starttime));
-                                                    calend.setTime(format.parse(endtime));
-                                                } catch (ParseException e) {
-                                                    e.printStackTrace();
+                                                int editOTPInt=Integer.parseInt(editOTP.getText().toString());
+                                                if(editOTPInt==otp){
+                                                    onPaymentSuccess();
+                                                    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                                                    Calendar calstart = Calendar.getInstance();
+                                                    Calendar calend = Calendar.getInstance();
+                                                    try {
+                                                        calstart.setTime(format.parse(starttime));
+                                                        calend.setTime(format.parse(endtime));
+                                                    } catch (ParseException e) {
+                                                        e.printStackTrace();
+                                                    }
+
+                                                    Toast.makeText(getBaseContext(), "Successful Payment ", Toast.LENGTH_LONG).show();
+                                                    Intent calintent = new Intent(Intent.ACTION_EDIT);
+                                                    calintent.setType("vnd.android.cursor.item/event");
+                                                    calintent.putExtra("eventLocation", facility.getFacility_name());
+                                                    calintent.putExtra("title", "Sport @ SG booking reminder");
+                                                    calintent.putExtra("description", "Reminder "+facility.getFacility_name()+"-"+sportType);
+                                                    calintent.putExtra("beginTime",  calstart.getTimeInMillis());
+                                                    calintent.putExtra("endTime",calend.getTimeInMillis());
+                                                    startActivity(calintent);
+                                                }else {
+                                                    Toast.makeText(getBaseContext(), "OTP Incorrect, Please Submit Again", Toast.LENGTH_LONG).show();
                                                 }
-
-                                                Toast.makeText(getBaseContext(), "Successful Payment ", Toast.LENGTH_LONG).show();
-                                                Intent calintent = new Intent(Intent.ACTION_EDIT);
-                                                calintent.setType("vnd.android.cursor.item/event");
-                                                calintent.putExtra("eventLocation", facility.getFacility_name());
-                                                calintent.putExtra("title", "Sport @ SG booking reminder");
-                                                calintent.putExtra("description", "Reminder "+facility.getFacility_name()+"-"+sportType);
-                                                calintent.putExtra("beginTime",  calstart.getTimeInMillis());
-                                                calintent.putExtra("endTime",calend.getTimeInMillis());
-                                                startActivity(calintent);
-                                            }else {
-                                                Toast.makeText(getBaseContext(), "OTP Incorrect, Please Submit Again", Toast.LENGTH_LONG).show();
                                             }
-                                        }
-                                    })
-                                    .setNegativeButton("Cancel",
-                                            new DialogInterface.OnClickListener() {
-                                                public void onClick(DialogInterface dialog, int id) {
-                                                    dialog.cancel();
-                                                }
-                                            });
+                                        })
+                                        .setNegativeButton("Cancel",
+                                                new DialogInterface.OnClickListener() {
+                                                    public void onClick(DialogInterface dialog, int id) {
+                                                        dialog.cancel();
+                                                    }
+                                                });
 
-                            // create an alert dialog
-                            AlertDialog alert = alertDialogBuilder.create();
-                            alert.show();
+                                // create an alert dialog
+                                AlertDialog alert = alertDialogBuilder.create();
+                                alert.show();
+                            }
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
                         }
 
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                        Looper.loop(); //Loop in the message queue
                     }
-
-                    Looper.loop(); //Loop in the message queue
-                }
-            };
-            t.start();
+                };
+                t.start();
 
 
 

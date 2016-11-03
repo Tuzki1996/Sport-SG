@@ -156,7 +156,7 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
                         double longitude = gps.getLongitude();
                         LatLng latLng = new LatLng(latitude,longitude);
 
-                        Toast.makeText(context, Double.toString(latitude)+""+Double.toString(longitude), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(context, Double.toString(latitude)+""+Double.toString(longitude), Toast.LENGTH_SHORT).show();
                         Collections.sort(filtered, new SortDistance(latLng));
                     }
                     else {
@@ -202,7 +202,7 @@ public class FacilityAdapter extends ArrayAdapter<Facility> {
                             double longitude = gps.getLongitude();
                             LatLng latLng = new LatLng(latitude,longitude);
 
-                            Toast.makeText(context,Double.toString(latitude)+" "+Double.toString(longitude),Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(context,Double.toString(latitude)+" "+Double.toString(longitude),Toast.LENGTH_SHORT).show();
                             Collections.sort(filtered, new SortDistance(latLng));
                         }
                         else {
